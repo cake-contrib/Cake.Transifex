@@ -171,7 +171,7 @@ Task("Publish-MyGet")
         throw new InvalidOperationException("Could not resolve MyGet Symbols url.");
     }
 
-    var pacakges = GetFiles(parameters.Paths.Directories.NugetRoot + "/**/*.nupkg");
+    var packages = GetFiles(parameters.Paths.Directories.NugetRoot + "/**/*.nupkg");
 
     foreach (var package in packages)
     {
@@ -216,7 +216,7 @@ Task("Publish-NuGet")
     var packages = GetFiles(parameters.Paths.Directories.NugetRoot + "/**/*.nupkg");
     foreach (var package in packages)
     {
-        if (!package.Fullpath.EndsWith(".symbols.nupkg"))
+        if (!package.FullPath.EndsWith(".symbols.nupkg"))
         {
             NuGetPush(package, new NuGetPushSettings
             {
