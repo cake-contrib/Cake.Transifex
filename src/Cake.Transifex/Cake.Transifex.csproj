@@ -6,6 +6,17 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>    
     <LangVersion>7</LangVersion>
     <DebugType>pdbonly</DebugType>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>AdmiringWorm</Authors>
+    <Company />
+    <Description>Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.</Description>
+    <Copyright>Copyright 2017 - Kim Nordmo</Copyright>
+    <PackageLicenseUrl>https://github.com/WormieCorp/Cake.Transifex/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/WormieCorp/Cake.Transifex</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/WormieCorp/Cake.Transifex</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>cake transifex localization build</PackageTags>
+    <IncludeSymbols>True</IncludeSymbols>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
