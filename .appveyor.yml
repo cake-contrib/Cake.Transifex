@@ -1,0 +1,28 @@
+version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
+skip_branch_with_pr: true
+image: Visual Studio 2017
+environment:
+  MYGET_API_KEY:
+    secure: PiwP8bD2HnXNwjM8xcE009XPYp7K5xdwS4xtz8aoVuUxdIpqtXf5PeWlg25RW5c3
+  MYGET_API_URL: https://www.myget.org/F/wormie-nugets/api/v2/package
+  MYGET_SYMBOLS_URL: https://www.myget.org/F/wormie-nugets/symbols/api/v2/package
+  NUGET_API_KEY:
+    secure: koMAZYSTMVgMKHVVuyfoyVsqyFJc7KQ7UpmNixgflGJC0Mo6CQa8S5cQfbXaBXTH
+  NUGET_API_URL: https://www.nuget.org/api/v2/package
+  GITHUB_USERNAME:
+    secure: Bx5iVoapUFFKud44e1qbAQ==
+  GITHUB_PASSWORD:
+    secure: atNrzVTaIk7ivnzuOV0vwfti0qWEQAb2r+Oq+DROAoVDoVWzJltYeEWDxbnHx1wu
+install:
+- cmd: pip install codecov
+cache: tools -> .build/tools.cake,tools/packages.config
+build_script:
+- ps: .\build.ps1 -Configuration Release -Target AppVeyor
+test: off
+artifacts:
+- path: artifacts\**\*.nupkg
+deploy: off
+on_success:
+- cmd: codecov -X gcov --required
