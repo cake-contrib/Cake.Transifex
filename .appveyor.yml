@@ -25,4 +25,4 @@ artifacts:
 - path: artifacts\**\*.nupkg
 deploy: off
 on_success:
-- cmd: codecov -X gcov --required
+- ps: codecov -X gcov --required --file $(Get-ChildItem "./artifacts" -Name "coverage-result.xml" -File | select -First 1)
