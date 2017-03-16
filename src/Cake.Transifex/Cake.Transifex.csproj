@@ -7,7 +7,7 @@
     <LangVersion>7</LangVersion>
     <DebugType>pdbonly</DebugType>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Authors>AdmiringWorm</Authors>
+    <Authors>Kim Nordmo</Authors>
     <Company />
     <Description>Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.</Description>
     <Copyright>Copyright 2017 - Kim Nordmo</Copyright>
