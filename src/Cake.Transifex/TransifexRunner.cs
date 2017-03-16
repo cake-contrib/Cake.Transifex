@@ -68,7 +68,7 @@
         private static ProcessArgumentBuilder GetTransifexRunnerArguments(TransifexRunnerSettings settings)
         {
             var args = new ProcessArgumentBuilder();
-            settings?.Evaluate(args);
+            settings.Evaluate(args);
             return args;
         }
     }
