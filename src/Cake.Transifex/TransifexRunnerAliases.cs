@@ -127,7 +127,7 @@
         /// server. All new translations are merged with existing ones and if a language doesn't
         /// exist then it gets created. If you want to push the source file as well (either because
         /// this is your first time running the client or because you have updated with new entries),
-        /// set the <see cref="TransifexPushSettings.Source"/> to <c>true</c>. By default, this
+        /// set the <see cref="TransifexPushSettings.UploadSourceFiles"/> to <c>true</c>. By default, this
         /// command will push all files which are watched by Transifex but you can filter this per
         /// resource or/and language.
         /// </summary>
@@ -162,7 +162,7 @@
         /// server. All new translations are merged with existing ones and if a language doesn't
         /// exist then it gets created. If you want to push the source file as well (either because
         /// this is your first time running the client or because you have updated with new entries),
-        /// set the <see cref="TransifexPushSettings.Source"/> to <c>true</c>. By default, this
+        /// set the <see cref="TransifexPushSettings.UploadSourceFiles"/> to <c>true</c>. By default, this
         /// command will push all files which are watched by Transifex but you can filter this per
         /// resource or/and language.
         /// </summary>

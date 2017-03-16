@@ -20,13 +20,13 @@ namespace Cake.Transifex
         /// Gets or sets a value indicating whether to push the source file to the remote server.
         /// </summary>
         /// <value><see langword="true"/> to push the source file; otherwise, <see langword="false"/>.</value>
-        public bool Source { get; set; }
+        public bool UploadSourceFiles { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to push all local translations to the remote server.
         /// </summary>
         /// <value><see langword="true"/> to push all local translations; otherwise, <see langword="false"/>.</value>
-        public bool Translations { get; set; }
+        public bool UploadTranslations { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TransifexPushSettings"/> class.
@@ -47,12 +47,12 @@ namespace Cake.Transifex
                 args.Append("--no-interactive");
             }
 
-            if (Source)
+            if (UploadSourceFiles)
             {
                 args.Append("--source");
             }
 
-            if (Translations)
+            if (UploadTranslations)
             {
                 args.Append("--translations");
             }
