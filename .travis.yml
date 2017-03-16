@@ -24,7 +24,7 @@ branches:
         - /^v[0-9]/ # Skip tag builds, these should already have been tested before the tag was created
 
 before_script:
-    - git fetch --unshallow
+    #- git fetch --unshallow # Not needed until we reach a commit history of 50+
     - if [ "$TRAVIS_OS_NAME" == "osx" ]; then ulimit -n 1024; fi
     - chmod +x build.sh
 
