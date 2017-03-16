@@ -29,7 +29,7 @@ before_script:
     - chmod +x build.sh
 
 script:
-    ./build.sh --target Unix-CI --configuration $CONFIGURATION
+    ./build.sh --configuration $CONFIGURATION
 
 cache:
     directories:
