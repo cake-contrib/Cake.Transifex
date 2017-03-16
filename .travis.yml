@@ -1,0 +1,39 @@
+language: csharp
+
+env:
+    global:
+        - DOTNET_SKIP_FIRST_EXPERIENCE: true
+        - DOTNET_CLIE_TELEMETRY_OPTOUT: 1
+        - CONFIGURATION: Release
+
+matrix:
+    include:
+        - os: osx
+          osx_image: xcode7.3
+          dotnet: 1.0.1
+          mono: 4.0.5
+        - os: linux
+          dist: trusty
+          sudo: required
+          dotnet: 1.0.1
+          mono: 4.0.5
+
+branches:
+    except:
+        - ci/appveyor
+        - /^v[0-9]/ # Skip tag builds, these should already have been tested before the tag was created
+
+before_script:
+    - git fetch --unshallow
+    - if [ "$TRAVIS_OS_NAME" == "osx" ]; then ulimit -n 1024; fi
+    - chmod +x build.sh
+
+script:
+    ./build.sh --target Unix-CI --configuration $CONFIGURATION
+
+cache:
+    directories:
+        - tools
+
+before_cache:
+    - rm -f tools/packages.config
