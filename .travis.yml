@@ -26,6 +26,7 @@ branches:
 before_script:
     #- git fetch --unshallow # Not needed until we reach a commit history of 50+
     - if [ "$TRAVIS_OS_NAME" == "osx" ]; then ulimit -n 1024; fi
+    - if [ "$TRAVIS_OS_NAME" == "osx" ]; then export FrameworkPathOverride=/Library/Framework/Mono.framework/Versions/Current/lib/mono/4.5/; else export FrameworkPathOverride=/usr/lib/mono/4.5/; fi
     - chmod +x build.sh
 
 script:
