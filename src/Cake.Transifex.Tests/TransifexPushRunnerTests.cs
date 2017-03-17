@@ -59,6 +59,16 @@
         }
 
         [Fact]
+        public void Evaluate_SetsNoInteractiveWhenTrue()
+        {
+            this.fixture.Settings = new TransifexPushSettings { NoInteractive = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("push --no-interactive");
+        }
+
+        [Fact]
         public void Evaluate_SetsResourcesArgument()
         {
             this.fixture.Settings = new TransifexPushSettings { Resources = "helloworld*" };
@@ -79,6 +89,16 @@
         }
 
         [Fact]
+        public void Evaluate_SetsSourceWhenUploadSourceFilesIsTrue()
+        {
+            this.fixture.Settings = new TransifexPushSettings { UploadSourceFiles = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("push --source");
+        }
+
+        [Fact]
         public void Evaluate_SetsStatusAsCommandToArgumentBuilder()
         {
             this.fixture.Settings = null;
@@ -86,6 +106,16 @@
             var result = this.fixture.Run();
 
             result.Args.ShouldBe("push");
+        }
+
+        [Fact]
+        public void Evaluate_SetsTranslationsWhenUploadTranslationsIsTrue()
+        {
+            this.fixture.Settings = new TransifexPushSettings { UploadTranslations = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("push --translations");
         }
 
         [Fact]
