@@ -1,6 +1,5 @@
 ﻿namespace Cake.Transifex
 {
-    using System;
     using Cake.Core;
     using Cake.Core.Annotations;
 
@@ -29,40 +28,7 @@
         /// </code>
         [CakeMethodAlias]
         public static void TransifexPull(this ICakeContext context)
-            => TransifexPull(context, (opts) => { });
-
-        /// <summary>
-        /// This command pulls all outstanding changes from the remote Transifex server to the local
-        /// repository. By default, only the files that are watched by Transifex will be updated but
-        /// if you want to fetch the translations for new languages as well, set the <see
-        /// cref="TransifexPullSettings.All"/> property to <c>true</c> in the <paramref name="settingsAction"/>.
-        /// </summary>
-        /// <param name="context">The context.</param>
-        /// <param name="settingsAction">The settings action to configure different options.</param>
-        /// <example>
-        /// <para>Run 'tx pull' with additional options</para>
-        /// <para>Cake task:</para>
-        /// <code>
-        /// <![CDATA[
-        /// Task("Transifex-Pull")
-        ///     .Does(() =>
-        /// {
-        ///     TransifexPull(options =>
-        ///     {
-        ///         options.All = true;
-        ///         options.MinimumPercentage = 75;
-        ///         options.Mode = TransifexMode.Reviewed;
-        ///     });
-        /// };
-        /// ]]>
-        /// </code>
-        /// </example>
-        [CakeMethodAlias]
-        public static void TransifexPull(this ICakeContext context, Action<TransifexPullSettings> settingsAction)
-        {
-            var settings = InitializeSettings(settingsAction);
-            TransifexPull(context, settings);
-        }
+            => TransifexPull(context, null);
 
         /// <summary>
         /// This command pulls all outstanding changes from the remote Transifex server to the local
@@ -120,51 +86,16 @@
         /// </example>
         [CakeMethodAlias]
         public static void TransifexPush(this ICakeContext context)
-            => TransifexPush(context, (opts) => { });
+            => TransifexPush(context, null);
 
         /// <summary>
         /// This command pushes all local files that have been added to Transifex to the remote
         /// server. All new translations are merged with existing ones and if a language doesn't
         /// exist then it gets created. If you want to push the source file as well (either because
         /// this is your first time running the client or because you have updated with new entries),
-        /// set the <see cref="TransifexPushSettings.UploadSourceFiles"/> to <c>true</c>. By default, this
-        /// command will push all files which are watched by Transifex but you can filter this per
-        /// resource or/and language.
-        /// </summary>
-        /// <param name="context">The context.</param>
-        /// <param name="settingsAction">The settings action to configure different options.</param>
-        /// <example>
-        /// <para>Run 'tx push' with additional arguments</para>
-        /// <para>Cake task:</para>
-        /// <code>
-        /// <![CDATA[
-        /// Task("Transifex-Push")
-        ///     .Does(() =>
-        /// {
-        ///     TransifexPush(options =>
-        ///     {
-        ///         options.UploadSourceFiles = true;
-        ///         options.UploadTranslations = true;
-        ///     });
-        /// };
-        /// ]]>
-        /// </code>
-        /// </example>
-        [CakeMethodAlias]
-        public static void TransifexPush(this ICakeContext context, Action<TransifexPushSettings> settingsAction)
-        {
-            var settings = InitializeSettings(settingsAction);
-            TransifexPush(context, settings);
-        }
-
-        /// <summary>
-        /// This command pushes all local files that have been added to Transifex to the remote
-        /// server. All new translations are merged with existing ones and if a language doesn't
-        /// exist then it gets created. If you want to push the source file as well (either because
-        /// this is your first time running the client or because you have updated with new entries),
-        /// set the <see cref="TransifexPushSettings.UploadSourceFiles"/> to <c>true</c>. By default, this
-        /// command will push all files which are watched by Transifex but you can filter this per
-        /// resource or/and language.
+        /// set the <see cref="TransifexPushSettings.UploadSourceFiles"/> to <c>true</c>. By default,
+        /// this command will push all files which are watched by Transifex but you can filter this
+        /// per resource or/and language.
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
@@ -242,19 +173,5 @@
 
         private static TransifexRunner CreateRunner(ICakeContext context)
             => new TransifexRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-
-        private static TSettings InitializeSettings<TSettings>(Action<TSettings> settingsAction)
-                    where TSettings : TransifexRunnerSettings, new()
-        {
-            if (settingsAction == null)
-            {
-                throw new ArgumentNullException(nameof(settingsAction));
-            }
-
-            var settings = new TSettings();
-            settingsAction(settings);
-
-            return settings;
-        }
     }
 }
