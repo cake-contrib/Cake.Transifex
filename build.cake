@@ -103,7 +103,7 @@ Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    var projects = GetFiles("./src/**/*.Tests.csproj");
+    var projects = GetFiles("./tests/**/*.Tests.csproj");
     if (FileExists(parameters.Paths.Files.TestCoverageOutputFilePath))
     {
         DeleteFile(parameters.Paths.Files.TestCoverageOutputFilePath);

@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cake.Transifex\Cake.Transifex.csproj" />
+    <ProjectReference Include="..\..\src\Cake.Transifex\Cake.Transifex.csproj" />
   </ItemGroup>
 
   <ItemGroup>
