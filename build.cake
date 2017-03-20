@@ -113,13 +113,20 @@ Task("Run-Unit-Tests")
     {
         Action<ICakeContext> testAction = tool =>
         {
-            tool.DotNetCoreTest(project.FullPath, new DotNetCoreTestSettings
+            var settings = new DotNetCoreTestSettings
             {
                 Configuration = parameters.Configuration,
                 NoBuild = true,
                 Verbose = Context.Log.Verbosity == Verbosity.Diagnostic,
                 ArgumentCustomization = parameters.GetMsBuildArgs(Context)
-            });
+            };
+            if (parameters.IsRunningOnUnix)
+            {
+                // We are unable to test for .net 4.5(.2) because dotnet test can't find
+                // the test adapter for that framework, so skipping until it is fixed.
+                settings.Framework = "netcoreapp1.0";
+            }
+            tool.DotNetCoreTest(project.FullPath, settings);
         };
 
         if (parameters.IsRunningOnUnix || parameters.SkipOpenCover)
