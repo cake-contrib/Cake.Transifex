@@ -2,9 +2,7 @@ language: csharp
 
 env:
     global:
-        - DOTNET_SKIP_FIRST_EXPERIENCE: true
-        - DOTNET_CLIE_TELEMETRY_OPTOUT: 1
-        - CONFIGURATION: Release
+        - CONFIGURATION=Release
 
 matrix:
     include:
