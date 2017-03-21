@@ -71,13 +71,13 @@ Task("Export-Release-Notes")
     );
 
     string[] releaseNotes;
-    if (!FileExists("./artifacts/CHANGELOG.md") && !parameters.ShouldPublish)
+    if (!FileExists(parameters.Paths.Files.Changelog) && !parameters.ShouldPublish)
     {
       releaseNotes = new[] { "No release notes available for this release" };
     }
     else
     {
-      releaseNotes = ParseReleaseNotes("./artifacts/CHANGELOG.md").Notes.ToArray();
+      releaseNotes = ParseReleaseNotes(parameters.Paths.Files.Changelog).Notes.ToArray();
     }
 
     parameters.SetReleaseNotes(Context, releaseNotes);
