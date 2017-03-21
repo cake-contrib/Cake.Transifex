@@ -1,16 +1,14 @@
-﻿using Shouldly;
-using Xunit;
-
-namespace Cake.Transifex.Tests
+﻿namespace Cake.Transifex.Tests
 {
+    using Shouldly;
+    using Xunit;
+
     public class TransifexPullRunnerTests
     {
         private readonly TransifexPullFixture fixture;
 
         public TransifexPullRunnerTests()
-        {
-            fixture = new TransifexPullFixture();
-        }
+            => fixture = new TransifexPullFixture();
 
         [Theory]
         [InlineData(null)]

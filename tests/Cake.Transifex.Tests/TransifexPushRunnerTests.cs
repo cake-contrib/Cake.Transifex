@@ -8,9 +8,7 @@
         private readonly TransifexPushFixture fixture;
 
         public TransifexPushRunnerTests()
-        {
-            fixture = new TransifexPushFixture();
-        }
+            => fixture = new TransifexPushFixture();
 
         [Theory]
         [InlineData(null)]

@@ -8,9 +8,7 @@
         private readonly TransifexStatusFixture fixture;
 
         public TransifexStatusRunnerTests()
-        {
-            fixture = new TransifexStatusFixture();
-        }
+            => fixture = new TransifexStatusFixture();
 
         [Fact]
         public void Evaluate_SetsStatusAsCommandToArgumentBuilder()

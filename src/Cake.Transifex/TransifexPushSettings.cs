@@ -1,8 +1,8 @@
-﻿using Cake.Core;
-using Cake.Core.IO;
-
-namespace Cake.Transifex
+﻿namespace Cake.Transifex
 {
+    using Cake.Core;
+    using Cake.Core.IO;
+
     /// <summary>
     /// Defines the properties that can be used when calling the push command on the transifex
     /// client. This class cannot be inherited.

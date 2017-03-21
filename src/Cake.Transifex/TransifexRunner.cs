@@ -53,14 +53,12 @@
         }
 
         protected override IEnumerable<string> GetToolExecutableNames()
-        {
-            return new[]
+            => new[]
             {
                 "tx.cmd",
                 "tx.exe",
                 "tx"
             };
-        }
 
         protected override string GetToolName()
             => "Transifex Runner";

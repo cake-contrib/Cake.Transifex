@@ -1,6 +1,5 @@
 ﻿namespace Cake.Transifex
 {
-    using System;
     using Cake.Core;
     using Cake.Core.IO;
 
