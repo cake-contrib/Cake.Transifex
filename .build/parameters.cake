@@ -11,6 +11,7 @@ public class BuildParameters
     public const string MainBranch   = "master";
     private const string ArgumentCustomizationFormat = "/property:VersionPrefix={0};PackageReleaseNotes={1};PackageOutputPath={2}{3}";
 
+    public bool BuildNetCoreOnly { get; private set; }
     public string Configuration { get; private set; }
     public bool IsLocalBuild { get; private set; }
     public bool IsMainBranch { get; private set; }
@@ -85,7 +86,7 @@ public class BuildParameters
                 Version.Version,
                 ReleaseNotes,
                 Paths.Directories.NugetRoot.MakeAbsolute(context.Environment),
-                "" // Just in case we need something additional in the future
+                BuildNetCoreOnly ? ";NetCoreOnly=true": ""
             );
             return args;
         };
@@ -104,6 +105,7 @@ public class BuildParameters
         return new BuildParameters
         {
             Target = target,
+            BuildNetCoreOnly = context.Argument("netcoreonly", false),
             Configuration = context.Argument("configuration", "Release"),
             IsLocalBuild = buildSystem.IsLocalBuild,
             IsRunningOnUnix = context.IsRunningOnUnix(),
