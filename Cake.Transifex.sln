@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Transifex", "src\Cake.Transifex\Cake.Transifex.csproj", "{B0095F88-A78E-484B-A056-5D79DD4A1716}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C7CD914A-3A1D-49CB-BEB2-57FA66BC73CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{79621E89-D86A-493B-A2BE-BDB9921CF0C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Transifex.Tests", "tests\Cake.Transifex.Tests\Cake.Transifex.Tests.csproj", "{A7402949-439A-44B1-9B7B-50E61C3E0A94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0095F88-A78E-484B-A056-5D79DD4A1716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0095F88-A78E-484B-A056-5D79DD4A1716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0095F88-A78E-484B-A056-5D79DD4A1716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0095F88-A78E-484B-A056-5D79DD4A1716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7402949-439A-44B1-9B7B-50E61C3E0A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7402949-439A-44B1-9B7B-50E61C3E0A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7402949-439A-44B1-9B7B-50E61C3E0A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7402949-439A-44B1-9B7B-50E61C3E0A94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0095F88-A78E-484B-A056-5D79DD4A1716} = {C7CD914A-3A1D-49CB-BEB2-57FA66BC73CE}
+		{A7402949-439A-44B1-9B7B-50E61C3E0A94} = {79621E89-D86A-493B-A2BE-BDB9921CF0C5}
+	EndGlobalSection
+EndGlobal

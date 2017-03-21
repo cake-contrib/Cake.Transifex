@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Condition="'$(NetCoreOnly)'!='true'">
+    <TargetFrameworks>netstandard1.6;net45</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(NetCoreOnly)'=='true'">
+    <TargetFrameworks>netstandard1.6</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.0</NetStandardImplicitPackageVersion>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
+    <LangVersion>7</LangVersion>
+    <DebugType>pdbonly</DebugType>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Kim Nordmo</Authors>
+    <Company />
+    <Description>
+Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
+This addin requires that the transifex client is already installed and is available as `tx`.
+To install the transifex client, install python, then run `pip install transifex-client`.
+    </Description>
+    <Copyright>Copyright 2017 - Kim Nordmo</Copyright>
+    <PackageLicenseUrl>https://github.com/WormieCorp/Cake.Transifex/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/WormieCorp/Cake.Transifex</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/WormieCorp/Cake.Transifex</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>cake build transifex localization</PackageTags>
+    <IncludeSymbols>True</IncludeSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DebugSymbols>True</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DebugSymbols>False</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cake.Core" Version="0.18.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+</Project>

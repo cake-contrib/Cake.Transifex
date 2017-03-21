@@ -1,0 +1,38 @@
+language: csharp
+
+env:
+    global:
+        - CONFIGURATION=Release
+
+matrix:
+    include:
+        - os: osx
+          osx_image: xcode7.3
+          dotnet: 1.0.1
+          mono: 4.0.5
+        - os: linux
+          dist: trusty
+          sudo: required
+          dotnet: 1.0.1
+          mono: 4.0.5
+
+branches:
+    except:
+        - ci/appveyor
+        - /^v[0-9]/ # Skip tag builds, these should already have been tested before the tag was created
+
+before_script:
+    #- git fetch --unshallow # Not needed until we reach a commit history of 50+
+    - if [ "$TRAVIS_OS_NAME" == "osx" ]; then ulimit -n 1024; fi
+    - if [ "$TRAVIS_OS_NAME" != "osx" ]; then export FrameworkPathOverride=/usr/lib/mono/4.5/; fi
+    - chmod +x build.sh
+
+script:
+    - if [ "$TRAVIS_OS_NAME" == "osx" ]; then ./build.sh --configuration $CONFIGURATION; else ./build.sh --configuration $CONFIGURATION --with-netfull; fi
+
+cache:
+    directories:
+        - tools
+
+before_cache:
+    - rm -f tools/packages.config
