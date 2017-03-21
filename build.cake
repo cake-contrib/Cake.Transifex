@@ -32,7 +32,6 @@ Task("Restore-NuGet-Packages")
 {
     DotNetCoreRestore(parameters.Paths.Files.SolutionPath.FullPath, new DotNetCoreRestoreSettings
     {
-        Verbose = Context.Log.Verbosity == Verbosity.Diagnostic,
         ArgumentCustomization = parameters.GetMsBuildArgs(Context)
     });
 });
@@ -72,13 +71,13 @@ Task("Export-Release-Notes")
     );
 
     string[] releaseNotes;
-    if (!FileExists("./artifacts/CHANGELOG.md") && !parameters.ShouldPublish)
+    if (!FileExists(parameters.Paths.Files.Changelog) && !parameters.ShouldPublish)
     {
       releaseNotes = new[] { "No release notes available for this release" };
     }
     else
     {
-      releaseNotes = ParseReleaseNotes("./artifacts/CHANGELOG.md").Notes.ToArray();
+      releaseNotes = ParseReleaseNotes(parameters.Paths.Files.Changelog).Notes.ToArray();
     }
 
     parameters.SetReleaseNotes(Context, releaseNotes);
@@ -91,7 +90,6 @@ Task("Build")
 {
     DotNetCoreBuild(parameters.Paths.Files.SolutionPath.FullPath, new DotNetCoreBuildSettings
     {
-        Verbose = Context.Log.Verbosity == Verbosity.Diagnostic,
         VersionSuffix = parameters.Version.DotNetAsterix,
         Configuration = parameters.Configuration,
         NoDependencies = true,
@@ -117,7 +115,6 @@ Task("Run-Unit-Tests")
             {
                 Configuration = parameters.Configuration,
                 NoBuild = true,
-                Verbose = Context.Log.Verbosity == Verbosity.Diagnostic,
                 ArgumentCustomization = parameters.GetMsBuildArgs(Context)
             };
             if (parameters.IsRunningOnUnix)
