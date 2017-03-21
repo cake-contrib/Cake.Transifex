@@ -32,7 +32,6 @@ Task("Restore-NuGet-Packages")
 {
     DotNetCoreRestore(parameters.Paths.Files.SolutionPath.FullPath, new DotNetCoreRestoreSettings
     {
-        Verbose = Context.Log.Verbosity == Verbosity.Diagnostic,
         ArgumentCustomization = parameters.GetMsBuildArgs(Context)
     });
 });
@@ -91,7 +90,6 @@ Task("Build")
 {
     DotNetCoreBuild(parameters.Paths.Files.SolutionPath.FullPath, new DotNetCoreBuildSettings
     {
-        Verbose = Context.Log.Verbosity == Verbosity.Diagnostic,
         VersionSuffix = parameters.Version.DotNetAsterix,
         Configuration = parameters.Configuration,
         NoDependencies = true,
@@ -117,7 +115,6 @@ Task("Run-Unit-Tests")
             {
                 Configuration = parameters.Configuration,
                 NoBuild = true,
-                Verbose = Context.Log.Verbosity == Verbosity.Diagnostic,
                 ArgumentCustomization = parameters.GetMsBuildArgs(Context)
             };
             if (parameters.IsRunningOnUnix)
