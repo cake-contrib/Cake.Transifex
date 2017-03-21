@@ -35,4 +35,4 @@ Open up a powershell window and call `.\build.ps1`, this should build the projec
 - Mono (uncertain of which version, and it may fail on some systems)
 
 Open up the terminal and call `sh build.sh`, this should build the projects, run the unit tests and create nuget packages in the `./artifacts/v{version}/nuget` directory.
-**NOTE: If building fails saying that .NET 4.5 is not available, you may need to pass `--netcoreonly` when calling the `build.sh` script, like this: `sh build.sh --netcoreonly`, this will only build the .NET Core portion of the cake addin.**
+**NOTE: By default we do not enable building of .NET Full on Linux and OSX, to also build .NET Full pass `--with-netfull` when calling `sh build.sh`**

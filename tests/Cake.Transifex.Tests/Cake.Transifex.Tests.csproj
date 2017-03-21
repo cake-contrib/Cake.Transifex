@@ -1,7 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(NetCoreOnly)'=='true'">
+    <TargetFrameworks>netcoreapp1.0</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(NetCoreOnly)'!='true'">
     <TargetFrameworks>netcoreapp1.0;net452</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup>
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
 

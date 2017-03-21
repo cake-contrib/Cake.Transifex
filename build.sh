@@ -29,6 +29,7 @@ CONFIGURATION="Release"
 VERBOSITY="verbose"
 DRYRUN=
 SHOW_VERSION=false
+NETCOREONLY=true
 SCRIPT_ARGUMENTS=()
 
 # Parse arguments.
@@ -40,6 +41,7 @@ for i in "$@"; do
         -v|--verbosity) VERBOSITY="$2"; shift ;;
         -d|--dryrun) DRYRUN="-dryrun" ;;
         --version) SHOW_VERSION=true ;;
+        --with-netfull) NETCOREONLY=false ;;
         --) shift; SCRIPT_ARGUMENTS+=("$@"); break ;;
         *) SCRIPT_ARGUMENTS+=("$1") ;;
     esac
@@ -97,5 +99,5 @@ fi
 if $SHOW_VERSION; then
     exec mono "$CAKE_EXE" -version
 else
-    exec mono "$CAKE_EXE" $SCRIPT -verbosity=$VERBOSITY -configuration=$CONFIGURATION -target=$TARGET $DRYRUN "${SCRIPT_ARGUMENTS[@]}"
+    exec mono "$CAKE_EXE" $SCRIPT -verbosity=$VERBOSITY -configuration=$CONFIGURATION -target=$TARGET $DRYRUN -netcoreonly)$NETCOREONLY "${SCRIPT_ARGUMENTS[@]}"
 fi

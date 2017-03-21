@@ -1,7 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(NetCoreOnly)'=='true'">
+    <TargetFrameworks>netstandard1.6</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(NetCoreOnly)'!='true'">
     <TargetFrameworks>netstandard1.6;net45</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.0</NetStandardImplicitPackageVersion>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <LangVersion>7</LangVersion>

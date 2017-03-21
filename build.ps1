@@ -50,6 +50,7 @@ Param(
     [Alias("DryRun","Noop")]
     [switch]$WhatIf,
     [switch]$Mono,
+    [switch]$NetCoreOnly,
     [switch]$SkipToolPackageRestore,
     [Parameter(Position=0,Mandatory=$false,ValueFromRemainingArguments=$true)]
     [string[]]$ScriptArgs
@@ -182,8 +183,12 @@ if(-Not $SkipToolPackageRestore.IsPresent) {
 if (!(Test-Path $CAKE_EXE)) {
     Throw "Could not find Cake.exe at $CAKE_EXE"
 }
+$COMPILE_NET_CORE_ONLY='false'
+if ($NetCoreOnly.IsPresent) {
+    $COMPILE_NET_CORE_ONLY='true'
+}
 
 # Start Cake
 Write-Host "Running build script..."
-Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" $UseMono $UseDryRun $UseExperimental $ScriptArgs"
+Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" -netcoreonly=`"$COMPILE_NET_CORE_ONLY`" $UseMono $UseDryRun $UseExperimental $ScriptArgs"
 exit $LASTEXITCODE
