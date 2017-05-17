@@ -1,7 +1,9 @@
 version: '{build}'
 pull_requests:
   do_not_increment_build_number: true
-skip_branch_with_pr: true
+branches:
+  except:
+  - ci/travis
 image: Visual Studio 2017
 environment:
   MYGET_API_KEY:
@@ -25,4 +27,4 @@ artifacts:
 - path: artifacts\**\*.nupkg
 deploy: off
 on_success:
-- ps: codecov -X gcov --required --file $(Get-ChildItem "./artifacts" -Name "coverage-result.xml" -File | select -First 1)
+- ps: codecov -X gcov --required --file $(Get-ChildItem "./artifacts" -Filter "coverage-result.xml" -File -Recurse | select -Last 1 -expand FullName)
