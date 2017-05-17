@@ -90,6 +90,9 @@
         [InlineData(TransifexMode.Developer)]
         [InlineData(TransifexMode.Reviewed)]
         [InlineData(TransifexMode.Translator)]
+        [InlineData(TransifexMode.OnlyTranslated)]
+        [InlineData(TransifexMode.OnlyReviewed)]
+        [InlineData(TransifexMode.SourceAsTranslation)]
         public void Evaluate_SetsModeWhenNotNull(TransifexMode mode)
         {
             var expected = mode.ToString().ToLowerInvariant();
