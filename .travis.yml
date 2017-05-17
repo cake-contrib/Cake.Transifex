@@ -4,17 +4,18 @@ env:
     global:
         - CONFIGURATION=Release
 
-matrix:
-    include:
-        - os: osx
-          osx_image: xcode7.3
-          dotnet: 1.0.1
-          mono: 4.0.5
-        - os: linux
-          dist: trusty
-          sudo: required
-          dotnet: 1.0.1
-          mono: 4.0.5
+os:
+  - osx
+  - linux
+osx_image: xcode7.3
+dist: trusty
+sudo: required
+mono:
+  - 4.0.5
+  - latest
+dotnet:
+  - 1.0.1
+  - 1.0.4
 
 branches:
     except:
