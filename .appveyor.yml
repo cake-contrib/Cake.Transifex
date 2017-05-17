@@ -25,4 +25,4 @@ artifacts:
 - path: artifacts\**\*.nupkg
 deploy: off
 on_success:
-- ps: codecov -X gcov --required --file $(Get-ChildItem "./artifacts" -Name "coverage-result.xml" -File -Recurse | select -Last 1)
+- ps: codecov -X gcov --required --file $(Get-ChildItem "./artifacts" -Name "coverage-result.xml" -File -Recurse | select -Last 1 -expand FullName)
