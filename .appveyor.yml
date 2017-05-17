@@ -6,6 +6,10 @@ branches:
   - ci/travis
 skip_commits:
   message: /Merge tag.*into develop/
+  files:
+    - '**/*.md'
+    - LICENSE
+    - .travis.yml
 image: Visual Studio 2017
 environment:
   MYGET_API_KEY:
