@@ -4,6 +4,8 @@ pull_requests:
 branches:
   except:
   - ci/travis
+skip_commits:
+  message: /Merge tag.*into develop/
 image: Visual Studio 2017
 environment:
   MYGET_API_KEY:
