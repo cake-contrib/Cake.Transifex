@@ -156,7 +156,7 @@ Task("Upload-Coverage-Report")
     .WithCriteria(parameters.IsRunningOnAppVeyor)
     .Does(() =>
 {
-    Codecov(parameters.Paths.Files.TestCoverageOutputFilePath);
+    Codecov(parameters.Paths.Files.TestCoverageOutputFilePath.ToString());
 });
 
 Task("Publish-MyGet")
