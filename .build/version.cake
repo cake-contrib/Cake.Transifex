@@ -2,6 +2,7 @@ public class BuildVersion
 {
     public string Version { get; private set; }
     public string SemVersion { get; private set; }
+    public string FullSemVersion { get; private set; }
     public string DotNetAsterix { get; private set; }
     public string Milestone { get; private set; }
     public string CakeVersion { get; private set; }
@@ -15,7 +16,8 @@ public class BuildVersion
 
         string version = "0.0.0",
                semVersion = version + "-unknown",
-               milestone = string.Concat("v", version);
+               milestone = string.Concat("v", version),
+               fullSemVersion = semVersion;
 
         try
         {
@@ -37,6 +39,7 @@ public class BuildVersion
                 version = assertedVersion.MajorMinorPatch;
                 semVersion = assertedVersion.LegacySemVerPadded;
                 milestone = string.Concat("v", version);
+                fullSemVersion = assertedVersion.FullSemVer;
 
                 context.Information("Calculated Semantic Version: {0}", semVersion);
             }
@@ -52,7 +55,8 @@ public class BuildVersion
             SemVersion = semVersion,
             DotNetAsterix = semVersion.Substring(version.Length).TrimStart('-'),
             Milestone = milestone,
-            CakeVersion = typeof(ICakeContext).Assembly.GetName().Version.ToString()
+            CakeVersion = typeof(ICakeContext).Assembly.GetName().Version.ToString(),
+            FullSemVersion = fullSemVersion
         };
     }
 }

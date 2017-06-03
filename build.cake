@@ -156,9 +156,13 @@ Task("Upload-Coverage-Report")
     .WithCriteria(parameters.IsRunningOnAppVeyor)
     .Does(() =>
 {
+    var buildVersion = string.Format("{0}.build.{1}",
+        parameters.Version.FullSemVersion,
+        BuildSystem.AppVeyor.Environment.Build.Version);
+
     Codecov(new CodecovSettings {
         Files = new[] { parameters.Paths.Files.TestCoverageOutputFilePath.ToString() },
-        Build = EnvironmentVariable("APPVEYOR_BUILD_VERSION")
+        EnvironmentVariables = new Dictionary<string,string> { { "APPVEYOR_BUILD_VERSION", buildVersion } }
     });
 });
 
