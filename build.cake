@@ -152,8 +152,15 @@ Task("Run-Unit-Tests")
     }
 });
 
+Task("Upload-Coverage-Report")
+    .WithCriteria(parameters.IsRunningOnAppVeyor)
+    .Does(() =>
+{
+    Codecov(parameters.Paths.Files.TestCoverageOutputFilePath);
+});
+
 Task("Publish-MyGet")
-    .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Upload-Coverage-Report")
     .WithCriteria(() => parameters.ShouldPublishToMyGet)
     .Does(() =>
 {
@@ -201,7 +208,7 @@ Task("Publish-MyGet")
 });
 
 Task("Publish-NuGet")
-    .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Upload-Coverage-Report")
     .WithCriteria(() => parameters.ShouldPublish)
     .Does(() =>
 {
@@ -236,7 +243,7 @@ Task("Publish-NuGet")
 });
 
 Task("Publish-GitHub-Release")
-    .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Upload-Coverage-Report")
     .WithCriteria(() => parameters.GitHub.HasCredentials)
     .WithCriteria(() => parameters.ShouldPublish)
     .Does(() =>
@@ -262,6 +269,7 @@ Task("Default")
 
 Task("AppVeyor")
     .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Upload-Coverage-Report")
     .IsDependentOn("Publish-MyGet")
     .IsDependentOn("Publish-NuGet")
     .IsDependentOn("Publish-GitHub-Release")

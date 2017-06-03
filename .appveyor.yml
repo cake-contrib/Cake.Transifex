@@ -23,8 +23,6 @@ environment:
     secure: Bx5iVoapUFFKud44e1qbAQ==
   GITHUB_PASSWORD:
     secure: atNrzVTaIk7ivnzuOV0vwfti0qWEQAb2r+Oq+DROAoVDoVWzJltYeEWDxbnHx1wu
-install:
-- cmd: pip install codecov
 cache: tools -> .build/tools.cake,tools/packages.config
 build_script:
 - ps: .\build.ps1 -Configuration Release -Target AppVeyor
@@ -32,5 +30,3 @@ test: off
 artifacts:
 - path: artifacts\**\*.nupkg
 deploy: off
-on_success:
-- ps: codecov -X gcov --required --file $(Get-ChildItem "./artifacts" -Filter "coverage-result.xml" -File -Recurse | select -Last 1 -expand FullName)
