@@ -10,7 +10,7 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <LangVersion>7</LangVersion>
     <DebugType>pdbonly</DebugType>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Authors>Kim Nordmo</Authors>
     <Company />
     <Description>
@@ -25,6 +25,7 @@ To install the transifex client, install python, then run `pip install transifex
     <RepositoryType>git</RepositoryType>
     <PackageTags>cake build transifex localization</PackageTags>
     <IncludeSymbols>True</IncludeSymbols>
+    <PackageReleaseNotes>$(RepositoryUrl)/releases/tag/$(Version)</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

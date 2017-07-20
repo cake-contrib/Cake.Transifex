@@ -3,6 +3,12 @@
 var parameters = BuildParameters.GetParameters(Context);
 var publishingError = false;
 
+if (Context.IsRunningOnWindows()) {
+    Warning(@"Please use the setup.cake file when building on Windows.
+build.cake is only provided to allow building on Unix like systems as 'Cake.Recipe'
+currently do not support those kind of systems.");
+}
+
 Setup(context =>
 {
     parameters.Initialize(context);
