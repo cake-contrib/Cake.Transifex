@@ -21,6 +21,7 @@ To install the transifex client, install python, then run `pip install transifex
     <Copyright>Copyright 2017 - Kim Nordmo</Copyright>
     <PackageLicenseUrl>https://github.com/WormieCorp/Cake.Transifex/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/WormieCorp/Cake.Transifex</PackageProjectUrl>
+    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/WormieCorp/Cake.Transifex</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>cake build transifex localization</PackageTags>
