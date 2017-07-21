@@ -8,4 +8,4 @@ coverage:
 
 comment:
   behavior: new
-  require_changers: true
+  require_changes: true
