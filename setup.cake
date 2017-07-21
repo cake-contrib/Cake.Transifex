@@ -12,7 +12,8 @@ BuildParameters.SetParameters(
     appVeyorAccountName: "AdmiringWorm",
     shouldRunDotNetCorePack: true,
     shouldBuildNugetSourcePackage: true,
-    solutionFilePath: "./Cake.Transifex.sln"
+    solutionFilePath: "./Cake.Transifex.sln",
+    shouldExecuteGitLink: false // Currently gitlink fails since we uses a custom path to the solution file
 );
 
 ToolSettings.SetToolSettings(
