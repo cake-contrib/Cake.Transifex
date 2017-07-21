@@ -1,6 +1,6 @@
 # Cake.Transifex
 
-[![license](https://img.shields.io/github/license/WormieCorp/Cake.Transifex.svg)](https://github.com/WormieCorp/Cake.Transifex/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/cake-contrib/Cake.Transifex.svg)](https://github.com/cake-contrib/Cake.Transifex/blob/master/LICENSE)
 
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
@@ -11,7 +11,7 @@ To install the transifex client, install python, then run `pip install transifex
 
 | |Stable|Pre-release|
 |:--:|:--:|:--:|
-|GitHub Release|[![GitHub release](https://img.shields.io/github/release/WormieCorp/Cake.Transifex.svg)](https://github.com/WormieCorp/Cake.Transifex/releases/latest)|[![GitHub (pre-)release](https://img.shields.io/github/release/WormieCorp/Cake.Transifex/all.svg)](https://github.com/WormieCorp/Cake.Transifex/releases)|
+|GitHub Release|[![GitHub release](https://img.shields.io/github/release/cake-contrib/Cake.Transifex.svg)](https://github.com/cake-contrib/Cake.Transifex/releases/latest)|[![GitHub (pre-)release](https://img.shields.io/github/release/cake-contrib/Cake.Transifex/all.svg)](https://github.com/cake-contrib/Cake.Transifex/releases)|
 |NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.Transifex.svg)](https://nuget.org/packages/Cake.Transifex)|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/Cake.Transifex.svg)](https://nuget.org/packages/Cake.Transifex)|
 
 ### Where to get the addin
@@ -27,15 +27,15 @@ The following aliases is available from the cake build script:
 ## Build Status
 | | master | develop |
 |:--:|:--:|:--:|
-|AppVeyor|[![AppVeyor branch master](https://img.shields.io/appveyor/ci/AdmiringWorm/cake-transifex/master.svg)](https://ci.appveyor.com/project/AdmiringWorm/cake-transifex/branch/master)|[![AppVeyor branch develop](https://img.shields.io/appveyor/ci/AdmiringWorm/cake-transifex/develop.svg)](https://ci.appveyor.com/project/AdmiringWorm/cake-transifex/branch/develop)|
-|Travis CI|[![Travis branch](https://img.shields.io/travis/WormieCorp/Cake.Transifex/master.svg)](https://travis-ci.org/WormieCorp/Cake.Transifex)|[![Travis branch](https://img.shields.io/travis/WormieCorp/Cake.Transifex/develop.svg)](https://travis-ci.org/WormieCorp/Cake.Transifex)|
+|AppVeyor|[![AppVeyor branch master](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/master.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/master)|[![AppVeyor branch develop](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/develop.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/develop)|
+|Travis CI|[![Travis branch](https://img.shields.io/travis/cake-contrib/Cake.Transifex/master.svg)](https://travis-ci.org/cake-contrib/Cake.Transifex)|[![Travis branch](https://img.shields.io/travis/cake-contrib/Cake.Transifex/develop.svg)](https://travis-ci.org/cake-contrib/Cake.Transifex)|
 
 ## Code Coverage
 
 | |master|develop|
 |:--:|:--:|:--:|
-|Codecov|[![Codecov branch](https://img.shields.io/codecov/c/github/WormieCorp/Cake.Transifex/master.svg)](https://codecov.io/github/WormieCorp/Cake.Transifex)|[![Codecov branch](https://img.shields.io/codecov/c/github/WormieCorp/Cake.Transifex/develop.svg)](https://codecov.io/github/WormieCorp/Cake.Transifex)|
-|Coveralls|[![Coveralls branch](https://img.shields.io/coveralls/WormieCorp/Cake.Transifex/master.svg)](https://coveralls.io/github/WormieCorp/Cake.Transifex?branch=master)|[![Coveralls branch](https://img.shields.io/coveralls/WormieCorp/Cake.Transifex/develop.svg)](https://coveralls.io/github/WormieCorp/Cake.Transifex?branch=develop)|
+|Codecov|[![Codecov branch](https://img.shields.io/codecov/c/github/cake-contrib/Cake.Transifex/master.svg)](https://codecov.io/github/cake-contrib/Cake.Transifex)|[![Codecov branch](https://img.shields.io/codecov/c/github/cake-contrib/Cake.Transifex/develop.svg)](https://codecov.io/github/cake-contrib/Cake.Transifex)|
+|Coveralls|[![Coveralls branch](https://img.shields.io/coveralls/cake-contrib/Cake.Transifex/master.svg)](https://coveralls.io/github/cake-contrib/Cake.Transifex?branch=master)|[![Coveralls branch](https://img.shields.io/coveralls/cake-contrib/Cake.Transifex/develop.svg)](https://coveralls.io/github/cake-contrib/Cake.Transifex?branch=develop)|
 
 ## Quick Links
 
