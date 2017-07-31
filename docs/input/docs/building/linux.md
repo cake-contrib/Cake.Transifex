@@ -6,7 +6,7 @@ Author: Kim Nordmo
 
 ## Requirements
 
-The following are need to build Cake.Transifex on Windows:
+The following are need to build Cake.Transifex on Linux:
 - .NET Core SDK 1.0.4 *(could work with other versions as well)*
 - Mono 4.2.3+ *(earlier versions may work, but are not supported)*
 
