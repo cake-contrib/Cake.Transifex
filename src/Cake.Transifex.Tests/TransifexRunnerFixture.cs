@@ -78,6 +78,20 @@
         }
     }
 
+    public class TransifexInitFixture : ToolFixture<TransifexInitSettings>
+    {
+        public TransifexInitFixture()
+            : base("tx")
+        {
+        }
+
+        protected override void RunTool()
+        {
+            var tool = new TransifexRunner(FileSystem, Environment, ProcessRunner, Tools);
+            tool.Init(Settings);
+        }
+    }
+
     public class TransifexPullFixture : ToolFixture<TransifexPullSettings>
     {
         public TransifexPullFixture()
