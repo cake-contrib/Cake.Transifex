@@ -42,7 +42,7 @@
         [Fact]
         public void Evaluate_SetHostByDefault()
         {
-            this.fixture.Settings = new TransifexInitSettings();
+            this.fixture.Settings = null;
 
             var result = this.fixture.Run();
 
