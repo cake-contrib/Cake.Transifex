@@ -31,6 +31,12 @@
         public bool DisableOverwrite { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to force downloading of the source file.
+        /// </summary>
+        /// <value><see langword="true"/> to download the source file; otherwise, <see langword="false"/>.</value>
+        public bool DownloadSourceFiles { get; set; }
+
+        /// <summary>
         /// Gets or sets the minimum acceptable percentage of a translation in order to download it.
         /// </summary>
         public int? MinimumPercentage { get; set; }
@@ -46,12 +52,6 @@
         /// </summary>
         /// <value><see langword="true"/> to download the pseudo file; otherwise, <see langword="false"/>.</value>
         public bool Pseudo { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to force downloading of the source file.
-        /// </summary>
-        /// <value><see langword="true"/> to download the source file; otherwise, <see langword="false"/>.</value>
-        public bool DownloadSourceFiles { get; set; }
 
         /// <summary>
         /// Evaluates the arguments and appends the necessary arguments.

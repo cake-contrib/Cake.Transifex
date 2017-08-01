@@ -31,19 +31,4 @@ ToolSettings.SetToolSettings(
 
 BuildParameters.PrintParameters(Context);
 
-// We want to override the creation of release notes
-// when the following is true:
-// We are running on appveyor
-// We are inside the Main Repository
-// We are on the main branch
-// And we're not using a tagged branch
-if (BuildParameters.IsRunningOnAppVeyor) {
-    BuildParameters.Tasks.CreateReleaseNotesTask
-        .WithCriteria(() => BuildParameters.IsMainRepository
-            && BuildParameters.IsMasterBranch
-            && !BuildParameters.IsTagged);
-    BuildParameters.Tasks.ExportReleaseNotesTask
-        .IsDependentOn(BuildParameters.Tasks.CreateReleaseNotesTask);
-}
-
 Build.RunDotNetCore();
