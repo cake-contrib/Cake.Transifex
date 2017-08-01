@@ -6,6 +6,30 @@
     using Cake.Testing.Fixtures;
     using Moq;
 
+    public class TransifexAliasesInitFixture : TransifexInitFixture
+    {
+        private static ICakeContext _context;
+
+        public TransifexAliasesInitFixture()
+        {
+            var argumentsMoq = new Mock<ICakeArguments>();
+            var registryMoq = new Mock<IRegistry>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools);
+        }
+
+        protected override void RunTool()
+        {
+            if (Settings != null)
+            {
+                TransifexRunnerAliases.TransifexInit(_context, Settings);
+            }
+            else
+            {
+                TransifexRunnerAliases.TransifexInit(_context);
+            }
+        }
+    }
+
     public class TransifexAliasesPullFixture : TransifexPullFixture
     {
         private static ICakeContext _context;

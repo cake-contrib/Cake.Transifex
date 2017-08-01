@@ -5,6 +5,7 @@
 
     public class TransifexRunnerAlisesTests
     {
+        private readonly TransifexAliasesInitFixture _initFixture;
         private readonly TransifexAliasesPullFixture _pullFixture;
         private readonly TransifexAliasesPushFixture _pushFixture;
         private readonly TransifexAliasesStatusFixture _statusFixture;
@@ -14,6 +15,29 @@
             _statusFixture = new TransifexAliasesStatusFixture();
             _pullFixture = new TransifexAliasesPullFixture();
             _pushFixture = new TransifexAliasesPushFixture();
+            _initFixture = new TransifexAliasesInitFixture();
+        }
+
+        [Fact]
+        public void TransifexInit_ShouldJustCallTxInitWithDefaultHost()
+        {
+            this._initFixture.Settings = null;
+
+            var result = this._initFixture.Run();
+
+            result.Args.ShouldBe("init --host www.transifex.com");
+        }
+
+        [Fact]
+        public void TransifexInitWithArguments_ShouldUsePassedSettings()
+        {
+            this._initFixture.Settings = new TransifexInitSettings { Token = "MEGA-TOKEN", Host = "cakebuild.net" };
+
+            var result = this._pullFixture.Run();
+
+            result.Args.ShouldContain("init");
+            result.Args.ShouldContain("--host cakebuild.net");
+            result.Args.ShouldContain("--token MEGA-TOKEN");
         }
 
         [Fact]
