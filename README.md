@@ -16,7 +16,7 @@ To install the transifex client, install python, then run `pip install transifex
 
 ### Where to get the addin
 Officially published versions are available on [NuGet](https://www.nuget.org/packages/Cake.Transifex/).
-Development versions is available at the following nuget api endpoint: <https://www.myget.org/F/wormie-nugets/api/v2>
+Development versions is available at the following nuget api endpoint: <https://www.myget.org/F/cake-contrib/api/v2>
 
 ### Usage
 The following aliases is available from the cake build script:
