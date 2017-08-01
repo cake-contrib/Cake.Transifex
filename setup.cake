@@ -7,12 +7,13 @@ BuildParameters.SetParameters(
     buildSystem: BuildSystem,
     sourceDirectoryPath: "./src",
     title: "Cake.Transifex",
-    repositoryOwner: "WormieCorp",
+    repositoryOwner: "cake-contrib",
     repositoryName: "Cake.Transifex",
-    appVeyorAccountName: "AdmiringWorm",
+    appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
     shouldBuildNugetSourcePackage: true,
-    solutionFilePath: "./Cake.Transifex.sln"
+    solutionFilePath: "./Cake.Transifex.sln",
+    testFilePattern: "/**/*.Tests.csproj"
 );
 
 ToolSettings.SetToolSettings(
