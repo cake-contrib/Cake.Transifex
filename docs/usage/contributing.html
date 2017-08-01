@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Transifex/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Transifex/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.Transifex - Cake.Transifex</title>
+        <title>Cake.Transifex - Contributing</title>
         <link href="/Cake.Transifex/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
 
         
     </head>
-    <body class="hold-transition wyam layout-boxed layout-top-nav ">    
+    <body class="hold-transition wyam layout-boxed  ">    
         <div class="top-banner"></div>
         <div class="wrapper with-container">
             <!-- Header -->
@@ -43,6 +43,10 @@
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
                                         
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -54,7 +58,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li><a href="/Cake.Transifex/docs">Documentation</a></li>
+                                    <li class="active"><a href="/Cake.Transifex/docs">Documentation</a></li>
         <li><a href="/Cake.Transifex/blog">Blog</a></li>
         <li><a href="/Cake.Transifex/api">API</a></li>
  
@@ -67,9 +71,10 @@
             </header>
             
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar hidden">
+            <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
+        <div><p><a href="https://github.com/cake-contrib/Cake.Transifex/tree/develop/docs/input/docs/usage/contributing.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
@@ -78,6 +83,23 @@
 
                     <ul class="sidebar-menu">
                         
+                <li class="treeview active">
+                    <a href="/Cake.Transifex/docs/usage">Usage</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Transifex/docs/usage/intro">Introduction</a></li>
+                <li class="selected"><a href="/Cake.Transifex/docs/usage/contributing">Contributing</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/Cake.Transifex/docs/building">Building</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Transifex/docs/building/windows">Building on Windows</a></li>
+                <li><a href="/Cake.Transifex/docs/building/linux">Building on Linux</a></li>
+                <li><a href="/Cake.Transifex/docs/building/macos">Building on OSX</a></li>
+
+                    </ul>
+                </li>
 
                     </ul>
                 </section>                
@@ -90,29 +112,41 @@
 
 
 	<section class="content-header">
-		<h1>Cake.Transifex</h1>
+		<h1>Contributing</h1>
 	</section>
 	<section class="content">
-		
-<div class="container-fluid">
-	<h1>What is it?</h1>
-    <p>
-        Cake.Transifex is an addin for the Cake Build script adding support for working with the localization service Transifex.
-        This addin requires that the transifex client is already installed and is available as `tx`.
-    </p>
-
-    <h2>Where to get it</h2>
-    <p>
-        Officially published versions are available on
-        <a href="https://www.nuget.org/packages/Cake.Transifex/" target="_blank">
-            NuGet
-        </a>.
-        While development versions are made available using the following nuget end point:
-        <a href="https://www.myget.org/F/cake-contrib/api/v2">
-            https://www.myget.org/F/cake-contrib/api/v2
-        </a>
-    </p>
-</div>
+		<p>This is very much an active project so any and all contributions are welcome, even just finding issues!</p>
+<h2 id="reporting-issues">Reporting Issues</h2>
+<p>All issues should be tracked at <a href="https://github.com/cake-contrib/Cake.Transifex">GitHub</a>,
+with enough information to reproduce the issue.</p>
+<h2 id="code-contributions">Code Contributions</h2>
+<p>This repository is based around the Git Flow workflow, using feature/hotfix/bugfix branches and pull requests to manage incoming changes and fixes. Generally speaking you can follow a similar guidance as Cake itself (found <a href="http://cakebuild.net/docs/contributing/guidelines">here</a>), which can be summarised as follows:</p>
+<ul>
+<li>Find a change or fix you want to implement</li>
+<li>Fork the repo</li>
+<li>Workflow for new features
+<ul>
+<li>Create a new branch named <code>feature/&lt;your-feature-name&gt;</code> and make your changes</li>
+<li>Open a PR from your feature branch against the <code>develop</code> branch (include the GitHub issue number)</li>
+</ul>
+</li>
+<li>Workflow for bug fixes in the latest stable version
+<ul>
+<li>Create a new branch named <code>hotfix/&lt;your-bugfix-name&gt;</code> and make your changes</li>
+<li>Open a PR from your hotfix branch against the <code>master</code> branch (include the GitHub issue number)<br />
+<em>(This will be re-targeted to a different branch when accepted)</em></li>
+</ul>
+</li>
+<li>Workflow for bug fixes in an unpublished version of Cake.Transifex
+<ul>
+<li>Create a new branch named <code>bugfix/&lt;your-bugfix-name&gt;</code> and make your changes</li>
+<li>Open a PR from your bugfix branch against the <code>develop</code> branch (include the GitHub issue number)</li>
+</ul>
+</li>
+<li>Success! I will provide feedback if needed, or just accept the changes directly and they should appear in the next release</li>
+</ul>
+<h2 id="license">License</h2>
+<p>Note that this project (and all contributions) fall under the <a href="https://github.com/cake-contrib/Cake.Transifex/blob/master/LICENSE">MIT License terms</a>.</p>
 
 	</section>
                 
