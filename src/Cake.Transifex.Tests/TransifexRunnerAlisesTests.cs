@@ -33,7 +33,7 @@
         {
             this._initFixture.Settings = new TransifexInitSettings { Token = "MEGA-TOKEN", Host = "cakebuild.net" };
 
-            var result = this._pullFixture.Run();
+            var result = this._initFixture.Run();
 
             result.Args.ShouldContain("init");
             result.Args.ShouldContain("--host cakebuild.net");
