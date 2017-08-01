@@ -10,7 +10,7 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <LangVersion>7</LangVersion>
     <DebugType>pdbonly</DebugType>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Authors>Kim Nordmo</Authors>
     <Company />
     <Description>
@@ -19,12 +19,14 @@ This addin requires that the transifex client is already installed and is availa
 To install the transifex client, install python, then run `pip install transifex-client`.
     </Description>
     <Copyright>Copyright 2017 - Kim Nordmo</Copyright>
-    <PackageLicenseUrl>https://github.com/WormieCorp/Cake.Transifex/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/WormieCorp/Cake.Transifex</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/WormieCorp/Cake.Transifex</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/cake-contrib/Cake.Transifex/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/cake-contrib/Cake.Transifex</PackageProjectUrl>
+    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.Transifex</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>cake build transifex localization</PackageTags>
     <IncludeSymbols>True</IncludeSymbols>
+    <PackageReleaseNotes>$(RepositoryUrl)/releases/tag/$(Version)</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -38,7 +40,7 @@ To install the transifex client, install python, then run `pip install transifex
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.18.0" />
+    <PackageReference Include="Cake.Core" Version="0.16.2" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="System" />

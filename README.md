@@ -1,24 +1,52 @@
 # Cake.Transifex
 
-| AppVeyor | Travis | NuGet | GitHub | Codecov |
-| :------: | :----: | :---: | :----: | :-----: |
-| [![AppVeyor](https://img.shields.io/appveyor/ci/AdmiringWorm/cake-transifex.svg)](https://ci.appveyor.com/project/AdmiringWorm/cake-transifex) | [![Travis](https://img.shields.io/travis/WormieCorp/Cake.Transifex.svg)](https://travis-ci.org/WormieCorp/Cake.Transifex) | [![NuGet](https://img.shields.io/nuget/v/Cake.Transifex.svg)](https://www.nuget.org/packages/Cake.Transifex/) | [![GitHub release](https://img.shields.io/github/release/WormieCorp/Cake.Transifex.svg)](https://github.com/WormieCorp/Cake.Transifex/releases) | [![Codecov](https://codecov.io/github/WormieCorp/Cake.Transifex/coverage.svg)](https://codecov.io/github/WormieCorp/Cake.Transifex) |
+[![license](https://img.shields.io/github/license/cake-contrib/Cake.Transifex.svg)](https://github.com/cake-contrib/Cake.Transifex/blob/master/LICENSE)
 
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
+
+## Information
+
 To install the transifex client, install python, then run `pip install transifex-client`.
 
+| |Stable|Pre-release|
+|:--:|:--:|:--:|
+|GitHub Release|[![GitHub release](https://img.shields.io/github/release/cake-contrib/Cake.Transifex.svg)](https://github.com/cake-contrib/Cake.Transifex/releases/latest)|[![GitHub (pre-)release](https://img.shields.io/github/release/cake-contrib/Cake.Transifex/all.svg)](https://github.com/cake-contrib/Cake.Transifex/releases)|
+|NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.Transifex.svg)](https://nuget.org/packages/Cake.Transifex)|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/Cake.Transifex.svg)](https://nuget.org/packages/Cake.Transifex)|
 
-## Where to get it
+### Where to get the addin
 Officially published versions are available on [NuGet](https://www.nuget.org/packages/Cake.Transifex/).
-Development versions is available at the following nuget api endpoint: <https://www.myget.org/F/wormie-nugets/api/v2>
+Development versions is available at the following nuget api endpoint: <https://www.myget.org/F/cake-contrib/api/v2>
 
-
-## Usage
+### Usage
 The following aliases is available from the cake build script:
 - `TransifexStatus` -> Get the status of the current translations in the local repository.
 - `TransifexPush`   -> Push translations to the remote transifex server (Optionally also the source file)
 - `TransifexPull`   -> Pull monitored translations from the remote transifex server
+
+## Build Status
+| | master | develop |
+|:--:|:--:|:--:|
+|AppVeyor|[![AppVeyor branch master](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/master.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/master)|[![AppVeyor branch develop](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/develop.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/develop)|
+|Travis CI|[![Travis branch](https://img.shields.io/travis/cake-contrib/Cake.Transifex/master.svg)](https://travis-ci.org/cake-contrib/Cake.Transifex)|[![Travis branch](https://img.shields.io/travis/cake-contrib/Cake.Transifex/develop.svg)](https://travis-ci.org/cake-contrib/Cake.Transifex)|
+
+## Code Coverage
+
+| |master|develop|
+|:--:|:--:|:--:|
+|Codecov|[![Codecov branch](https://img.shields.io/codecov/c/github/cake-contrib/Cake.Transifex/master.svg)](https://codecov.io/github/cake-contrib/Cake.Transifex)|[![Codecov branch](https://img.shields.io/codecov/c/github/cake-contrib/Cake.Transifex/develop.svg)](https://codecov.io/github/cake-contrib/Cake.Transifex)|
+|Coveralls|[![Coveralls branch](https://img.shields.io/coveralls/cake-contrib/Cake.Transifex/master.svg)](https://coveralls.io/github/cake-contrib/Cake.Transifex?branch=master)|[![Coveralls branch](https://img.shields.io/coveralls/cake-contrib/Cake.Transifex/develop.svg)](https://coveralls.io/github/cake-contrib/Cake.Transifex?branch=develop)|
+
+## Quick Links
+
+- [Addin Documentation](https://cake-contrib.github.io/Cake.Transifex) *Not yet created*
+- [Transifex Documentation](https://docs.transifex.com/)
+
+## Chat Room
+
+Come join in the conversation about Cake.Transifex in our Gitter Chat Room
+
+[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)]((https://gitter.im/cake-contrib/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Building Cake.Transifex
 

@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C7CD914A-3A1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{79621E89-D86A-493B-A2BE-BDB9921CF0C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Transifex.Tests", "tests\Cake.Transifex.Tests\Cake.Transifex.Tests.csproj", "{A7402949-439A-44B1-9B7B-50E61C3E0A94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Transifex.Tests", "src\Cake.Transifex.Tests\Cake.Transifex.Tests.csproj", "{A7402949-439A-44B1-9B7B-50E61C3E0A94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

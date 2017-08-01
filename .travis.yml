@@ -21,7 +21,7 @@ branches:
         - /^v[0-9]/ # Skip tag builds, these should already have been tested before the tag was created
 
 before_script:
-    #- git fetch --unshallow # Not needed until we reach a commit history of 50+
+    - git fetch --unshallow || true
     - if [ "$TRAVIS_OS_NAME" == "osx" ]; then ulimit -n 1024; fi
     - if [ "$TRAVIS_OS_NAME" != "osx" ]; then export FrameworkPathOverride=/usr/lib/mono/4.5/; fi
     - chmod +x build.sh

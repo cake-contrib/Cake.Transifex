@@ -1,0 +1,11 @@
+codecov:
+  ci:
+    - appveyor
+    - !travis-ci
+
+coverage:
+  range: "80-100"
+
+comment:
+  behavior: new
+  require_changes: true

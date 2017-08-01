@@ -3,6 +3,12 @@
 var parameters = BuildParameters.GetParameters(Context);
 var publishingError = false;
 
+if (Context.IsRunningOnWindows()) {
+    Warning(@"Please use the setup.cake file when building on Windows.
+build.cake is only provided to allow building on Unix like systems as 'Cake.Recipe'
+currently do not support those kind of systems.");
+}
+
 Setup(context =>
 {
     parameters.Initialize(context);
@@ -152,8 +158,22 @@ Task("Run-Unit-Tests")
     }
 });
 
+Task("Upload-Coverage-Report")
+    .WithCriteria(parameters.IsRunningOnAppVeyor)
+    .Does(() =>
+{
+    var buildVersion = string.Format("{0}.build.{1}",
+        parameters.Version.FullSemVersion,
+        BuildSystem.AppVeyor.Environment.Build.Version);
+
+    Codecov(new CodecovSettings {
+        Files = new[] { parameters.Paths.Files.TestCoverageOutputFilePath.ToString() },
+        EnvironmentVariables = new Dictionary<string,string> { { "APPVEYOR_BUILD_VERSION", buildVersion } }
+    });
+});
+
 Task("Publish-MyGet")
-    .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Upload-Coverage-Report")
     .WithCriteria(() => parameters.ShouldPublishToMyGet)
     .Does(() =>
 {
@@ -201,7 +221,7 @@ Task("Publish-MyGet")
 });
 
 Task("Publish-NuGet")
-    .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Upload-Coverage-Report")
     .WithCriteria(() => parameters.ShouldPublish)
     .Does(() =>
 {
@@ -236,7 +256,7 @@ Task("Publish-NuGet")
 });
 
 Task("Publish-GitHub-Release")
-    .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Upload-Coverage-Report")
     .WithCriteria(() => parameters.GitHub.HasCredentials)
     .WithCriteria(() => parameters.ShouldPublish)
     .Does(() =>
@@ -262,6 +282,7 @@ Task("Default")
 
 Task("AppVeyor")
     .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Upload-Coverage-Report")
     .IsDependentOn("Publish-MyGet")
     .IsDependentOn("Publish-NuGet")
     .IsDependentOn("Publish-GitHub-Release")

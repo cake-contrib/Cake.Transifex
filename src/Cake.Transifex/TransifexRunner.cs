@@ -24,6 +24,14 @@
         {
         }
 
+        public ITransifexRunnerCommands Init(TransifexInitSettings settings)
+        {
+            settings = settings ?? new TransifexInitSettings();
+            var args = GetTransifexRunnerArguments(settings);
+            Run(settings, args);
+            return this;
+        }
+
         public ITransifexRunnerCommands Pull(TransifexPullSettings settings)
         {
             settings = settings ?? new TransifexPullSettings();
