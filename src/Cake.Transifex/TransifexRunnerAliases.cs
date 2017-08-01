@@ -37,7 +37,6 @@
         /// an API token.
         /// </summary>
         /// <param name="context">The cake context</param>
-        /// <param name="settings">The settings to use when calling <c>tx init</c></param>
         /// <para>Runs <c>tx init</c> with the specified <paramref name="settings" /></para>
         /// <para>Cake task:</para>
         /// <example>
