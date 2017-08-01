@@ -34,22 +34,6 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"TransifexPushSettings",
-        content:"TransifexPushSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:1,
-        title:"TransifexStatusSettings",
-        content:"TransifexStatusSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:2,
         title:"TransifexRunnerSettings",
         content:"TransifexRunnerSettings",
         description:'',
@@ -57,25 +41,41 @@ var searchModule = function() {
     });
 
     a({
+        id:1,
+        title:"TransifexRunnerRemoteSettings",
+        content:"TransifexRunnerRemoteSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:2,
+        title:"TransifexRunnerAliases",
+        content:"TransifexRunnerAliases",
+        description:'',
+        tags:''
+    });
+
+    a({
         id:3,
-        title:"TransifexPullSettings",
-        content:"TransifexPullSettings",
+        title:"ITransifexRunnerCommands",
+        content:"ITransifexRunnerCommands",
         description:'',
         tags:''
     });
 
     a({
         id:4,
-        title:"TransifexMode",
-        content:"TransifexMode",
+        title:"TransifexPushSettings",
+        content:"TransifexPushSettings",
         description:'',
         tags:''
     });
 
     a({
         id:5,
-        title:"ITransifexRunnerCommands",
-        content:"ITransifexRunnerCommands",
+        title:"TransifexMode",
+        content:"TransifexMode",
         description:'',
         tags:''
     });
@@ -90,54 +90,26 @@ var searchModule = function() {
 
     a({
         id:7,
-        title:"TransifexRunnerRemoteSettings",
-        content:"TransifexRunnerRemoteSettings",
+        title:"TransifexPullSettings",
+        content:"TransifexPullSettings",
         description:'',
         tags:''
     });
 
     a({
         id:8,
-        title:"TransifexRunnerAliases",
-        content:"TransifexRunnerAliases",
+        title:"TransifexStatusSettings",
+        content:"TransifexStatusSettings",
         description:'',
         tags:''
     });
 
-    y({
-        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexPushSettings',
-        title:"TransifexPushSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexStatusSettings',
-        title:"TransifexStatusSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1',
-        title:"TransifexRunnerSettings<TSettingsType>",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings',
-        title:"TransifexPullSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexMode',
-        title:"TransifexMode",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/ITransifexRunnerCommands',
-        title:"ITransifexRunnerCommands",
-        description:""
+    a({
+        id:9,
+        title:"TransifexInitSettings",
+        content:"TransifexInitSettings",
+        description:'',
+        tags:''
     });
 
     y({
@@ -155,6 +127,48 @@ var searchModule = function() {
     y({
         url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases',
         title:"TransifexRunnerAliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/ITransifexRunnerCommands',
+        title:"ITransifexRunnerCommands",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexPushSettings',
+        title:"TransifexPushSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexMode',
+        title:"TransifexMode",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1',
+        title:"TransifexRunnerSettings<TSettingsType>",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings',
+        title:"TransifexPullSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexStatusSettings',
+        title:"TransifexStatusSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Transifex/Cake.Transifex/api/Cake.Transifex/TransifexInitSettings',
+        title:"TransifexInitSettings",
         description:""
     });
 

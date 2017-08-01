@@ -5,8 +5,16 @@
 		<link>https://cake-contrib.github.io/Cake.Transifex</link>
 		<description />
 		<copyright>2017</copyright>
-		<pubDate>Tue, 01 Aug 2017 14:47:40 GMT</pubDate>
-		<lastBuildDate>Tue, 01 Aug 2017 14:47:40 GMT</lastBuildDate>
+		<pubDate>Tue, 01 Aug 2017 16:25:55 GMT</pubDate>
+		<lastBuildDate>Tue, 01 Aug 2017 16:25:55 GMT</lastBuildDate>
+		<item>
+			<title>New Release - 0.3.0</title>
+			<link>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.3.0</link>
+			<description>&lt;p&gt;As part of this release we had &lt;a href="https://github.com/cake-contrib/Cake.Transifex/compare/v0.1.0...0.3.0"&gt;58 commits&lt;/a&gt; which resulted in &lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues?milestone=3&amp;amp;state=closed"&gt;8 issues&lt;/a&gt; being closed.&lt;/p&gt;</description>
+			<author>AdmiringWorm</author>
+			<guid>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.3.0</guid>
+			<pubDate>Tue, 01 Aug 2017 00:00:00 GMT</pubDate>
+		</item>
 		<item>
 			<title>New Release - 0.2.0</title>
 			<link>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.2.0</link>
