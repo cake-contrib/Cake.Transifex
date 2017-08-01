@@ -81,15 +81,10 @@
             {
                 args.Append("--token").AppendSecret(Token);
             }
-
-            if (!string.IsNullOrEmpty(Username))
+            else if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
             {
-                args.Append("--user").Append(Username);
-            }
-
-            if (!string.IsNullOrEmpty(Password))
-            {
-                args.Append("--pass").AppendQuotedSecret(Password);
+                args.Append("--user").Append(Username)
+                    .Append("--pass").AppendQuotedSecret(Password);
             }
         }
     }
