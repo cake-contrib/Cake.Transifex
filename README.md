@@ -2,7 +2,7 @@
 
 | AppVeyor | Travis | NuGet | GitHub | Codecov |
 | :------: | :----: | :---: | :----: | :-----: |
-| [![AppVeyor](https://img.shields.io/appveyor/ci/AdmiringWorm/cake-transifex.svg)](https://ci.appveyor.com/project/AdmiringWorm/cake-transifex) | [![Travis](https://img.shields.io/travis/WormieCorp/Cake.Transifex.svg)](https://travis-ci.org/WormieCorp/Cake.Transifex) | [![NuGet](https://img.shields.io/nuget/v/Cake.Transifex.svg)](https://www.nuget.org/packages/Cake.Transifex/) | [![GitHub release](https://img.shields.io/github/release/WormieCorp/Cake.Transifex.svg)](https://github.com/WormieCorp/Cake.Transifex/releases) | [![Codecov](https://codecov.io/github/WormieCorp/Cake.Transifex/coverage.svg)](https://codecov.io/github/WormieCorp/Cake.Transifex) |
+| [![AppVeyor](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex) | [![Travis](https://img.shields.io/travis/cake-contrib/Cake.Transifex.svg)](https://travis-ci.org/cake-contrib/Cake.Transifex) | [![NuGet](https://img.shields.io/nuget/v/Cake.Transifex.svg)](https://www.nuget.org/packages/Cake.Transifex/) | [![GitHub release](https://img.shields.io/github/release/WormieCorp/Cake.Transifex.svg)](https://github.com/WormieCorp/Cake.Transifex/releases) | [![Codecov](https://codecov.io/github/WormieCorp/Cake.Transifex/coverage.svg)](https://codecov.io/github/WormieCorp/Cake.Transifex) |
 
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
