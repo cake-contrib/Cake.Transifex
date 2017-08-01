@@ -1,4 +1,4 @@
-namespace Cake.Transifex.Tests
+﻿namespace Cake.Transifex.Tests
 {
     using System;
     using Shouldly;

@@ -1,7 +1,5 @@
 ﻿namespace Cake.Transifex
 {
-    using System.Collections.Generic;
-
     /// <summary>
     /// Defines the commands supported by the transifex client and the transifex runner.
     /// </summary>

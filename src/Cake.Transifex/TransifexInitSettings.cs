@@ -1,4 +1,4 @@
-namespace Cake.Transifex
+﻿namespace Cake.Transifex
 {
     using System;
     using Cake.Core;

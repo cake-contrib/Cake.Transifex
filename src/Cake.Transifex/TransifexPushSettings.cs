@@ -11,6 +11,14 @@
     public sealed class TransifexPushSettings : TransifexRunnerRemoteSettings<TransifexPushSettings>
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="TransifexPushSettings"/> class.
+        /// </summary>
+        public TransifexPushSettings()
+            : base("push")
+        {
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to require user input when forcing a push.
         /// </summary>
         /// <value><see langword="true"/> to don't require user input; otherwise, <see langword="false"/>.</value>
@@ -27,14 +35,6 @@
         /// </summary>
         /// <value><see langword="true"/> to push all local translations; otherwise, <see langword="false"/>.</value>
         public bool UploadTranslations { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TransifexPushSettings"/> class.
-        /// </summary>
-        public TransifexPushSettings()
-            : base("push")
-        {
-        }
 
         /// <summary>
         /// Evaluates the arguments and appends the necessary arguments.

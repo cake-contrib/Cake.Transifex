@@ -10,16 +10,6 @@
         public TransifexStatusRunnerTests()
             => fixture = new TransifexStatusFixture();
 
-        [Fact]
-        public void Evaluate_SetsStatusAsCommandToArgumentBuilder()
-        {
-            this.fixture.Resources = null;
-
-            var result = this.fixture.Run();
-
-            result.Args.ShouldBe("status");
-        }
-
         [Theory]
         [InlineData(null)]
         [InlineData("")]
@@ -41,6 +31,16 @@
             var result = this.fixture.Run();
 
             result.Args.ShouldBe("status \"--resources=helloworld*\"");
+        }
+
+        [Fact]
+        public void Evaluate_SetsStatusAsCommandToArgumentBuilder()
+        {
+            this.fixture.Resources = null;
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("status");
         }
     }
 }
