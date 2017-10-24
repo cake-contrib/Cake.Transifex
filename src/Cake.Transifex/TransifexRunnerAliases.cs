@@ -1,4 +1,4 @@
-﻿namespace Cake.Transifex
+namespace Cake.Transifex
 {
     using Cake.Core;
     using Cake.Core.Annotations;
@@ -15,7 +15,7 @@
         /// sets the host to <c>www.transifex.com</c>.
         /// </summary>
         /// <param name="context">The cake context</param>
-        /// <para>Runs <c>tx init --host www.transifex.com</c> with the specified <paramref name="settings" /></para>
+        /// <para>Runs <c>tx init --host www.transifex.com</c> with the specified with default settings.</para>
         /// <para>Cake task:</para>
         /// <example>
         /// <code>
@@ -37,6 +37,7 @@
         /// an API token.
         /// </summary>
         /// <param name="context">The cake context</param>
+        /// <param name="settings">The settings to use when initializing repository.</param>
         /// <para>Runs <c>tx init</c> with the specified <paramref name="settings" /></para>
         /// <para>Cake task:</para>
         /// <example>
