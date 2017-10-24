@@ -11,7 +11,7 @@ BuildParameters.SetParameters(
     repositoryName: "Cake.Transifex",
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
-    shouldBuildNugetSourcePackage: true,
+    shouldBuildNugetSourcePackage: false,
     solutionFilePath: "./Cake.Transifex.sln",
     testFilePattern: "/**/*.Tests.csproj"
 );
