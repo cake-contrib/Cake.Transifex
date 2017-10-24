@@ -1,4 +1,4 @@
-﻿namespace Cake.Transifex.Tests
+namespace Cake.Transifex.Tests
 {
     using System;
     using Shouldly;
@@ -84,7 +84,7 @@
 
             var ex = Assert.Throws<ArgumentException>(() => this.fixture.Run());
 
-            Assert.Equal(ex.Message, "A token can not be set at the same time as either the username or password.");
+            Assert.Equal("A token can not be set at the same time as either the username or password.", ex.Message);
         }
     }
 }
