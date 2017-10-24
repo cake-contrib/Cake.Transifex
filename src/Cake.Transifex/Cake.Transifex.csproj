@@ -25,7 +25,7 @@ To install the transifex client, install python, then run `pip install transifex
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Transifex</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>cake build transifex localization</PackageTags>
-    <IncludeSymbols>True</IncludeSymbols>
+    <IncludeSymbols>False</IncludeSymbols>
     <PackageReleaseNotes>$(RepositoryUrl)/releases/tag/$(Version)</PackageReleaseNotes>
   </PropertyGroup>
 
@@ -36,7 +36,7 @@ To install the transifex client, install python, then run `pip install transifex
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <DebugSymbols>False</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
