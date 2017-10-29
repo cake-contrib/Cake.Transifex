@@ -57,7 +57,7 @@ The following are needed to build Cake.Transifex on Windows
 - Visual Studio 2017
 - .NET 4.5 (.NET 4.5.2 to build the unit tests), *these should already be installed when installing Visual Studio 2017*
 
-Open up a powershell window and call `.\build.ps1`, this should build the projects, run the unit tests and create nuget packages in the `.\artifacts\v{version}\nuget` directory.
+Open up a powershell window and call `.\build.ps1`, this should build the projects, run the unit tests and create nuget packages in the `.\BuildArtifacts\Packages\NuGet` directory.
 
 ### 2. Building on Linux or OSX
 - .NET Core 1.0.1
