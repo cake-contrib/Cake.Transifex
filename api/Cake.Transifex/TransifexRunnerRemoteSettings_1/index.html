@@ -111,7 +111,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -123,6 +123,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -183,10 +190,17 @@
 									<ul class="list-unstyled">										
 											<li>ToolSettings</li>								
 											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></li>								
-											<li>Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></li>								
+											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></li>								
 									</ul>
 								</dd>				
 							
+								<dt>Derived Types</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings">Transifex<wbr>Pull<wbr>Settings</a></li>								
+											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPushSettings">Transifex<wbr>Push<wbr>Settings</a></li>								
+									</ul>
+								</dd>			
 							
 						</dl>
 					</div>		
@@ -194,11 +208,16 @@
 						<div class="mermaid">
 							graph TD
 	Base0["TransifexRunnerSettings&lt;TSettingsType&gt;"]--&gt;Type
+	click Base0 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1"
 	Base1["TransifexRunnerSettings"]--&gt;Base0
 	click Base1 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings"
 	Base2["ToolSettings"]--&gt;Base1
 	Type["TransifexRunnerRemoteSettings&lt;TSettingsType&gt;"]
 class Type type-node
+	Type--&gt;Derived0["TransifexPullSettings"]
+	click Derived0 "/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings"
+	Type--&gt;Derived1["TransifexPushSettings"]
+	click Derived1 "/Cake.Transifex/api/Cake.Transifex/TransifexPushSettings"
 
 						</div>
 					</div>
@@ -293,6 +312,16 @@ class Type type-node
 									<div>
     The languages you want to push/pull. (defaults to all)
     </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1/B9640750">Resources</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The resources you want to use for this command (defaults to all)
+    </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 							<tr>

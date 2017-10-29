@@ -110,7 +110,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -122,6 +122,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -183,8 +190,8 @@
 									<ul class="list-unstyled">										
 											<li>ToolSettings</li>								
 											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></li>								
-											<li>Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>Transifex<wbr>Push<wbr>Settings&gt;<wbr></li>								
-											<li>Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>Transifex<wbr>Push<wbr>Settings&gt;<wbr></li>								
+											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></li>								
+											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></li>								
 									</ul>
 								</dd>				
 							
@@ -194,8 +201,10 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["TransifexRunnerRemoteSettings&lt;TransifexPushSettings&gt;"]--&gt;Type
-	Base1["TransifexRunnerSettings&lt;TransifexPushSettings&gt;"]--&gt;Base0
+	Base0["TransifexRunnerRemoteSettings&lt;TSettingsType&gt;"]--&gt;Type
+	click Base0 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1"
+	Base1["TransifexRunnerSettings&lt;TSettingsType&gt;"]--&gt;Base0
+	click Base1 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1"
 	Base2["TransifexRunnerSettings"]--&gt;Base1
 	click Base2 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings"
 	Base3["ToolSettings"]--&gt;Base2
@@ -261,12 +270,52 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/C77F6918">Force</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether to force the command event if the resource exists.
+    </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/53270FF6">Languages</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The languages you want to push/pull. (defaults to all)
+    </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPushSettings/95035FFB">NoInteractive</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to require user input when forcing a push.
     </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1/B9640750">Resources</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The resources you want to use for this command (defaults to all)
+    </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/05C2DC52">SkipErrors</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether to continue with the command even if an error ocurs.
+    </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -285,6 +334,16 @@ class Type type-node
 									<div>
     Gets or sets a value indicating whether to push all local translations to the remote server.
     </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/A52978C0">UseXliff</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether use the xliff format.
+    </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>

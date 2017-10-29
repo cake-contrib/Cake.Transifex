@@ -107,7 +107,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -119,6 +119,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -137,9 +144,14 @@
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/35D4FEA5">Command</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings/5F44E672">DisableOverwrite</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings/91F734F5">DownloadSourceFiles</a></li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/C77F6918">Force</a></li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/53270FF6">Languages</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings/1F1A6467">MinimumPercentage</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings/A52D3570">Mode</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings/AA0B28B5">Pseudo</a></li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1/B9640750">Resources</a></li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/05C2DC52">SkipErrors</a></li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/A52978C0">UseXliff</a></li>
 			<li class="header">Method Members</li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings/F9EB4E3C">EvaluateCore<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
 

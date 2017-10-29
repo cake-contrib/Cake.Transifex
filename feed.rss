@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
 		<title>Cake.Transifex</title>
 		<link>https://cake-contrib.github.io/Cake.Transifex</link>
 		<description />
 		<copyright>2017</copyright>
-		<pubDate>Tue, 01 Aug 2017 16:40:02 GMT</pubDate>
-		<lastBuildDate>Tue, 01 Aug 2017 16:40:02 GMT</lastBuildDate>
+		<pubDate>Sun, 29 Oct 2017 12:22:57 GMT</pubDate>
+		<lastBuildDate>Sun, 29 Oct 2017 12:22:57 GMT</lastBuildDate>
 		<item>
 			<title>New Release - 0.3.0</title>
 			<link>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.3.0</link>
@@ -14,6 +14,27 @@
 			<author>AdmiringWorm</author>
 			<guid>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.3.0</guid>
 			<pubDate>Tue, 01 Aug 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="release"&gt;0.3.0 Release&lt;/h1&gt;
+&lt;p&gt;As part of this release we had &lt;a href="https://github.com/cake-contrib/Cake.Transifex/compare/v0.1.0...0.3.0"&gt;58 commits&lt;/a&gt; which resulted in &lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues?milestone=3&amp;amp;state=closed"&gt;8 issues&lt;/a&gt; being closed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/7"&gt;&lt;strong&gt;#7&lt;/strong&gt;&lt;/a&gt; Support the 'Init' command&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Improvements&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/10"&gt;&lt;strong&gt;#10&lt;/strong&gt;&lt;/a&gt; Build against Cake.Core version 16.2&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/9"&gt;&lt;strong&gt;#9&lt;/strong&gt;&lt;/a&gt; Start using Cake.Recipe for windows builds&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/6"&gt;&lt;strong&gt;#6&lt;/strong&gt;&lt;/a&gt; Use the Cake Contrib Icon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/13"&gt;&lt;strong&gt;#13&lt;/strong&gt;&lt;/a&gt; Update Readme to be similiar to other Cake addins&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/12"&gt;&lt;strong&gt;#12&lt;/strong&gt;&lt;/a&gt; Configure gitreleasemanager to add package nuget url on releases&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/11"&gt;&lt;strong&gt;#11&lt;/strong&gt;&lt;/a&gt; Start using wyam to document the addin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="where-to-get-it"&gt;Where to get it&lt;/h3&gt;
+&lt;p&gt;You can download this release from &lt;a href="https://nuget.org/packages/Cake.Transifex/0.3.0"&gt;nuget&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
 		</item>
 		<item>
 			<title>New Release - 0.2.0</title>
@@ -22,6 +43,13 @@
 			<author>AdmiringWorm</author>
 			<guid>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.2.0</guid>
 			<pubDate>Wed, 17 May 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="release"&gt;0.2.0 Release&lt;/h1&gt;
+&lt;p&gt;As part of this release we had &lt;a href="https://github.com/WormieCorp/Cake.Transifex/issues?milestone=2&amp;amp;state=closed"&gt;1 issue&lt;/a&gt; closed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Enhancement&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/WormieCorp/Cake.Transifex/issues/4"&gt;&lt;strong&gt;#4&lt;/strong&gt;&lt;/a&gt; Support additional modes when pulling translations&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
 		</item>
 		<item>
 			<title>New Release - 0.1.0</title>
@@ -30,6 +58,14 @@
 			<author>AdmiringWorm</author>
 			<guid>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.1.0</guid>
 			<pubDate>Sat, 11 Mar 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="release"&gt;0.1.0 Release&lt;/h1&gt;
+&lt;p&gt;I'm happy to anounce the first public release of the Cake.Transifex library.&lt;/p&gt;
+&lt;p&gt;In this release, the following issue was resolved:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/WormieCorp/Cake.Transifex/issues/1"&gt;&lt;strong&gt;#1&lt;/strong&gt;&lt;/a&gt; Initial Release&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
 		</item>
 	</channel>
 </rss>
