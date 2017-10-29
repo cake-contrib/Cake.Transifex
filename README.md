@@ -7,7 +7,7 @@ This addin requires that the transifex client is already installed and is availa
 
 ## Information
 
-To install the transifex client, install python, then run `pip install transifex-client`.
+To install the transifex client, install python, then run `pip install transifex-client`, or using the chocolatey package `choco install transifex-client --version 0.12.4` *(version can be omitted when package have been approved)*.
 
 | |Stable|Pre-release|
 |:--:|:--:|:--:|
@@ -20,6 +20,7 @@ Development versions is available at the following nuget api endpoint: <https://
 
 ### Usage
 The following aliases is available from the cake build script:
+- `TransifexInit`   -> Initialize a simple configuration file in the repository
 - `TransifexStatus` -> Get the status of the current translations in the local repository.
 - `TransifexPush`   -> Push translations to the remote transifex server (Optionally also the source file)
 - `TransifexPull`   -> Pull monitored translations from the remote transifex server
@@ -39,14 +40,14 @@ The following aliases is available from the cake build script:
 
 ## Quick Links
 
-- [Addin Documentation](https://cake-contrib.github.io/Cake.Transifex) *Not yet created*
+- [Addin Documentation](https://cake-contrib.github.io/Cake.Transifex)
 - [Transifex Documentation](https://docs.transifex.com/)
 
 ## Chat Room
 
 Come join in the conversation about Cake.Transifex in our Gitter Chat Room
 
-[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)]((https://gitter.im/cake-contrib/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)](https://gitter.im/cake-contrib/Lobby)
 
 ## Building Cake.Transifex
 
