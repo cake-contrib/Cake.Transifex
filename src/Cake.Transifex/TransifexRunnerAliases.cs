@@ -28,6 +28,9 @@ namespace Cake.Transifex
         /// ]]>
         /// </code>
         /// </example>
+		/// <revisionHistory>
+		/// <revision version="0.2.0">Initial creation </revision>
+		/// </revisionHistory>
         public static void TransifexInit(this ICakeContext context)
             => TransifexInit(context, null);
 
