@@ -12,6 +12,7 @@ BuildParameters.SetParameters(
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
     shouldBuildNugetSourcePackage: false,
+    shouldDeployGraphDocumentation: false,
     solutionFilePath: "./Cake.Transifex.sln",
     testFilePattern: "/**/*.Tests.csproj"
 );
