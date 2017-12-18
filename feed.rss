@@ -5,8 +5,33 @@
 		<link>https://cake-contrib.github.io/Cake.Transifex</link>
 		<description />
 		<copyright>2017</copyright>
-		<pubDate>Sun, 29 Oct 2017 12:22:57 GMT</pubDate>
-		<lastBuildDate>Sun, 29 Oct 2017 12:22:57 GMT</lastBuildDate>
+		<pubDate>Mon, 18 Dec 2017 20:48:19 GMT</pubDate>
+		<lastBuildDate>Mon, 18 Dec 2017 20:48:19 GMT</lastBuildDate>
+		<item>
+			<title>New Release - 0.4.0</title>
+			<link>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.4.0</link>
+			<description>&lt;p&gt;This blog post is a little belated, but here it is.
+This release is just a minor compatibility release to make Cake.Transifex
+compatible with Cake above version 0.22, while maintaining compatibility with
+previous releases.&lt;/p&gt;</description>
+			<author>AdmiringWorm</author>
+			<guid>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.4.0</guid>
+			<pubDate>Mon, 18 Dec 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="compatibility-release"&gt;0.4.0 Compatibility Release&lt;/h1&gt;
+&lt;p&gt;This blog post is a little belated, but here it is.
+This release is just a minor compatibility release to make Cake.Transifex
+compatible with Cake above version 0.22, while maintaining compatibility with
+previous releases.&lt;/p&gt;
+&lt;h2 id="release-notes"&gt;Release Notes&lt;/h2&gt;
+&lt;p&gt;As part of this release we had &lt;a href="https://github.com/cake-contrib/Cake.Transifex/compare/0.3.0...0.4.0"&gt;9 commits&lt;/a&gt; which resulted in &lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues?milestone=4&amp;amp;state=closed"&gt;2 issues&lt;/a&gt; being closed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/16"&gt;&lt;strong&gt;#16&lt;/strong&gt;&lt;/a&gt; Update Cake.Core dependency to version 0.22.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="where-to-get-it"&gt;Where to get it&lt;/h3&gt;
+&lt;p&gt;You can download this release from &lt;a href="https://nuget.org/packages/Cake.Transifex/0.4.0"&gt;nuget&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
+		</item>
 		<item>
 			<title>New Release - 0.3.0</title>
 			<link>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.3.0</link>

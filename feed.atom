@@ -4,7 +4,34 @@
 	<id>https://cake-contrib.github.io/Cake.Transifex</id>
 	<title>Cake.Transifex</title>
 	<rights>2017</rights>
-	<updated>2017-10-29T12:22:57Z</updated>
+	<updated>2017-12-18T20:48:19Z</updated>
+	<entry>
+		<author>
+			<name>AdmiringWorm</name>
+		</author>
+		<link href="https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.4.0" />
+		<id>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.4.0</id>
+		<title>New Release - 0.4.0</title>
+		<updated>2017-12-18T00:00:00Z</updated>
+		<content>&lt;h1 id="compatibility-release"&gt;0.4.0 Compatibility Release&lt;/h1&gt;
+&lt;p&gt;This blog post is a little belated, but here it is.
+This release is just a minor compatibility release to make Cake.Transifex
+compatible with Cake above version 0.22, while maintaining compatibility with
+previous releases.&lt;/p&gt;
+&lt;h2 id="release-notes"&gt;Release Notes&lt;/h2&gt;
+&lt;p&gt;As part of this release we had &lt;a href="https://github.com/cake-contrib/Cake.Transifex/compare/0.3.0...0.4.0"&gt;9 commits&lt;/a&gt; which resulted in &lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues?milestone=4&amp;amp;state=closed"&gt;2 issues&lt;/a&gt; being closed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/16"&gt;&lt;strong&gt;#16&lt;/strong&gt;&lt;/a&gt; Update Cake.Core dependency to version 0.22.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="where-to-get-it"&gt;Where to get it&lt;/h3&gt;
+&lt;p&gt;You can download this release from &lt;a href="https://nuget.org/packages/Cake.Transifex/0.4.0"&gt;nuget&lt;/a&gt;&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;This blog post is a little belated, but here it is.
+This release is just a minor compatibility release to make Cake.Transifex
+compatible with Cake above version 0.22, while maintaining compatibility with
+previous releases.&lt;/p&gt;</summary>
+	</entry>
 	<entry>
 		<author>
 			<name>AdmiringWorm</name>
