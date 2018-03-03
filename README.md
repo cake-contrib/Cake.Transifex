@@ -30,7 +30,6 @@ The following aliases is available from the cake build script:
 | | master | develop |
 |:--:|:--:|:--:|
 |AppVeyor|[![AppVeyor branch master](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/master.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/master)|[![AppVeyor branch develop](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/develop.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/develop)|
-|Travis CI|[![Travis branch](https://img.shields.io/travis/cake-contrib/Cake.Transifex/master.svg)](https://travis-ci.org/cake-contrib/Cake.Transifex)|[![Travis branch](https://img.shields.io/travis/cake-contrib/Cake.Transifex/develop.svg)](https://travis-ci.org/cake-contrib/Cake.Transifex)|
 
 ## Code Coverage
 
