@@ -12,14 +12,14 @@
     <LangVersion>7</LangVersion>
     <DebugType>pdbonly</DebugType>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Authors>Kim Nordmo</Authors>
+    <Authors>Kim J. Nordmo</Authors>
     <Company />
     <Description>
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
 To install the transifex client, install python, then run `pip install transifex-client`.
     </Description>
-    <Copyright>Copyright 2017 - Kim Nordmo</Copyright>
+    <Copyright>Copyright 2017-2018 - Kim J. Nordmo</Copyright>
     <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Transifex</RepositoryUrl>
     <PackageLicenseUrl>$(RepositoryUrl)/blob/master/LICENSE</PackageLicenseUrl>
