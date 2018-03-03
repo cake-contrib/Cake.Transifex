@@ -84,7 +84,7 @@ namespace Cake.Transifex.Tests
 
             var ex = Assert.Throws<ArgumentException>(() => this.fixture.Run());
 
-            Assert.Equal("A token can not be set at the same time as either the username or password.", ex.Message);
+            Assert.Equal(Exceptions.TokenAndUsernameException, ex.Message);
         }
     }
 }

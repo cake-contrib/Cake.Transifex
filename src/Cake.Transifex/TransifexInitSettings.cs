@@ -1,4 +1,4 @@
-﻿namespace Cake.Transifex
+namespace Cake.Transifex
 {
     using System;
     using Cake.Core;
@@ -69,7 +69,7 @@
         {
             if (!string.IsNullOrEmpty(Token) && (!string.IsNullOrEmpty(Username) || !string.IsNullOrEmpty(Password)))
             {
-                throw new ArgumentException("A token can not be set at the same time as either the username or password.");
+                throw new ArgumentException(Exceptions.TokenAndUsernameException);
             }
 
             if (!string.IsNullOrEmpty(Host))
