@@ -13,6 +13,7 @@ skip_commits:
 image: Visual Studio 2017
 cache: tools -> setup.cake,tools/packages.config,.appveyor.yml
 install:
+- cinst python3 -n
 - cinst transifex-client
 build_script:
 - ps: .\build.ps1 -Configuration Release -Target AppVeyor
