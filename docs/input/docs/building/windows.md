@@ -8,8 +8,8 @@ Author: Kim Nordmo
 
 The following are need to build Cake.Transifex on Windows:
 - Visual Studio 2017
-- .NET Core SDK 1.0.4 *(could work with other versions as well)*
-- .NET Framework 4.5
+- .NET Core SDK 2.0 *(could work with other versions as well)*
+- .NET Framework 4.6
 
 All other dependencies will be automatically downloaded when invoking the build script.
 
