@@ -12,6 +12,9 @@
 ###############################################################################
 *.cs     diff=csharp
 
+*.resx text whitespace=-trailing-space
+*.Designer.cs diff=csharp whitespace=-trailing-space
+
 ###############################################################################
 # Set the merge driver for project and solution files
 #

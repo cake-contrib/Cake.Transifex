@@ -1,28 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup Condition="'$(NetCoreOnly)'!='true'">
-    <TargetFrameworks>netstandard1.6;net45;net46</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;netstandard2.0;net45;net46</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(NetCoreOnly)'=='true'">
-    <TargetFrameworks>netstandard1.6</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;netstandard2.0</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.1</NetStandardImplicitPackageVersion>
+    <IsNetCore Condition=" '$(TargetFramework)' == 'netstandard1.6' Or '$(TargetFramework)' == 'netstandard2.0'">True</IsNetCore>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <LangVersion>7</LangVersion>
     <DebugType>pdbonly</DebugType>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Authors>Kim Nordmo</Authors>
+    <Authors>Kim J. Nordmo</Authors>
     <Company />
     <Description>
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
 To install the transifex client, install python, then run `pip install transifex-client`.
     </Description>
-    <Copyright>Copyright 2017 - Kim Nordmo</Copyright>
-    <PackageLicenseUrl>https://github.com/cake-contrib/Cake.Transifex/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/cake-contrib/Cake.Transifex</PackageProjectUrl>
+    <Copyright>Copyright 2017-2018 - Kim J. Nordmo</Copyright>
     <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Transifex</RepositoryUrl>
+    <PackageLicenseUrl>$(RepositoryUrl)/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>cake build transifex localization</PackageTags>
     <IncludeSymbols>False</IncludeSymbols>
@@ -42,11 +43,27 @@ To install the transifex client, install python, then run `pip install transifex
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <PackageReference Include="Cake.Core" Version="0.16.2" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' != 'net45'">
+  <ItemGroup Condition=" '$(TargetFramework)' != 'net45' And '$(TargetFramework)' != 'netstandard2.0'">
     <PackageReference Include="Cake.Core" Version="0.22.0" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' != 'netstandard1.6' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="Cake.Core" Version="0.26.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(IsNetCore)' != 'True' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Exceptions.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Exceptions.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Exceptions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Exceptions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

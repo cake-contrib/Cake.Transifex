@@ -23,4 +23,4 @@ When the cake script is run, this will download the latest version of the `Cake.
 
 
 *NOTE: Remember to also install the transifex (`tx`) client on the running computer, this can be installed through
-the python `pip` utility (`pip install transifex-client`).*
+the python `pip` utility (`pip install transifex-client`) or through chocolatey `choco install transifex-client`.*

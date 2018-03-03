@@ -1,0 +1,15 @@
+[main]
+host = https://www.transifex.com
+lang_map = en_GB: en-GB, en_US: en-US
+
+[caketransifex.commonresx]
+source_file = src/Cake.Transifex/Common.resx
+file_filter = src/Cake.Transifex/Common.<lang>.resx
+source_lang = en
+type = RESX
+
+[caketransifex.exceptionsresx]
+source_file = src/Cake.Transifex/Exceptions.resx
+file_filter = src/Cake.Transifex/Exceptions.<lang>.resx
+source_lang = en
+type = RESX

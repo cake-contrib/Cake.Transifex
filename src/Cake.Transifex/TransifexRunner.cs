@@ -1,4 +1,4 @@
-﻿namespace Cake.Transifex
+namespace Cake.Transifex
 {
     using System.Collections.Generic;
     using Cake.Core;
@@ -69,7 +69,7 @@
             };
 
         protected override string GetToolName()
-            => "Transifex Runner";
+            => Common.TransifexRunner;
 
         private static ProcessArgumentBuilder GetTransifexRunnerArguments(TransifexRunnerSettings settings)
         {
