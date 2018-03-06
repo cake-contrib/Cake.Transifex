@@ -5,8 +5,38 @@
 		<link>https://cake-contrib.github.io/Cake.Transifex</link>
 		<description />
 		<copyright>2018</copyright>
-		<pubDate>Sat, 03 Mar 2018 06:26:45 GMT</pubDate>
-		<lastBuildDate>Sat, 03 Mar 2018 06:26:45 GMT</lastBuildDate>
+		<pubDate>Tue, 06 Mar 2018 20:38:14 GMT</pubDate>
+		<lastBuildDate>Tue, 06 Mar 2018 20:38:14 GMT</lastBuildDate>
+		<item>
+			<title>New Release - 0.5.0</title>
+			<link>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.5.0</link>
+			<description>&lt;p&gt;The main feature of this release is adding the support for Cake version 0.26.0.
+The project have also now been setup as a example project with pulling/pushing translations to transifex (these are also included in the package).&lt;/p&gt;</description>
+			<author>AdmiringWorm</author>
+			<guid>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.5.0</guid>
+			<pubDate>Sat, 03 Mar 2018 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="compatibility-release"&gt;0.5.0 Compatibility Release&lt;/h1&gt;
+&lt;p&gt;The main feature of this release is adding the support for Cake version 0.26.0.
+The project have also now been setup as a example project with pulling/pushing translations to transifex (these are also included in the package).&lt;/p&gt;
+&lt;p&gt;As part of this release we had &lt;a href="https://github.com/cake-contrib/Cake.Transifex/compare/0.4.0...0.5.0"&gt;22 commits&lt;/a&gt; which resulted in &lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues?milestone=6&amp;amp;state=closed"&gt;5 issues&lt;/a&gt; being closed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/22"&gt;&lt;strong&gt;#22&lt;/strong&gt;&lt;/a&gt; Support Cake.Core 0.26&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Improvement&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/20"&gt;&lt;strong&gt;#20&lt;/strong&gt;&lt;/a&gt; Change all hard coded strings to translatable strings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/23"&gt;&lt;strong&gt;#23&lt;/strong&gt;&lt;/a&gt; Updated documentation to the correct .NET Core and .NET Framework versions&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/19"&gt;&lt;strong&gt;#19&lt;/strong&gt;&lt;/a&gt; Mention which cake versions are supported in wyam documentation.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/18"&gt;&lt;strong&gt;#18&lt;/strong&gt;&lt;/a&gt; Documentation in Readme.md is outdated&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="where-to-get-it"&gt;Where to get it&lt;/h3&gt;
+&lt;p&gt;You can download this release from &lt;a href="https://nuget.org/packages/Cake.Transifex/0.5.0"&gt;nuget&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
+		</item>
 		<item>
 			<title>New Release - 0.4.0</title>
 			<link>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.4.0</link>
