@@ -23,7 +23,7 @@ To install the transifex client, install python, then run `pip install transifex
     <RepositoryType>git</RepositoryType>
     <PackageTags>cake build transifex localization</PackageTags>
     <IncludeSymbols>False</IncludeSymbols>
-    <PackageReleaseNotes>$(RepositoryUrl)/releases/tag/$(Version)</PackageReleaseNotes>
+    <PackageReleaseNotes>$(RepositoryUrl)/issues?q=milestone:$(FileVersion)+is:closed</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
