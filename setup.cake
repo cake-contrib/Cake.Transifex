@@ -14,7 +14,8 @@ BuildParameters.SetParameters(
     shouldBuildNugetSourcePackage: false,
     shouldDeployGraphDocumentation: false,
     solutionFilePath: "./Cake.Transifex.sln",
-    testFilePattern: "/**/*.Tests.csproj"
+    testFilePattern: "/**/*.Tests.csproj",
+    shouldDownloadMilestoneReleaseNotes: true
 );
 
 ToolSettings.SetToolSettings(
@@ -29,6 +30,62 @@ ToolSettings.SetToolSettings(
      testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
      testCoverageExcludeByFile: "*Designer.cs;*.g.cs;*.g.i.cs"
 );
+
+BuildParameters.Tasks.DotNetCorePackTask.Task.Actions.Clear();
+
+// We replicate the package task here so we can override the Release Notes
+BuildParameters.Tasks.DotNetCorePackTask.Does(() => {
+    var projects = GetFiles(BuildParameters.SourceDirectoryPath + "/**/*.csproj")
+        - GetFiles(BuildParameters.SourceDirectoryPath + "/**/*.Tests.csproj");
+
+    var msBuildSettings = new DotNetCoreMSBuildSettings()
+        .WithProperty("Version", BuildParameters.Version.SemVersion)
+        .WithProperty("AssemblyVersion", BuildParameters.Version.Version)
+        .WithProperty("FileVersion", BuildParameters.Version.Version)
+        .WithProperty("AssemblyInformationalVersion", BuildParameters.Version.InformationalVersion);
+
+    if (!IsRunningOnWindows()) {
+        var frameworkPathOverride = new FilePath(typeof(object).Assembly.Location).GetDirectory().FullPath + "/";
+
+        // Use FrameworkPathOverride when not running on Windows.
+        Information("Pack will use FrameworkPathOverride={0} since not building on Windows.", frameworkPathOverride);
+        msBuildSettings.WithProperty("FrameworkPathOverride", frameworkPathOverride);
+    }
+
+    if (BuildParameters.ShouldDownloadMilestoneReleaseNotes && FileExists(BuildParameters.MilestoneReleaseNotesFilePath)) {
+        var releaseNotes = ParseReleaseNotes(BuildParameters.MilestoneReleaseNotesFilePath);
+
+        if (releaseNotes.Notes.Any()) {
+            msBuildSettings.WithProperty("PackageReleaseNotes",
+                string.Join(System.Environment.NewLine, releaseNotes.Notes.ToArray()));
+        }
+    } else if (BuildParameters.ShouldDownloadFullReleaseNotes && FileExists(BuildParameters.FullReleaseNotesFilePath)) {
+        var releases = ParseAllReleaseNotes(BuildParameters.FullReleaseNotesFilePath);
+
+        if (releases.Any() && releases.First(r => r.Version.ToString() == BuildParameters.Version.Version).Notes.Any()) {
+            var releaseNotes = releases.First(r => r.Version.ToString() == BuildParameters.Version.Version);
+            msBuildSettings.WithProperty("PackageReleaseNotes",
+                string.Join(System.Environment.NewLine, releaseNotes.Notes.ToArray()));
+        }
+    }
+
+    var settings = new DotNetCorePackSettings {
+        NoBuild = true,
+        Configuration = BuildParameters.Configuration,
+        OutputDirectory = BuildParameters.Paths.Directories.NuGetPackages,
+        MSBuildSettings = msBuildSettings,
+        ArgumentCustomization = (args) => {
+            if (BuildParameters.ShouldBuildNugetSourcePackage) {
+                args.Append("--include-source");
+            }
+            return args;
+        }
+    };
+
+    foreach (var project in projects) {
+        DotNetCorePack(project.ToString(), settings);
+    }
+});
 
 BuildParameters.PrintParameters(Context);
 
