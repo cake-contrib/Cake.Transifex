@@ -1,13 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup Condition="'$(NetCoreOnly)'!='true'">
-    <TargetFrameworks>netstandard1.6;netstandard2.0;net45;net46</TargetFrameworks>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(NetCoreOnly)'=='true'">
-    <TargetFrameworks>netstandard1.6;netstandard2.0</TargetFrameworks>
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup>
-    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.1</NetStandardImplicitPackageVersion>
-    <IsNetCore Condition=" '$(TargetFramework)' == 'netstandard1.6' Or '$(TargetFramework)' == 'netstandard2.0'">True</IsNetCore>
+    <IsNetCore Condition=" '$(TargetFramework)' == 'netstandard2.0'">True</IsNetCore>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <LangVersion>7</LangVersion>
     <DebugType>pdbonly</DebugType>
@@ -40,13 +36,7 @@ To install the transifex client, install python, then run `pip install transifex
     <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <PackageReference Include="Cake.Core" Version="0.16.2" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' != 'net45' And '$(TargetFramework)' != 'netstandard2.0'">
-    <PackageReference Include="Cake.Core" Version="0.22.0" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+  <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.26.0" />
   </ItemGroup>
   <ItemGroup Condition=" '$(IsNetCore)' != 'True' ">
