@@ -87,6 +87,11 @@ BuildParameters.Tasks.DotNetCorePackTask.Does(() => {
     }
 });
 
+if (BuildParameters.IsRunningOnAppVeyor &&
+    BuildParameters.IsMainRepository && BuildParameters.IsMasterBranch && !BuildParameters.IsTagged) {
+    BuildParameters.Tasks.AppVeyorTask.IsDependentOn("Create-Release-Notes");
+}
+
 BuildParameters.PrintParameters(Context);
 
 Build.RunDotNetCore();
