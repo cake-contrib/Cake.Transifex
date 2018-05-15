@@ -4,7 +4,33 @@
 	<id>https://cake-contrib.github.io/Cake.Transifex</id>
 	<title>Cake.Transifex</title>
 	<rights>2018</rights>
-	<updated>2018-03-07T16:56:01Z</updated>
+	<updated>2018-05-15T18:05:52Z</updated>
+	<entry>
+		<author>
+			<name>AdmiringWorm</name>
+		</author>
+		<link href="https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.6.0" />
+		<id>https://cake-contrib.github.io/Cake.Transifex/blog/new-release-0.6.0</id>
+		<title>New Release - 0.5.0</title>
+		<updated>2018-03-03T00:00:00Z</updated>
+		<content>&lt;h1 id="the-breaking-change-release"&gt;0.6.0 The breaking change release&lt;/h1&gt;
+&lt;p&gt;Due to misunderstanding of the requirements, the previously released version only added partial support for Cake version 0.26.0.
+This release fixes that, but unfortunately includes breaking changes due to this.
+It was also decided to remove all support for cake versions released prior to version 0.26.0.&lt;/p&gt;
+&lt;h2 id="release-notes"&gt;Release notes&lt;/h2&gt;
+&lt;p&gt;As part of this release we had &lt;a href="https://github.com/cake-contrib/Cake.Transifex/compare/0.5.0...0.6.0"&gt;9 commits&lt;/a&gt; which resulted in &lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues?milestone=7&amp;amp;state=closed"&gt;2 issues&lt;/a&gt; being closed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Breaking Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/25"&gt;&lt;strong&gt;#25&lt;/strong&gt;&lt;/a&gt; Add full support for Cake version 0.26.0 and above&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues/24"&gt;&lt;strong&gt;#24&lt;/strong&gt;&lt;/a&gt; Drop support for versions of Cake previous to 0.26.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="where-to-get-it"&gt;Where to get it&lt;/h3&gt;
+&lt;p&gt;You can download this release from &lt;a href="https://nuget.org/packages/Cake.Transifex/0.6.0"&gt;nuget&lt;/a&gt;&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;Due to misunderstanding of the requirements, the previously released version only added partial support for Cake version 0.26.0.
+This release fixes that, but unfortunately includes breaking changes due to this.
+It was also decided to remove all support for cake versions released prior to version 0.26.0.&lt;/p&gt;</summary>
+	</entry>
 	<entry>
 		<author>
 			<name>AdmiringWorm</name>
@@ -16,6 +42,10 @@
 		<content>&lt;h1 id="compatibility-release"&gt;0.5.0 Compatibility Release&lt;/h1&gt;
 &lt;p&gt;The main feature of this release is adding the support for Cake version 0.26.0.
 The project have also now been setup as a example project with pulling/pushing translations to transifex (these are also included in the package).&lt;/p&gt;
+&lt;p&gt;EDIT:
+It turns out this support, was only for partial support for Cake version 0.26.0.
+It is only supported when targeting .NET Core 2.0, and not when targeting the full .NET Framework.&lt;/p&gt;
+&lt;h2 id="release-notes"&gt;Release notes&lt;/h2&gt;
 &lt;p&gt;As part of this release we had &lt;a href="https://github.com/cake-contrib/Cake.Transifex/compare/0.4.0...0.5.0"&gt;22 commits&lt;/a&gt; which resulted in &lt;a href="https://github.com/cake-contrib/Cake.Transifex/issues?milestone=6&amp;amp;state=closed"&gt;5 issues&lt;/a&gt; being closed.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Feature&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
