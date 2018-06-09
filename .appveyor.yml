@@ -12,7 +12,7 @@ skip_commits:
     - .travis.yml
 image:
 - Visual Studio 2017
-- Ubuntu
+#- Ubuntu
 cache: tools -> setup.cake,appveyor.yml
 install:
 - cmd: cinst python3 -n
