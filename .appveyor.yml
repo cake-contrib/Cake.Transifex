@@ -13,7 +13,7 @@ skip_commits:
 image:
 - Visual Studio 2017
 - Ubuntu
-cache: tools -> setup.cake,tools/packages.config,.appveyor.yml
+cache: tools -> setup.cake,appveyor.yml
 install:
 - cmd: cinst python3 -n
 - cmd: cinst transifex-client
