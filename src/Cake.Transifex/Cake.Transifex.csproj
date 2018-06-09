@@ -38,7 +38,7 @@ To install the transifex client, install python, then run `pip install transifex
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.26.0" />
+    <PackageReference Include="Cake.Core" Version="0.28.0" />
   </ItemGroup>
   <ItemGroup Condition=" '$(IsNetCore)' != 'True' ">
     <Reference Include="System" />
