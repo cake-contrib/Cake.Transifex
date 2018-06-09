@@ -9,7 +9,11 @@ Author: AdmiringWorm
 The main feature of this release is adding the support for Cake version 0.26.0.
 The project have also now been setup as a example project with pulling/pushing translations to transifex (these are also included in the package).
 
+EDIT:
+It turns out this support, was only for partial support for Cake version 0.26.0.
+It is only supported when targeting .NET Core 2.0, and not when targeting the full .NET Framework.
 
+## Release notes
 
 As part of this release we had [22 commits](https://github.com/cake-contrib/Cake.Transifex/compare/0.4.0...0.5.0) which resulted in [5 issues](https://github.com/cake-contrib/Cake.Transifex/issues?milestone=6&state=closed) being closed.
 

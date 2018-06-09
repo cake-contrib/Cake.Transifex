@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <PropertyGroup>
-    <IsNetCore Condition=" '$(TargetFramework)' == 'netstandard2.0'">True</IsNetCore>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <LangVersion>7</LangVersion>
     <DebugType>pdbonly</DebugType>
@@ -23,7 +22,8 @@ To install the transifex client, install python, then run `pip install transifex
     <RepositoryType>git</RepositoryType>
     <PackageTags>cake build transifex localization</PackageTags>
     <IncludeSymbols>False</IncludeSymbols>
-    <PackageReleaseNotes>$(RepositoryUrl)/issues?q=milestone:$(FileVersion)+is:closed</PackageReleaseNotes>
+    <PackageReleaseNotes Condition=" '$(Version)' == '$(FileVersion)'">$(RepositoryUrl)/releases/tag/$(Version)</PackageReleaseNotes>
+    <PackageReleaseNotes Condition=" '$(Version)' != '$(FileVersion)'">$(RepositoryUrl)/issues?q=milestone:$(FileVersion)+is:closed</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -37,11 +37,7 @@ To install the transifex client, install python, then run `pip install transifex
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.26.0" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(IsNetCore)' != 'True' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="Cake.Core" Version="0.28.0" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Exceptions.Designer.cs">
