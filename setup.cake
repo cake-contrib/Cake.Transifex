@@ -1,5 +1,5 @@
 #addin "nuget:?package=Cake.Coverlet&version=2.0.1"
-#load "nuget:https://www.myget.org/F/wormie-nugets/api/v2?package=Cake.Recipe&prerelease"
+#load "nuget:https://www.myget.org/F/cake-contrib/api/v2?package=Cake.Recipe&prerelease"
 
 Environment.SetVariableNames();
 
