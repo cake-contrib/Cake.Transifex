@@ -11,7 +11,7 @@ skip_commits:
     - LICENSE
     - .travis.yml
 image:
-#- Visual Studio 2017
+- Visual Studio 2017
 - Ubuntu
 cache: tools -> setup.cake,.appveyor.yml
 install:
