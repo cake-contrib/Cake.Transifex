@@ -71,4 +71,3 @@ Open up a powershell window and call `.\build.ps1`, this should build the projec
 - Mono (uncertain of which version, and it may fail on some systems)
 
 Open up the terminal and call `sh build.sh`, this should build the projects, run the unit tests and create nuget packages in the `./artifacts/v{version}/nuget` directory.
-**NOTE: By default we do not enable building of .NET Full on Linux and OSX, to also build .NET Full pass `--with-netfull` when calling `sh build.sh`**
