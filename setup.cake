@@ -16,7 +16,8 @@ BuildParameters.SetParameters(
     shouldDeployGraphDocumentation: false,
     solutionFilePath: "./Cake.Transifex.sln",
     testFilePattern: "/**/*.Tests.csproj",
-    shouldRunCodecov: true
+    shouldRunCodecov: true,
+    shouldExecuteGitLink: false
 );
 
 ToolSettings.SetToolSettings(
