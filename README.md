@@ -16,17 +16,21 @@ To install the transifex client, install python, then run `pip install transifex
 |NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.Transifex.svg)](https://nuget.org/packages/Cake.Transifex)|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/Cake.Transifex.svg)](https://nuget.org/packages/Cake.Transifex)|
 
 ### Where to get the addin
+
 Officially published versions are available on [NuGet](https://www.nuget.org/packages/Cake.Transifex/).
-Development versions is available at the following nuget api endpoint: <https://www.myget.org/F/cake-contrib/api/v2>
+Development versions is available at the following nuget api endpoint: <https://ci.appveyor.com/nuget/cake-transifex>
 
 ### Usage
+
 The following aliases is available from the cake build script:
+
 - `TransifexInit`   -> Initialize a simple configuration file in the repository
 - `TransifexStatus` -> Get the status of the current translations in the local repository.
 - `TransifexPush`   -> Push translations to the remote transifex server (Optionally also the source file)
 - `TransifexPull`   -> Pull monitored translations from the remote transifex server
 
 ## Build Status
+
 | | master | develop |
 |:--:|:--:|:--:|
 |AppVeyor|[![AppVeyor branch master](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/master.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/master)|[![AppVeyor branch develop](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/develop.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/develop)|
@@ -52,7 +56,9 @@ Come join in the conversation about Cake.Transifex in our Gitter Chat Room
 ## Building Cake.Transifex
 
 ### 1. Building on Windows
+
 The following are needed to build Cake.Transifex on Windows
+
 - .NET Core 2.0
 - .NET 4.6
 - Visual Studio 2017
@@ -60,6 +66,7 @@ The following are needed to build Cake.Transifex on Windows
 Open up a powershell window and call `.\build.ps1`, this should build the projects, run the unit tests and create nuget packages in the `.\BuildArtifacts\Packages\NuGet` directory.
 
 ### 2. Building on Linux or OSX
+
 - .NET Core 1.0.5 and 2.0
 - Mono (uncertain of which version, and it may fail on some systems)
 
