@@ -5,7 +5,6 @@
   <PropertyGroup>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <LangVersion>7</LangVersion>
-    <DebugType>pdbonly</DebugType>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Authors>Kim J. Nordmo</Authors>
     <Company />
