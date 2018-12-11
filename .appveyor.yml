@@ -21,7 +21,7 @@ install:
 build_script:
 - pwsh: |
     if ($isLinux) {
-        .\build.ps1 -Configuration Release -Target Package
+        .\build.ps1 -Configuration Release -Target AppVeyor-Linux
     } else {
         .\build.ps1 -Configuration Release -Target AppVeyor
     }
