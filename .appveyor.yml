@@ -13,7 +13,7 @@ skip_commits:
 image:
 - Visual Studio 2017
 - Ubuntu
-cache: tools -> setup.cake,.appveyor.yml
+cache: tools -> setup.cake,.appveyor.yml,build.cake
 install:
 - cmd: cinst python3 -n
 - cmd: cinst transifex-client
@@ -21,9 +21,9 @@ install:
 build_script:
 - pwsh: |
     if ($isLinux) {
-        .\build.ps1 -Configuration Release -Target AppVeyor-Linux -Verbosity Diagnostic
+        .\build.ps1 --configuration=Release --target=AppVeyor-Linux --verbosity=Diagnostic
     } else {
-        .\build.ps1 -Configuration Release -Target AppVeyor -Verbosity Diagnostic
+        .\build.ps1 --configuration=Release --target=AppVeyor --verbosity=Diagnostic
     }
 test: off
 deploy: off
