@@ -21,9 +21,9 @@ install:
 build_script:
 - pwsh: |
     if ($isLinux) {
-        .\build.ps1 --configuration=Release --target=AppVeyor-Linux --verbosity=Diagnostic
+        .\build.ps1 --configuration=Release --target=AppVeyor-Linux
     } else {
-        .\build.ps1 --configuration=Release --target=AppVeyor --verbosity=Diagnostic
+        .\build.ps1 --configuration=Release --target=AppVeyor
     }
 test: off
 deploy: off
