@@ -1,5 +1,5 @@
 #addin "nuget:?package=Cake.Coverlet&version=2.0.1"
-#load "nuget:https://www.myget.org/F/cake-contrib/api/v2?package=Cake.Recipe&prerelease"
+#load "nuget:https://ci.appveyor.com/nuget/cake-recipe-pylg5x5ru9c2?package=Cake.Recipe&prerelease&version=0.3.0-alpha0492"
 
 Environment.SetVariableNames();
 
@@ -17,7 +17,8 @@ BuildParameters.SetParameters(
     solutionFilePath: "./Cake.Transifex.sln",
     testFilePattern: "/**/*.Tests.csproj",
     shouldRunCodecov: true,
-    shouldExecuteGitLink: false
+    shouldExecuteGitLink: false,
+    shouldRunGitVersion: true
 );
 
 ToolSettings.SetToolSettings(
