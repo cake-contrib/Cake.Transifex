@@ -79,9 +79,13 @@ BuildParameters.Tasks.DotNetCoreTestTask
 
 BuildParameters.Tasks.TransifexPushSourceResource.WithCriteria(() => BuildParameters.IsRunningOnWindows);
 
+Task("Linux")
+    .IsDependentOn("Package")
+    .IsDependentOn("Upload-Coverage-Report");
+
 Task("Appveyor-Linux")
-    .IsDependentOn("Upload-AppVeyor-Artifacts")
-    .IsDepentdetOn("Upload-Coverage-Report");
+    .IsDependentOn("Linux")
+    .IsDependentOn("Upload-AppVeyor-Artifacts");
 
 BuildParameters.PrintParameters(Context);
 
