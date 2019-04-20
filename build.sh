@@ -44,18 +44,17 @@ fi
 
 export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER=0
 
 CAKE_INSTALLED_VERSION=$(dotnet-cake --version 2>&1)
 
 if [ "$CAKE_VERSION" != "$CAKE_INSTALLED_VERSION" ]; then
     if [ ! -f "$CAKE_EXE" ] || [ ! -d "$CAKE_PATH" ]; then
         if [ -f "$CAKE_EXE" ]; then
-            exec $DOTNET_EXE tool uninstall --tool-path $TOOLS_DIR Cake.Tool
+            dotnet tool uninstall --tool-path $TOOLS_DIR Cake.Tool
         fi
 
         echo "Installing Cake $CAKE_VERSION..."
-        exec $DOTNET_EXE tool install --tool-path $TOOLS_DIR --version $CAKE_VERSION Cake.Tool
+        dotnet tool install --tool-path $TOOLS_DIR --version $CAKE_VERSION Cake.Tool
         if [ $? -ne 0 ]; then
             echo "An error occured while installing Cake."
             exit 1

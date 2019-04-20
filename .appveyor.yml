@@ -17,7 +17,7 @@ cache: tools -> setup.cake,.appveyor.yml,build.cake
 install:
 - cmd: cinst python3 -n
 - cmd: cinst transifex-client
-- sh: sudo pip install transifex-client
+- sh: sudo -H pip install transifex-client
 build_script:
 - pwsh: |
     if ($isLinux) {
