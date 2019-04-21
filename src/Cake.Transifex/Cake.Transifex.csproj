@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
@@ -14,7 +14,7 @@ This addin requires that the transifex client is already installed and is availa
 To install the transifex client, install python, then run `pip install transifex-client`.
     </Description>
     <Copyright>Copyright 2017-2018 - Kim J. Nordmo</Copyright>
-    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics@49c3b71def749b86416d773f1ead0c0da2d590ea/png/cake-contrib-medium.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Transifex</RepositoryUrl>
     <PackageLicenseUrl>$(RepositoryUrl)/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
