@@ -13,7 +13,7 @@ Cake.Transifex is a addin for the Cake Build script adding support for working w
 This addin requires that the transifex client is already installed and is available as `tx`.
 To install the transifex client, install python, then run `pip install transifex-client`.
     </Description>
-    <Copyright>Copyright 2017-2018 - Kim J. Nordmo</Copyright>
+    <Copyright>Copyright 2017-$([System.DateTime]::Now.Year) - Kim J. Nordmo</Copyright>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics@49c3b71def749b86416d773f1ead0c0da2d590ea/png/cake-contrib-medium.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Transifex</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
