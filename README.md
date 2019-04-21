@@ -9,7 +9,7 @@ This addin requires that the transifex client is already installed and is availa
 
 ## Information
 
-To install the transifex client, install python, then run `pip install transifex-client`, or using the chocolatey package `choco install transifex-client --version 0.12.4` *(version can be omitted when package have been approved)*.
+To install the transifex client, install python, then run `pip install transifex-client`, or using the chocolatey package `choco install transifex-client`.
 
 | |Stable|Pre-release|
 |:--:|:--:|:--:|
