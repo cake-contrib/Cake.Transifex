@@ -35,6 +35,7 @@ The following aliases is available from the cake build script:
 | | master | develop |
 |:--:|:--:|:--:|
 |AppVeyor|[![AppVeyor branch master](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/master.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/master)|[![AppVeyor branch develop](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/develop.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/develop)|
+|Travis|[![Build Status](https://travis-ci.org/cake-contrib/Cake.Transifex.svg?branch=master)](https://travis-ci.org/cake-contrib/Cake.Transifex)|[![Build Status](https://travis-ci.org/cake-contrib/Cake.Transifex.svg?branch=develop)](https://travis-ci.org/cake-contrib/Cake.Transifex)
 
 ## Code Coverage
 
@@ -60,18 +61,18 @@ Come join in the conversation about Cake.Transifex in our Gitter Chat Room
 
 The following are needed to build Cake.Transifex on Windows
 
-- .NET Core 2.0
+- .NET Core 2.0+
 - .NET 4.6
-- Visual Studio 2017
+- Visual Studio 2017 (or Visual Studio Build Tools 2017)
 
 Open up a powershell window and call `.\build.ps1`, this should build the projects, run the unit tests and create nuget packages in the `.\BuildArtifacts\Packages\NuGet` directory.
 
 ### 2. Building on Linux or OSX
 
-- .NET Core 1.0.5 and 2.0
-- Mono (uncertain of which version, and it may fail on some systems)
+- .NET Core 2.0+
+- Mono
 
-Open up the terminal and call `sh build.sh`, this should build the projects, run the unit tests and create nuget packages in the `./artifacts/v{version}/nuget` directory.
+Open up the terminal and call `sh build.sh`, this should build the projects, run the unit tests and create nuget packages in the `./BuildArtifacts/Packages/NuGet/` directory.
 
 ## Contributors
 
