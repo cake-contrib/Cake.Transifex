@@ -21,6 +21,5 @@ This addin is designed to be used inside of cake scripts. To start using it, fir
 
 When the cake script is run, this will download the latest version of the `Cake.Transifex` nuget package and will now be available to use inside of the script.
 
-
 *NOTE: Remember to also install the transifex (`tx`) client on the running computer, this can be installed through
 the python `pip` utility (`pip install transifex-client`) or through chocolatey `choco install transifex-client`.*

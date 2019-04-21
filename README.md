@@ -1,4 +1,5 @@
 # Cake.Transifex
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 [![license](https://img.shields.io/github/license/cake-contrib/Cake.Transifex.svg)](https://github.com/cake-contrib/Cake.Transifex/blob/master/LICENSE)
 [![Open Source Helpers](https://www.codetriage.com/wormiecorp/cake.transifex/badges/users.svg)](https://www.codetriage.com/wormiecorp/cake.transifex)
@@ -8,7 +9,7 @@ This addin requires that the transifex client is already installed and is availa
 
 ## Information
 
-To install the transifex client, install python, then run `pip install transifex-client`, or using the chocolatey package `choco install transifex-client --version 0.12.4` *(version can be omitted when package have been approved)*.
+To install the transifex client, install python, then run `pip install transifex-client`, or using the chocolatey package `choco install transifex-client`.
 
 | |Stable|Pre-release|
 |:--:|:--:|:--:|
@@ -16,17 +17,21 @@ To install the transifex client, install python, then run `pip install transifex
 |NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.Transifex.svg)](https://nuget.org/packages/Cake.Transifex)|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/Cake.Transifex.svg)](https://nuget.org/packages/Cake.Transifex)|
 
 ### Where to get the addin
+
 Officially published versions are available on [NuGet](https://www.nuget.org/packages/Cake.Transifex/).
-Development versions is available at the following nuget api endpoint: <https://www.myget.org/F/cake-contrib/api/v2>
+Development versions is available at the following nuget api endpoint: <https://ci.appveyor.com/nuget/cake-transifex>
 
 ### Usage
+
 The following aliases is available from the cake build script:
+
 - `TransifexInit`   -> Initialize a simple configuration file in the repository
 - `TransifexStatus` -> Get the status of the current translations in the local repository.
 - `TransifexPush`   -> Push translations to the remote transifex server (Optionally also the source file)
 - `TransifexPull`   -> Pull monitored translations from the remote transifex server
 
 ## Build Status
+
 | | master | develop |
 |:--:|:--:|:--:|
 |AppVeyor|[![AppVeyor branch master](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/master.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/master)|[![AppVeyor branch develop](https://img.shields.io/appveyor/ci/cakecontrib/cake-transifex/develop.svg)](https://ci.appveyor.com/project/cakecontrib/cake-transifex/branch/develop)|
@@ -35,7 +40,7 @@ The following aliases is available from the cake build script:
 
 | |master|develop|
 |:--:|:--:|:--:|
-|Codecov|[![Codecov branch](https://img.shields.io/codecov/c/github/cake-contrib/Cake.Transifex/master.svg)](https://codecov.io/github/cake-contrib/Cake.Transifex)|[![Codecov branch](https://img.shields.io/codecov/c/github/cake-contrib/Cake.Transifex/develop.svg)](https://codecov.io/github/cake-contrib/Cake.Transifex)|
+|Codecov|[![Codecov branch](https://img.shields.io/codecov/c/github/cake-contrib/Cake.Transifex/master.svg)](https://codecov.io/gh/cake-contrib/Cake.Transifex/branch/master)|[![Codecov branch](https://img.shields.io/codecov/c/github/cake-contrib/Cake.Transifex/develop.svg)](https://codecov.io/gh/cake-contrib/Cake.Transifex/branch/develop)|
 |Coveralls|[![Coveralls branch](https://img.shields.io/coveralls/cake-contrib/Cake.Transifex/master.svg)](https://coveralls.io/github/cake-contrib/Cake.Transifex?branch=master)|[![Coveralls branch](https://img.shields.io/coveralls/cake-contrib/Cake.Transifex/develop.svg)](https://coveralls.io/github/cake-contrib/Cake.Transifex?branch=develop)|
 
 ## Quick Links
@@ -52,7 +57,9 @@ Come join in the conversation about Cake.Transifex in our Gitter Chat Room
 ## Building Cake.Transifex
 
 ### 1. Building on Windows
+
 The following are needed to build Cake.Transifex on Windows
+
 - .NET Core 2.0
 - .NET 4.6
 - Visual Studio 2017
@@ -60,8 +67,19 @@ The following are needed to build Cake.Transifex on Windows
 Open up a powershell window and call `.\build.ps1`, this should build the projects, run the unit tests and create nuget packages in the `.\BuildArtifacts\Packages\NuGet` directory.
 
 ### 2. Building on Linux or OSX
+
 - .NET Core 1.0.5 and 2.0
 - Mono (uncertain of which version, and it may fail on some systems)
 
 Open up the terminal and call `sh build.sh`, this should build the projects, run the unit tests and create nuget packages in the `./artifacts/v{version}/nuget` directory.
-**NOTE: By default we do not enable building of .NET Full on Linux and OSX, to also build .NET Full pass `--with-netfull` when calling `sh build.sh`**
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://github.com/AdmiringWorm"><img src="https://avatars3.githubusercontent.com/u/1474648?v=4" width="100px;" alt="Kim J. Nordmo"/><br /><sub><b>Kim J. Nordmo</b></sub></a><br /><a href="#maintenance-AdmiringWorm" title="Maintenance">🚧</a></td><td align="center"><a href="http://www.gep13.co.uk/blog"><img src="https://avatars3.githubusercontent.com/u/1271146?v=4" width="100px;" alt="Gary Ewan Park"/><br /><sub><b>Gary Ewan Park</b></sub></a><br /><a href="#question-gep13" title="Answering Questions">💬</a> <a href="https://github.com/cake-contrib/Cake.Transifex/issues?q=author%3Agep13" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-gep13" title="Reviewed Pull Requests">👀</a></td><td align="center"><a href="https://www.codetriage.com"><img src="https://avatars0.githubusercontent.com/u/35302948?v=4" width="100px;" alt="README Bot"/><br /><sub><b>README Bot</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/commits?author=codetriage-readme-bot" title="Documentation">📖</a></td><td align="center"><a href="https://github.com/Jericho"><img src="https://avatars0.githubusercontent.com/u/112710?v=4" width="100px;" alt="jericho"/><br /><sub><b>jericho</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/issues?q=author%3AJericho" title="Ideas, Planning, & Feedback">🤔</a> <a href="#question-Jericho" title="Answering Questions">💬</a></td><td align="center"><a href="https://twitter.com/mholo65"><img src="https://avatars1.githubusercontent.com/u/7863439?v=4" width="100px;" alt="Martin Björkström"/><br /><sub><b>Martin Björkström</b></sub></a><br /><a href="#question-mholo65" title="Answering Questions">💬</a></td></tr></table>
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

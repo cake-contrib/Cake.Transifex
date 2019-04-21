@@ -14,7 +14,8 @@
         {
             var argumentsMoq = new Mock<ICakeArguments>();
             var registryMoq = new Mock<IRegistry>();
-            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools);
+            var dataService = new Mock<ICakeDataService>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools, dataService.Object, Configuration);
         }
 
         protected override void RunTool()
@@ -38,7 +39,8 @@
         {
             var argumentsMoq = new Mock<ICakeArguments>();
             var registryMoq = new Mock<IRegistry>();
-            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools);
+            var dataService = new Mock<ICakeDataService>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools, dataService.Object, Configuration);
         }
 
         protected override void RunTool()
@@ -62,7 +64,8 @@
         {
             var argumentsMoq = new Mock<ICakeArguments>();
             var registryMoq = new Mock<IRegistry>();
-            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools);
+            var dataService = new Mock<ICakeDataService>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools, dataService.Object, Configuration);
         }
 
         protected override void RunTool()
@@ -86,7 +89,8 @@
         {
             var argumentsMoq = new Mock<ICakeArguments>();
             var registryMoq = new Mock<IRegistry>();
-            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools);
+            var dataService = new Mock<ICakeDataService>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools, dataService.Object, Configuration);
         }
 
         protected override void RunTool()

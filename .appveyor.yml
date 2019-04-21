@@ -12,18 +12,18 @@ skip_commits:
     - .travis.yml
 image:
 - Visual Studio 2017
-#- Ubuntu
-cache: tools -> setup.cake,appveyor.yml
+- Ubuntu
+cache: tools -> setup.cake,.appveyor.yml,setup.cake
 install:
 - cmd: cinst python3 -n
 - cmd: cinst transifex-client
-- sh: sudo pip install transifex-client
+- sh: sudo -H pip install transifex-client
 build_script:
 - pwsh: |
     if ($isLinux) {
-        .\build.ps1 -Configuration Release -Target Package
+        .\build.ps1 --configuration=Release --target=AppVeyor-Linux
     } else {
-        .\build.ps1 -Configuration Release -Target AppVeyor
+        .\build.ps1 --configuration=Release --target=AppVeyor
     }
 test: off
 deploy: off

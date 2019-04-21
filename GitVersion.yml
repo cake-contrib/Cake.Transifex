@@ -1,6 +1,0 @@
-branches:
-  dev(elop)?(ment)?$:
-    mode: ContinuousDelivery
-    tag: alpha
-ignore:
-  sha: []
