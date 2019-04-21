@@ -1,4 +1,4 @@
-#addin "nuget:?package=Cake.Coverlet&version=2.0.1"
+#addin "nuget:?package=Cake.Coverlet&version=2.2.1"
 #load "nuget:https://ci.appveyor.com/nuget/cake-recipe-pylg5x5ru9c2?package=Cake.Recipe&prerelease&version=0.3.0-alpha0492"
 
 Environment.SetVariableNames();
@@ -60,6 +60,15 @@ BuildParameters.Tasks.DotNetCoreTestTask
     foreach (var line in ToolSettings.TestCoverageExcludeByFile.Split(';')) {
         foreach (var file in GetFiles("**/" + line)) {
             settings = settings.WithFileExclusion(file.FullPath);
+        }
+    }
+
+    foreach (var item in ToolSettings.TestCoverageFilter.Split(' ')) {
+        if (item[0] == '+') {
+            settings.WithInclusion(item.TrimStart('+'));
+        }
+        else if (item[0] == '-') {
+            settings.WithFilter(item.TrimStart('-'));
         }
     }
 
