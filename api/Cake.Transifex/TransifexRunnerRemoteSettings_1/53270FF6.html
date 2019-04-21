@@ -7,7 +7,6 @@
         <link rel="shortcut icon" href="/Cake.Transifex/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Transifex/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake.Transifex - API - TransifexRunnerRemoteSettings&lt;TSettingsType&gt;.Languages Property</title>
-        <link href="/Cake.Transifex/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -22,6 +21,7 @@
         <script src="/Cake.Transifex/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/Cake.Transifex/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/Cake.Transifex/assets/js/mermaid.min.js"></script>
+        <script src="/Cake.Transifex/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/Cake.Transifex/assets/js/html5shiv.min.js"></script>
         <script src="/Cake.Transifex/assets/js/respond.min.js"></script>
@@ -57,7 +57,6 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/Cake.Transifex/docs">Documentation</a></li>
-        <li><a href="/Cake.Transifex/blog">Blog</a></li>
         <li class="active"><a href="/Cake.Transifex/api">API</a></li>
  
                         </ul>       
@@ -145,7 +144,6 @@
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/35D4FEA5">Command</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/C77F6918">Force</a></li>
 				<li class="selected"><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/53270FF6">Languages</a></li>
-				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1/B9640750">Resources</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/05C2DC52">SkipErrors</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/A52978C0">UseXliff</a></li>
 			<li class="header">Method Members</li>
@@ -164,7 +162,7 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a>.</h3>
+			<h3><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings</a><wbr>&lt;<a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1#typeparam-TSettingsType">TSettingsType</a>&gt;<wbr>.</h3>
 	<h1>Languages <small>Property</small></h1>
 </section>
 <section class="content">
@@ -183,7 +181,7 @@
 						<dd><a href="/Cake.Transifex/api/Cake.Transifex">Cake<wbr>.Transifex</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></dd>		
+						<dd><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings</a><wbr>&lt;<a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1#typeparam-TSettingsType">TSettingsType</a>&gt;<wbr></dd>		
 					
 				</dl>
   			</div>
@@ -291,22 +289,53 @@
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top

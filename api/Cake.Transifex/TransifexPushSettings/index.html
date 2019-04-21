@@ -7,7 +7,6 @@
         <link rel="shortcut icon" href="/Cake.Transifex/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Transifex/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake.Transifex - API - TransifexPushSettings Class</title>
-        <link href="/Cake.Transifex/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -22,6 +21,7 @@
         <script src="/Cake.Transifex/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/Cake.Transifex/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/Cake.Transifex/assets/js/mermaid.min.js"></script>
+        <script src="/Cake.Transifex/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/Cake.Transifex/assets/js/html5shiv.min.js"></script>
         <script src="/Cake.Transifex/assets/js/respond.min.js"></script>
@@ -57,7 +57,6 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/Cake.Transifex/docs">Documentation</a></li>
-        <li><a href="/Cake.Transifex/blog">Blog</a></li>
         <li class="active"><a href="/Cake.Transifex/api">API</a></li>
  
                         </ul>       
@@ -192,8 +191,8 @@
 									<ul class="list-unstyled">										
 											<li>ToolSettings</li>								
 											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></li>								
-											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></li>								
-											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></li>								
+											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings</a><wbr>&lt;<a href="/Cake.Transifex/api/Cake.Transifex/TransifexPushSettings">Transifex<wbr>Push<wbr>Settings</a>&gt;<wbr></li>								
+											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings</a><wbr>&lt;<a href="/Cake.Transifex/api/Cake.Transifex/TransifexPushSettings">Transifex<wbr>Push<wbr>Settings</a>&gt;<wbr></li>								
 									</ul>
 								</dd>				
 							
@@ -202,14 +201,12 @@
 					</div>		
 					<div class="col-md-6">
 						<div class="mermaid">
-							graph TD
-	Base0["TransifexRunnerRemoteSettings&lt;TSettingsType&gt;"]--&gt;Type
-	click Base0 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1"
-	Base1["TransifexRunnerSettings&lt;TSettingsType&gt;"]--&gt;Base0
-	click Base1 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1"
-	Base2["TransifexRunnerSettings"]--&gt;Base1
+							graph BT
+	Type--&gt;Base0["TransifexRunnerRemoteSettings&lt;TransifexPushSettings&gt;"]
+	Base0--&gt;Base1["TransifexRunnerSettings&lt;TransifexPushSettings&gt;"]
+	Base1--&gt;Base2["TransifexRunnerSettings"]
 	click Base2 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings"
-	Base3["ToolSettings"]--&gt;Base2
+	Base2--&gt;Base3["ToolSettings"]
 	Type["TransifexPushSettings"]
 class Type type-node
 
@@ -221,6 +218,7 @@ class Type type-node
 
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public sealed class TransifexPushSettings : TransifexRunnerRemoteSettings&lt;TransifexPushSettings&gt;</code></pre>
+
 
 
 
@@ -272,52 +270,12 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/C77F6918">Force</a></td>
-								<td>bool</td>
-								<td>
-									<div>
-    Gets or sets a value indicating whether to force the command event if the resource exists.
-    </div>
-											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/53270FF6">Languages</a></td>
-								<td>string</td>
-								<td>
-									<div>
-    The languages you want to push/pull. (defaults to all)
-    </div>
-											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPushSettings/95035FFB">NoInteractive</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to require user input when forcing a push.
     </div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1/B9640750">Resources</a></td>
-								<td>string</td>
-								<td>
-									<div>
-    The resources you want to use for this command (defaults to all)
-    </div>
-											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/05C2DC52">SkipErrors</a></td>
-								<td>bool</td>
-								<td>
-									<div>
-    Gets or sets a value indicating whether to continue with the command even if an error ocurs.
-    </div>
-											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -336,16 +294,6 @@ class Type type-node
 									<div>
     Gets or sets a value indicating whether to push all local translations to the remote server.
     </div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1/A52978C0">UseXliff</a></td>
-								<td>bool</td>
-								<td>
-									<div>
-    Gets or sets a value indicating whether use the xliff format.
-    </div>
-											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerRemoteSettings_1">Transifex<wbr>Runner<wbr>Remote<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>
@@ -458,22 +406,53 @@ class Type type-node
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top
