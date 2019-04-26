@@ -34,7 +34,7 @@ if [ "$INSTALL_NETCORE" = "1" ]; then
     else
         bash "$SCRIPT_DIR/.dotnet/dotnet-install.sh" --version $DOTNET_VERSION --install-dir "$SCRIPT_DIR/.dotnet" --no-path
     fi
-    
+
     DOTNET_EXE="$SCRIPT_DIR/.dotnet/dotnet"
     export PATH="$SCRIPT_DIR/.dotnet:$PATH"
     export DOTNET_ROOT="$SCRIPT_DIR/.dotnet"
@@ -75,4 +75,4 @@ fi
 ###########################################################################
 
 # Start Cake
-(exec "$CAKE_EXE" setup.cake --bootstrap) && (exec "$CAKE_EXE" setup.cake "$@")
+(exec "$CAKE_EXE" setup.cake "$@")
