@@ -17,17 +17,15 @@ skip_commits:
 image:
 - Visual Studio 2017
 - Ubuntu
+environment:
+  APPVEYOR_YML_DISABLE_PS_LINUX: true
 cache: tools -> setup.cake,.appveyor.yml,build.config
 install:
 - cmd: cinst python3 -n
 - cmd: cinst transifex-client
 - sh: sudo -H pip install transifex-client
 build_script:
-- pwsh: |
-    if ($isLinux) {
-        .\build.ps1 --configuration=Release --target=AppVeyor-Linux
-    } else {
-        .\build.ps1 --configuration=Release --target=AppVeyor
-    }
+- ps: .\build.ps1 --configuration=Release --target=AppVeyor
+- sh: ./build.sh --configuration=Release --target=AppVeyor-Linux
 test: off
 deploy: off
