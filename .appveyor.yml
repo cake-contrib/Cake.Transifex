@@ -2,8 +2,12 @@ version: '{build}'
 pull_requests:
   do_not_increment_build_number: true
 branches:
-  except:
-  - ci/travis
+  # Whitelist
+  only:
+    - develop
+    - master
+    - /release/.*/
+    - /hotfix/.*/
 skip_commits:
   message: /Merge tag.*into develop/
   files:

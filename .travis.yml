@@ -6,6 +6,15 @@ os:
 mono: latest
 dotnet: 2.1.603
 
+branches:
+  # Whitelist
+  only:
+    - develop
+    - master
+    - /release/.*/
+    - /hotfix/.*/
+    - ci/appveyor
+
 cache:
   directories:
     - tools
