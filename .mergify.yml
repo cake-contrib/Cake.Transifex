@@ -1,10 +1,24 @@
 pull_request_rules:
-  - name: Add docs labes for documentation change
+  - name: Add Documentation label for documentation change
     conditions:
       - "files~=^docs/.*"
     actions:
       label:
         add: ["Documentation"]
+  - name: Add Breaking change label for changes by dependabot in project file
+    conditions:
+      - author=dependabot-bot
+      - files=src/Cake.Transifex/Cake.Transifex.csproj
+    actions:
+      label:
+        add: ["Breaking change"] # We add the breaking change label, as this means Cake.Core was updated
+  - name: Add Build label for changes by dependabot in unit test project file
+    conditions:
+      - author=dependabot-bot
+      - files=src/Cake.Transifex.Tests/Cake.Transifex.Tests.csproj
+    actions:
+      label:
+        add: ["Build"]
   - name: Merge PR when ci passes and 1 approved review
     conditions:
       - "#approved-reviews-by>=1"
