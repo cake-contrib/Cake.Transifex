@@ -13,6 +13,13 @@ indent_size = 2
 [*.md]
 trim_trailing_whitespace = false
 
+[*.ps1]
+charset = utf-8-bom
+end_of_line = crlf
+
+[*.sh]
+end_of_line = lf
+
 [*.cs]
 dotnet_sort_system_directorives_first = true:warning
 dotnet_style_qualification_for_fields = true:suggestion
