@@ -75,4 +75,4 @@ fi
 ###########################################################################
 
 # Start Cake
-(exec "$CAKE_EXE" setup.cake "$@")
+(exec "$CAKE_EXE" recipe.cake --bootstrap) && (exec "$CAKE_EXE" recipe.cake "$@")
