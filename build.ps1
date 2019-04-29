@@ -1,4 +1,4 @@
-$SCRIPT_DIR = Split-Path -Parent $MyInvocation.MyCommand.Definition
+﻿$SCRIPT_DIR = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $TOOLS_DIR="$SCRIPT_DIR/tools"
 if ($IsMacOS -or $IsLinux) {
     $CAKE_EXE="$TOOLS_DIR/dotnet-cake"
@@ -19,7 +19,7 @@ foreach ($line in Get-Content "$SCRIPT_DIR/build.config" -Encoding utf8) {
     }
 }
 
-if ([string]::IsNullOrWhiteSpace($CAKE_VERSION) -or [string]::IsNullOrEmpty($DOTNET_VERSION)) {
+if ([string]::IsNullOrWhiteSpace($CAKE_VERSION) -or [string]::IsNullOrEmpty($DOTNET_VERSION)) {
     "An errer occured while parsing Cake / .NET Core SDK version."
     exit 1
 }
