@@ -7,14 +7,14 @@ pull_request_rules:
         add: ["Documentation"]
   - name: Add Breaking change label for changes by dependabot in project file
     conditions:
-      - author=dependabot-bot
+      - author=dependabot-preview-bot
       - files=src/Cake.Transifex/Cake.Transifex.csproj
     actions:
       label:
         add: ["Breaking change"] # We add the breaking change label, as this means Cake.Core was updated
   - name: Add Build label for changes by dependabot in unit test project file
     conditions:
-      - author=dependabot-bot
+      - author=dependabot-preview-bot
       - files=src/Cake.Transifex.Tests/Cake.Transifex.Tests.csproj
     actions:
       label:
