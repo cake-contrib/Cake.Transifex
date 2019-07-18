@@ -36,7 +36,7 @@ To install the transifex client, install python, then run `pip install transifex
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="0.34.1" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Exceptions.Designer.cs">
