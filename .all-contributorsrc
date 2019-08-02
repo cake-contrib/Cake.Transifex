@@ -69,6 +69,11 @@
       "symbol": "🤔",
       "description": "Ideas, Planning, & Feedback",
       "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/issues?q=author%3A<%= contributor.login %>"
+    },
+    "review": {
+      "symbol": "👀",
+      "description": "Reviewed Pull Requests",
+      "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/pulls?q=revieweb-by%3A<% contributor.login %>"
     }
   }
 }
