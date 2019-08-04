@@ -1,5 +1,5 @@
 # Cake.Transifex
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 
 [![license](https://img.shields.io/github/license/cake-contrib/Cake.Transifex.svg)](https://github.com/cake-contrib/Cake.Transifex/blob/master/LICENSE)
 [![Open Source Helpers](https://www.codetriage.com/wormiecorp/cake.transifex/badges/users.svg)](https://www.codetriage.com/wormiecorp/cake.transifex)
@@ -79,17 +79,20 @@ Open up the terminal and call `sh build.sh`, this should build the projects, run
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
     <td align="center"><a href="https://github.com/AdmiringWorm"><img src="https://avatars3.githubusercontent.com/u/1474648?v=4" width="100px;" alt="Kim J. Nordmo"/><br /><sub><b>Kim J. Nordmo</b></sub></a><br /><a href="#maintenance-AdmiringWorm" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="http://www.gep13.co.uk/blog"><img src="https://avatars3.githubusercontent.com/u/1271146?v=4" width="100px;" alt="Gary Ewan Park"/><br /><sub><b>Gary Ewan Park</b></sub></a><br /><a href="#question-gep13" title="Answering Questions">💬</a> <a href="https://github.com/cake-contrib/Cake.Transifex/issues?q=author%3Agep13" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-gep13" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/cake-contrib/Cake.Transifex/commits?author=gep13" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.gep13.co.uk/blog"><img src="https://avatars3.githubusercontent.com/u/1271146?v=4" width="100px;" alt="Gary Ewan Park"/><br /><sub><b>Gary Ewan Park</b></sub></a><br /><a href="#question-gep13" title="Answering Questions">💬</a> <a href="https://github.com/cake-contrib/Cake.Transifex/issues?q=author%3Agep13" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/cake-contrib/Cake.Transifex/pulls?q=reviewed-by%3Agep13" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/cake-contrib/Cake.Transifex/commits?author=gep13" title="Documentation">📖</a></td>
     <td align="center"><a href="https://www.codetriage.com"><img src="https://avatars0.githubusercontent.com/u/35302948?v=4" width="100px;" alt="README Bot"/><br /><sub><b>README Bot</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/commits?author=codetriage-readme-bot" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Jericho"><img src="https://avatars0.githubusercontent.com/u/112710?v=4" width="100px;" alt="jericho"/><br /><sub><b>jericho</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/issues?q=author%3AJericho" title="Ideas, Planning, & Feedback">🤔</a> <a href="#question-Jericho" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://twitter.com/mholo65"><img src="https://avatars1.githubusercontent.com/u/7863439?v=4" width="100px;" alt="Martin Björkström"/><br /><sub><b>Martin Björkström</b></sub></a><br /><a href="#question-mholo65" title="Answering Questions">💬</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

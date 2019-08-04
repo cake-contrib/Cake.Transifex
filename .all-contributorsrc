@@ -74,7 +74,7 @@
     "review": {
       "symbol": "👀",
       "description": "Reviewed Pull Requests",
-      "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/pulls?q=revieweb-by%3A<% contributor.login %>"
+      "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/pulls?q=reviewed-by%3A<%= contributor.login %>"
     }
   }
 }
