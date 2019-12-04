@@ -24,6 +24,7 @@ install:
 - cmd: cinst python3 -n
 - cmd: cinst transifex-client
 - sh: sudo -H pip install transifex-client
+- sh: sudo apt-get update && sudo apt-get install -y libgit2-dev
 build_script:
 - ps: .\build.ps1 --configuration=Release --target=AppVeyor
 - sh: ./build.sh --configuration=Release --target=AppVeyor-Linux
