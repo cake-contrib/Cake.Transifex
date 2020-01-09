@@ -1,31 +1,28 @@
 pull_request_rules:
-  - name: Add Documentation label for documentation change
+  - name: Add Documentation label for documentation changes, but not in source
     conditions:
-      - "files~=^docs/.*"
+    - "files~=^(docs/.*|README.md|CODE_OF_CONDUCT.md|CONTRIBUTING.md)$"
+    - "-files~=^src/Cake.Transifex/.*$"
     actions:
-      label:
+    label:
         add: ["Documentation"]
-  - name: Add Breaking change label for changes by dependabot in project file
+  - name: Add build label when no change in source, and not in documentation
     conditions:
-      - author=dependabot-preview-bot
-      - files=src/Cake.Transifex/Cake.Transifex.csproj
+    - "-files~=^(docs/.*|README.md|CODE_OF_CONDUCT.md|CONTRIBUTING.md)$"
+    - "-files~=^src/Cake.Transifex/.*$"
+    - "-title~=Cake.Core"
     actions:
-      label:
-        add: ["Breaking change"] # We add the breaking change label, as this means Cake.Core was updated
-  - name: Add Build label for changes by dependabot in unit test project file
-    conditions:
-      - author=dependabot-preview-bot
-      - files=src/Cake.Transifex.Tests/Cake.Transifex.Tests.csproj
-    actions:
-      label:
+    label:
         add: ["Build"]
-  - name: Merge PR when ci passes and 1 approved review
+  - name: "Add Breaking change when Cake.Core is mentioned in title"
     conditions:
-      - "#approved-reviews-by>=1"
-      - status-success=continuous-integration/travis-ci/pr
-      - status-success=continuous-integration/appveyor/pr
+    - "title~=Cake.Core"
     actions:
-      delete_head_branch: {}
-      merge:
-        strict: smart
-        strict_method: rebase
+    label:
+        add: ["Breaking Change"]
+  - name: thank user and refer them to add themself as contributor
+    conditions:
+    - merged
+    actions:
+    comment:
+        message: "Thank you for your contribution, if you haven't already then feel free to add yourself as a contributors through the all-contributors bot. See https://allcontributors.org/docs/en/bot/usage for more information."
