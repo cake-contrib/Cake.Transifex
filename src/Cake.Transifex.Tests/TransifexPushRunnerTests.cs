@@ -1,4 +1,4 @@
-﻿namespace Cake.Transifex.Tests
+namespace Cake.Transifex.Tests
 {
     using Shouldly;
     using Xunit;
@@ -8,7 +8,9 @@
         private readonly TransifexPushFixture fixture;
 
         public TransifexPushRunnerTests()
-            => fixture = new TransifexPushFixture();
+        {
+            fixture = new TransifexPushFixture();
+        }
 
         [Theory]
         [InlineData(null)]

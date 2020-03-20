@@ -9,7 +9,9 @@ namespace Cake.Transifex.Tests
         private readonly TransifexInitFixture fixture;
 
         public TransifexInitRunnerTests()
-            => this.fixture = new TransifexInitFixture();
+        {
+            this.fixture = new TransifexInitFixture();
+        }
 
         [Theory]
         [InlineData(null)]

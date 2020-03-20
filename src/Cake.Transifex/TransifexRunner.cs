@@ -50,7 +50,7 @@ namespace Cake.Transifex
 
         public ITransifexRunnerCommands Status(string resources)
         {
-            var settings = new TransifexStatusSettings()
+            var settings = new TransifexStatusSettings
             {
                 Resources = resources
             };
