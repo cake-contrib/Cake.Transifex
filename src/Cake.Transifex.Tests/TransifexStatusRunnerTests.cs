@@ -32,7 +32,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("status \"--resources=helloworld*\"");
+            result.Args.ShouldBe("status --resources \"helloworld*\"");
         }
 
         [Fact]

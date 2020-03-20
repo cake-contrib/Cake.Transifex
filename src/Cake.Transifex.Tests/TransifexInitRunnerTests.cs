@@ -71,7 +71,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe($"init --host www.transifex.com --user {userName} --pass \"{password}\"");
+            result.Args.ShouldBe($"init --host www.transifex.com --user {userName} --pass {password}");
         }
 
         [Theory]

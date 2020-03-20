@@ -75,7 +75,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("pull \"--language=nb_NO*\"");
+            result.Args.ShouldBe("pull --language \"nb_NO*\"");
         }
 
         [Fact]
@@ -85,7 +85,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("pull --minimum-perc=50");
+            result.Args.ShouldBe("pull --minimum-perc 50");
         }
 
         [Theory]
@@ -102,7 +102,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe($"pull --mode={expected}");
+            result.Args.ShouldBe($"pull --mode {expected}");
         }
 
         [Fact]
@@ -122,7 +122,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("pull \"--resources=helloworld*\"");
+            result.Args.ShouldBe("pull --resources \"helloworld*\"");
         }
 
         [Fact]

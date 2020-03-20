@@ -55,7 +55,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("push \"--language=nb_NO*\"");
+            result.Args.ShouldBe("push --language \"nb_NO*\"");
         }
 
         [Fact]
@@ -75,7 +75,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("push \"--resources=helloworld*\"");
+            result.Args.ShouldBe("push --resources \"helloworld*\"");
         }
 
         [Fact]

@@ -1,8 +1,8 @@
 namespace Cake.Transifex
 {
     using System;
-    using Cake.Core;
-    using Cake.Core.IO;
+    using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Defines the properties that can be used when calling the init command on the transifex
@@ -12,12 +12,17 @@ namespace Cake.Transifex
     /// <category>Initialization</category>
     public sealed class TransifexInitSettings : TransifexRunnerSettings
     {
+        private const string UserNameKey = "!--user";
+        private const string PasswordKey = "!--pass";
+        private const string TokenKey = "!--token";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TransifexInitSettings"/> class.
         /// </summary>
         public TransifexInitSettings()
             : base("init")
         {
+            Host = "www.transifex.com";
         }
 
         /// <summary>
@@ -27,7 +32,11 @@ namespace Cake.Transifex
         /// Defaults to <c>www.transifex.com</c> to keep the user from
         /// being prompted to specify a host when called.
         /// </remarks>
-        public string Host { get; set; } = "www.transifex.com";
+        public string Host
+        {
+            get => GetValue<string>("--host");
+            set => SetValue("--host", value);
+        }
 
         /// <summary>
         /// Gets or sets the password for the user when connecting to transifex.
@@ -37,7 +46,11 @@ namespace Cake.Transifex
         /// </remarks>
         /// <seealso cref="Username" />
         /// <seealso cref="Token" />
-        public string Password { get; set; }
+        public string Password
+        {
+            get => GetValue<string>(PasswordKey);
+            set => SetValue(PasswordKey, value);
+        }
 
         /// <summary>
         /// Gets or sets the token to use when connecting to transifex.
@@ -47,7 +60,11 @@ namespace Cake.Transifex
         /// </remarks>
         /// <seealso cref="Username" />
         /// <seealso cref="Password" />
-        public string Token { get; set; }
+        public string Token
+        {
+            get => GetValue<string>(TokenKey);
+            set => SetValue(TokenKey, value);
+        }
 
         /// <summary>
         /// Gets or sets the username for the user when connecting to transifex.
@@ -57,34 +74,29 @@ namespace Cake.Transifex
         /// </remarks>
         /// <seealso cref="Password" />
         /// <seealso cref="Token" />
-        public string Username { get; set; }
-
-        /// <inheritdoc />
-        /// <exception cref="ArgumentException">
-        /// Thrown when both the <see cref="Token" /> property and either
-        /// the <see cref="Username" /> or <see cref="Password" /> properties have been
-        /// specified.
-        /// </exception>
-        protected override void EvaluateCore(ProcessArgumentBuilder args)
+        public string Username
         {
-            if (!string.IsNullOrEmpty(Token) && (!string.IsNullOrEmpty(Username) || !string.IsNullOrEmpty(Password)))
+            get => GetValue<string>(UserNameKey);
+            set => SetValue(UserNameKey, value);
+        }
+
+        internal override IDictionary<string, object> GetAllArguments()
+        {
+            var arguments = base.GetAllArguments();
+            if (arguments.ContainsKey(TokenKey) && (arguments.ContainsKey(UserNameKey) || arguments.ContainsKey(PasswordKey)))
             {
                 throw new ArgumentException(Exceptions.TokenAndUsernameException);
             }
 
-            if (!string.IsNullOrEmpty(Host))
-            {
-                args.Append("--host").Append(Host);
-            }
+            var hasUserNameAndPassword = arguments.ContainsKey(UserNameKey) && arguments.ContainsKey(PasswordKey);
 
-            if (!string.IsNullOrEmpty(Token))
+            if (!hasUserNameAndPassword)
             {
-                args.Append("--token").AppendSecret(Token);
+                return arguments.Where(x => x.Key != UserNameKey && x.Key != PasswordKey).ToDictionary(s => s.Key, s => s.Value);
             }
-            else if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
+            else
             {
-                args.Append("--user").Append(Username)
-                    .Append("--pass").AppendQuotedSecret(Password);
+                return arguments;
             }
         }
     }
