@@ -118,9 +118,9 @@ if ($CAKE_INSTALLED_VERSION -eq $CAKE_VERSION) {
     }
 }
 
-& "$CAKE_EXE" setup.cake --bootstrap
+& "$CAKE_EXE" "$SCRIPT_DIR/setup.cake" --bootstrap
 if ($LASTEXITCODE -eq 0) {
-    & "$CAKE_EXE" setup.cake $args
+    & "$CAKE_EXE" "$SCRIPT_DIR/setup.cake" $args
 }
 
 exit $LASTEXITCODE
