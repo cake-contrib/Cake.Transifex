@@ -15,8 +15,8 @@
 *.resx text whitespace=-trailing-space
 *.Designer.cs diff=csharp whitespace=-trailing-space
 
-*.ps1 text eol=CRLF
-*.sh  text eol=LF
+*.ps1 text eol=crlf
+*.sh  text eol=lf
 
 ###############################################################################
 # Set the merge driver for project and solution files

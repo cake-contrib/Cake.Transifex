@@ -5,21 +5,21 @@ if ($IsMacOS -or $IsLinux) {
 } else {
     $CAKE_EXE="$TOOLS_DIR/dotnet-cake.exe"
 }
-$CAKE_PATH="$TOOLS_DIR/.store/cake.tool/$CAKE_VERSION"
+
 $DOTNET_EXE="$(Get-Command dotnet -ea 0 | select -Expand Source)"
 $INSTALL_NETCORE=$false
-[string]$DOTNET_VERSION=""
+[string[]]$DOTNET_SDKS=""
 [string]$CAKE_VERSION=""
 foreach ($line in Get-Content "$SCRIPT_DIR/build.config" -Encoding utf8) {
     if ($line -like "CAKE_VERSION=*") {
         $CAKE_VERSION=$line.Substring($line.IndexOf('=') + 1)
     }
-    elseif ($line -like "DOTNET_VERSION=*") {
-        $DOTNET_VERSION=$line.Substring($line.IndexOf('=') + 1)
+    elseif ($line -like "DOTNET_SDKS=*") {
+        $DOTNET_SDKS=$line.Substring($line.IndexOf('=') + 1) -split ','
     }
 }
 
-if ([string]::IsNullOrWhiteSpace($CAKE_VERSION) -or [string]::IsNullOrEmpty($DOTNET_VERSION)) {
+if ([string]::IsNullOrWhiteSpace($CAKE_VERSION) -or !$DOTNET_SDKS) {
     "An errer occured while parsing Cake / .NET Core SDK version."
     exit 1
 }
@@ -27,10 +27,14 @@ if ([string]::IsNullOrWhiteSpace($CAKE_VERSION) -or [string]::IsNullOrEmpty($DOT
 if ([string]::IsNullOrWhiteSpace($DOTNET_EXE)) {
     $INSTALL_NETCORE=$true
 }
-elseif ("$DOTNET_VERSION" -ne "ANY") {
-    $DOTNET_INSTALLED_VERSION= . $DOTNET_EXE --version
-    if ("$DOTNET_VERSION" -ne "$DOTNET_INSTALLED_VERSION") {
-        $INSTALL_NETCORE=$true
+elseif (($DOTNET_SDKS | ? { $_ -ne 'ANY' })) {
+    foreach ($sdk in $DOTNET_SDKS) {
+        $re = "^\s*$([regex]::Escape($sdk))\s+"
+        $DOTNET_INSTALLED_VERSION = . $DOTNET_EXE --list-sdks 2>&1 | ? { $_ -match $re }
+        if (!$DOTNET_INSTALLED_VERSION) {
+            $INSTALL_NETCORE = $true
+            break
+        }
     }
 }
 
@@ -39,48 +43,48 @@ if ($true -eq $INSTALL_NETCORE) {
         New-Item -Path "$SCRIPT_DIR/.dotnet" -ItemType Directory -Force | Out-Null
     }
 
-    $arguments = @()
     $ScriptPath = ""
     $LaunchUrl = ""
     $ScriptUrl = ""
     $PathSep = ';'
+
     if ($IsMacOS -or $IsLinux) {
         $ScriptPath = "$SCRIPT_DIR/.dotnet/dotnet-install.sh"
         $ScriptUrl = "https://dot.net/v1/dotnet-install.sh"
         $LaunchUrl = "$(Get-Command bash)"
         $PathSep = ":"
-        $arguments = @(
-            $ScriptPath
-            "--install-dir"
-            "$SCRIPT_DIR/.dotnet"
-            "--no-path"
-        )
-        if ($DOTNET_VERSION -ne "ANY") {
-            $arguments += @(
-                "--version"
-                "$DOTNET_VERSION"
-            )
-        }
     } else {
         $ScriptPath = "$SCRIPT_DIR/.dotnet/dotnet-install.ps1"
         $ScriptUrl = "https://dot.net/v1/dotnet-install.ps1"
         $LaunchUrl = "$ScriptPath"
-        $arguments = @(
-            "-InstallDir"
-            "$SCRIPT_DIR/.dotnet"
-            "-NoPath"
-        )
-        if ($DOTNET_VERSION -ne "ANY") {
-            $arguments += @(
-                "-Version"
-                "$DOTNET_VERSION"
-            )
-        }
     }
-
     (New-Object System.Net.WebClient).DownloadFile($ScriptUrl, $ScriptPath)
 
-    & $LaunchUrl @arguments
+    foreach ($DOTNET_VERSION in $DOTNET_SDKS) {
+        $arguments = @()
+        if ($IsMacOS -or $IsLinux) {
+            $arguments = @(
+                $ScriptPath
+                "--install-dir"
+                "$SCRIPT_DIR/.dotnet"
+                "--no-path"
+            )
+            if ($DOTNET_VERSION -ne "ANY") {
+                $arguments += @(
+                    "--version"
+                    "$DOTNET_VERSION"
+                )
+            }
+        } else {
+            $arguments = @{
+                InstallDir = "$SCRIPT_DIR/.dotnet"
+                NoPath = $true
+                Version = "$DOTNET_VERSION"
+            }
+        }
+
+        & $LaunchUrl @arguments
+    }
 
     $env:PATH = "$SCRIPT_DIR/.dotnet${PathSep}${env:PATH}"
     $env:DOTNET_ROOT = "$SCRIPT_DIR/.dotnet"
