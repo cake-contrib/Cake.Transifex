@@ -1,4 +1,4 @@
-#load "nuget:https://f.feedz.io/wormiecorp/packages/nuget/index.json?package=Cake.Recipe&version=2.0.0-alpha0036&prerelease"
+#load "nuget:https://f.feedz.io/wormiecorp/packages/nuget/index.json?package=Cake.Recipe&version=2.0.0-alpha0536&prerelease"
 #load "./.build/*.cake"
 
 Environment.SetVariableNames();
