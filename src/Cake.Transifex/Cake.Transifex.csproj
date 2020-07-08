@@ -1,46 +1,42 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <!-- Assembly information -->
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <NeutralLanguage>en-GB</NeutralLanguage>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
-    <LangVersion>7</LangVersion>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Authors>Kim J. Nordmo</Authors>
-    <Company />
+    <AssemblyTitle>Transifex Cake addin</AssemblyTitle>
+    <CodeAnalysisRuleSet>Cake.Transifex.ruleset</CodeAnalysisRuleSet>
+    <Company>Cake Contributors</Company>
+    <Copyright>Copyright 2017-$([System.DateTime]::Now.Year) - Kim J. Nordmo</Copyright>
     <Description>
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
 To install the transifex client, install python, then run `pip install transifex-client`.
     </Description>
-    <Copyright>Copyright 2017-$([System.DateTime]::Now.Year) - Kim J. Nordmo</Copyright>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <!-- Package information -->
+  <PropertyGroup>
+    <Authors>Kim J. Nordmo;$(Company)</Authors>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics@49c3b71def749b86416d773f1ead0c0da2d590ea/png/cake-contrib-medium.png</PackageIconUrl>
-    <RepositoryUrl>https://github.com/cake-contrib/Cake.Transifex.git</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <PackageProjectUrl>https://cake-contrib.github.io/Cake.Transifex/</PackageProjectUrl>
+    <PackageSourceProjectUrl>https://github.com/cake-contrib/Cake.Transifex</PackageSourceProjectUrl>
+    <PackageReleaseNotes Condition=" '$(Version)' == '$(FileVersion)'">All release notes for $(AssemblyName) can be found on our GitHub release page - $(PackageSourceProjectUrl)/releases/tag/$(Version)</PackageReleaseNotes>
+    <PackageReleaseNotes Condition=" '$(Version)' != '$(FileVersion)'">Development releases do not contain release notes, please see the closed issues in these cases - $(PackageSourceProjectUrl)/issues?q=milestone:$(FileVersion)+is:closed</PackageReleaseNotes>
+    <PackageTags>Cake;Cake Script;Build;Transifex;Localization</PackageTags>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>cake build transifex localization</PackageTags>
-    <IncludeSymbols>False</IncludeSymbols>
-    <PackageReleaseNotes Condition=" '$(Version)' == '$(FileVersion)'">$(RepositoryUrl)/releases/tag/$(Version)</PackageReleaseNotes>
-    <PackageReleaseNotes Condition=" '$(Version)' != '$(FileVersion)'">$(RepositoryUrl)/issues?q=milestone:$(FileVersion)+is:closed</PackageReleaseNotes>
+    <RepositoryUrl>$(PackageSourceProjectUrl).git</RepositoryUrl>
+    <Title>$(AssemblyTitle)</Title>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
-    <DebugSymbols>True</DebugSymbols>
-    <CodeAnalysisRuleSet>Cake.Transifex.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <DebugSymbols>True</DebugSymbols>
-    <CodeAnalysisRuleSet>Cake.Transifex.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
+  <!-- Package References only for this project -->
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Exceptions.Designer.cs">
       <DesignTime>True</DesignTime>
