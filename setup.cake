@@ -1,7 +1,9 @@
-#load "nuget:https://f.feedz.io/wormiecorp/packages/nuget/index.json?package=Cake.Recipe&version=2.0.0-alpha0536&prerelease"
+#load "nuget:https://f.feedz.io/wormiecorp/packages/nuget?package=Cake.Recipe&version=2.0.0-unstable0247&prerelease"
 #load "./.build/*.cake"
 
-Environment.SetVariableNames();
+Environment.SetVariableNames(
+    coverallsRepoTokenVariable: "_WE_DO_NOT_WANT_COVERALLS_TO_RUN"
+);
 
 BuildParameters.SetParameters(
     context: Context,
@@ -12,14 +14,10 @@ BuildParameters.SetParameters(
     repositoryName: "Cake.Transifex",
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
-    shouldBuildNugetSourcePackage: false,
-    shouldDeployGraphDocumentation: false,
     solutionFilePath: "./Cake.Transifex.sln",
     testFilePattern: "/**/*.Tests.csproj",
     shouldRunCodecov: true,
-    shouldExecuteGitLink: false,
-    shouldRunGitVersion: true,
-    shouldRunDupFinder: false
+    shouldRunGitVersion: true
 );
 
 ToolSettings.SetToolSettings(
@@ -35,20 +33,12 @@ ToolSettings.SetToolSettings(
     testCoverageExcludeByFile: "*Designer.cs;*.g.cs;*.g.i.cs"
 );
 
-if (BuildParameters.IsRunningOnAppVeyor &&
-    BuildParameters.IsMainRepository && BuildParameters.IsMasterBranch && !BuildParameters.IsTagged) {
-    BuildParameters.Tasks.AppVeyorTask.IsDependentOn("Create-Release-Notes");
+if (BuildParameters.IsRunningOnAppVeyor && EnvironmentVariable("APPVEYOR_BUILD_WORKER_IMAGE") == "Visual Studio 2017" &&
+    BuildParameters.IsMainRepository && BuildParameters.BranchType == BranchType.Master && !BuildParameters.IsTagged) {
+    BuildParameters.Tasks.ContinuousIntegrationTask.IsDependentOn("Create-Release-Notes");
 }
 
-BuildParameters.Tasks.TransifexPushSourceResource.WithCriteria(() => BuildParameters.IsRunningOnWindows);
-
-Task("Linux")
-    .IsDependentOn("Package")
-    .IsDependentOn("Upload-Coverage-Report");
-
-Task("Appveyor-Linux")
-    .IsDependentOn("Linux")
-    .IsDependentOn("Upload-AppVeyor-Artifacts");
+BuildParameters.Tasks.TransifexPushSourceResource.WithCriteria(() => EnvironmentVariable("APPVEYOR_BUILD_WORKER_IMAGE") == "Visual Studio 2017");
 
 BuildParameters.PrintParameters(Context);
 

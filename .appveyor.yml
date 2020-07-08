@@ -1,32 +1,45 @@
-version: '{build}'
-pull_requests:
-  do_not_increment_build_number: true
-branches:
-  # Whitelist
-  only:
-    - develop
-    - master
-    - /release/.*/
-    - /hotfix/.*/
-skip_commits:
-  message: /Merge tag.*into develop/
-  files:
-    - '*.md'
-    - LICENSE
-    - .travis.yml
 image:
-- Visual Studio 2017
-- Ubuntu
+  #    - macos
+  - Ubuntu
+  - Visual Studio 2017
+matrix:
+  fast_finish: true
 environment:
   APPVEYOR_YML_DISABLE_PS_LINUX: true
-cache: tools -> setup.cake,.appveyor.yml,build.config
+branches:
+  except:
+    - ci/travis
+    - /dependabot\/.*/
+skip_commits:
+  files:
+    - "*.md"
+    - "LICENSE"
+    - ".travis.yml"
+
+for:
+-
+  matrix:
+    only:
+      - image: Ubuntu
+  skip_tags: true
+  install:
+    - git submodule update --init
+    - sudo -H pip install transifex-client
+    - sudo apt-get update || echo "Update failed, ignoring..."
+    - sudo apt-get install -y libgit2-dev
+
 install:
-- cmd: cinst python3 -n
-- cmd: cinst transifex-client
-- sh: sudo -H pip install transifex-client
-- sh: sudo apt-get update && sudo apt-get install -y libgit2-dev
-build_script:
-- ps: .\build.ps1 --configuration=Release --target=AppVeyor
-- sh: ./build.sh --configuration=Release --target=AppVeyor-Linux
+  - git submodule update --init
+  - cmd: |
+      cinst python3 -n
+      cinst transifex-client
+
+build: off
 test: off
-deploy: off
+
+build_script:
+  - pwsh: ./build.ps1 --target=ContinuousIntegration --verbosity=Diagnostic
+
+cache:
+  - "tools -> build.config,setup.cake,.build/sonarcloud.cake"
+  - ".dotnet -> build.config"

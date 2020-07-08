@@ -20,6 +20,9 @@ end_of_line = crlf
 [*.sh]
 end_of_line = lf
 
+[*.{yaml,yml}]
+indent_size = 2
+
 [*.cs]
 dotnet_sort_system_directorives_first = true:warning
 dotnet_style_qualification_for_fields = true:suggestion
