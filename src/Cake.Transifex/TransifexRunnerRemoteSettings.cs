@@ -27,6 +27,20 @@ namespace Cake.Transifex
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to require user input when forcing a push/pull.
+        /// </summary>
+        /// <value><see langword="true"/> to don't require user input; otherwise, <see langword="false"/>.</value>
+        /// <remarks>
+        /// <note>Argument supported for pulling translations supported since transifex client v0.13.3</note>
+        /// <note>Supported since Cake.Transifex addin v0.9.0</note>
+        /// </remarks>
+        public bool NoInteractive
+        {
+            get => GetValue<bool>("--no-interactive");
+            set => SetValue("--no-interactive", value);
+        }
+
+        /// <summary>
         /// The languages you want to push/pull. (defaults to all)
         /// </summary>
         /// <remarks>Supports unix style wildcards.</remarks>

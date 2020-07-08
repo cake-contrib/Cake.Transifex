@@ -164,5 +164,15 @@ namespace Cake.Transifex.Tests
 
             result.Args.ShouldBe("pull --xliff");
         }
+
+        [Fact]
+        public void Evaluate_SetsNoInteractiveWhenTrue()
+        {
+            this.fixture.Settings = new TransifexPullSettings { NoInteractive = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("pull --no-interactive");
+        }
     }
 }

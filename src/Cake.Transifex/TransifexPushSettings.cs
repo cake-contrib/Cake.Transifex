@@ -16,16 +16,6 @@ namespace Cake.Transifex
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to require user input when forcing a push.
-        /// </summary>
-        /// <value><see langword="true"/> to don't require user input; otherwise, <see langword="false"/>.</value>
-        public bool NoInteractive
-        {
-            get => GetValue<bool>("--no-interactive");
-            set => SetValue("--no-interactive", value);
-        }
-
-        /// <summary>
         /// Gets or sets a value indicating whether to push the source file to the remote server.
         /// </summary>
         /// <value><see langword="true"/> to push the source file; otherwise, <see langword="false"/>.</value>
