@@ -21,6 +21,18 @@ for:
   matrix:
     only:
       - image: Ubuntu
+  environment:
+    AZURE_SOURCE:
+    GITHUB_PASSWORD:
+    GITTER_TOKEN:
+    GPR_SOURCE:
+    MYGET_API_KEY:
+    NUGET_API_KEY:
+    SLACK_TOKEN:
+    TWITTER_ACCESS_TOKEN:
+    TWITTER_CONSUMER_KEY:
+    WYAM_ACCESS_TOKEN:
+
   skip_tags: true
   install:
     - git submodule update --init
