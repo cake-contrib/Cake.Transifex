@@ -51,6 +51,32 @@ namespace Cake.Transifex
         }
 
         /// <summary>
+        /// Gets or sets a value indicating wether translations/sources should be pushed/pulled in parallel.
+        /// </summary>
+        /// <value><see langword="true"/> to pull/push files in parallel; otherwise <see langword="false"/>.</value>
+        /// <remarks>
+        /// <list type="bullet">
+        ///   <item>
+        ///     <term>WARNING</term>
+        ///     <description>Be carefult with enabling parallel downloads/uploads. You may be Rate Limited</description>
+        ///   </item>
+        ///   <item>
+        ///      <term>Required transifex client</term>
+        ///      <description>v0.13.2</description>
+        ///   </item>
+        ///   <item>
+        ///      <term>Required Cake.Transifex version</term>
+        ///      <description>v0.9.0</description>
+        ///   </item>
+        /// </list>
+        /// </remarks>
+        public bool Parallel
+        {
+            get => GetValue<bool>("--parallel");
+            set => SetValue("--parallel", value);
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to continue with the command even if an error ocurs.
         /// </summary>
         public bool SkipErrors

@@ -174,5 +174,25 @@ namespace Cake.Transifex.Tests
 
             result.Args.ShouldBe("pull --no-interactive");
         }
+
+        [Fact]
+        public void Evaluate_SetsParallelWhenTrue()
+        {
+            this.fixture.Settings = new TransifexPullSettings { Parallel = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("pull --parallel");
+        }
+
+        [Fact]
+        public void Evaluate_DoesNotSetParallelWhenFalse()
+        {
+            this.fixture.Settings = new TransifexPullSettings { Parallel = false };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("pull");
+        }
     }
 }

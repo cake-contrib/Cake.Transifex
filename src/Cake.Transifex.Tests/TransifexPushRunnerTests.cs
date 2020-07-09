@@ -127,5 +127,25 @@ namespace Cake.Transifex.Tests
 
             result.Args.ShouldBe("push --xliff");
         }
+
+        [Fact]
+        public void Evaluate_SetsParallelWhenTrue()
+        {
+            this.fixture.Settings = new TransifexPushSettings { Parallel = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("push --parallel");
+        }
+
+        [Fact]
+        public void Evaluate_DoesNotSetParallelWhenFalse()
+        {
+            this.fixture.Settings = new TransifexPushSettings { Parallel = false };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("push");
+        }
     }
 }
