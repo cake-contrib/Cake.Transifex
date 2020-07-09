@@ -54,8 +54,16 @@ namespace Cake.Transifex
         /// </summary>
         /// <value><see langword="true"/> to don't require user input; otherwise, <see langword="false"/>.</value>
         /// <remarks>
-        /// <note>Argument supported for pulling translations supported since transifex client v0.13.3</note>
-        /// <note>Supported since Cake.Transifex addin v0.9.0</note>
+        /// <list type="bullet">
+        ///   <item>
+        ///      <term>Required transifex client</term>
+        ///      <description>v0.13.3</description>
+        ///   </item>
+        ///   <item>
+        ///      <term>Required Cake.Transifex version</term>
+        ///      <description>v0.9.0</description>
+        ///   </item>
+        /// </list>
         /// </remarks>
         public bool NoInteractive
         {
