@@ -1,4 +1,4 @@
-﻿namespace Cake.Transifex.Tests
+namespace Cake.Transifex.Tests
 {
     using Shouldly;
     using Xunit;
@@ -8,7 +8,9 @@
         private readonly TransifexPullFixture fixture;
 
         public TransifexPullRunnerTests()
-            => fixture = new TransifexPullFixture();
+        {
+            fixture = new TransifexPullFixture();
+        }
 
         [Theory]
         [InlineData(null)]
@@ -73,7 +75,7 @@
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("pull \"--language=nb_NO*\"");
+            result.Args.ShouldBe("pull --language \"nb_NO*\"");
         }
 
         [Fact]
@@ -83,7 +85,7 @@
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("pull --minimum-perc=50");
+            result.Args.ShouldBe("pull --minimum-perc 50");
         }
 
         [Theory]
@@ -100,7 +102,7 @@
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe($"pull --mode={expected}");
+            result.Args.ShouldBe($"pull --mode {expected}");
         }
 
         [Fact]
@@ -120,7 +122,7 @@
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("pull \"--resources=helloworld*\"");
+            result.Args.ShouldBe("pull --resources \"helloworld*\"");
         }
 
         [Fact]
@@ -161,6 +163,69 @@
             var result = this.fixture.Run();
 
             result.Args.ShouldBe("pull --xliff");
+        }
+
+        [Fact]
+        public void Evaluate_SetsNoInteractiveWhenTrue()
+        {
+            this.fixture.Settings = new TransifexPullSettings { NoInteractive = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("pull --no-interactive");
+        }
+
+        [Fact]
+        public void Evaluate_SetsParallelWhenTrue()
+        {
+            this.fixture.Settings = new TransifexPullSettings { Parallel = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("pull --parallel");
+        }
+
+        [Fact]
+        public void Evaluate_DoesNotSetParallelWhenFalse()
+        {
+            this.fixture.Settings = new TransifexPullSettings { Parallel = false };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("pull");
+        }
+
+        [Theory]
+        [InlineData("master")]
+        [InlineData("develop")]
+        [InlineData("feature/branch-argument")]
+        public void Evaluate_SetsBranchArgument(string branch)
+        {
+            this.fixture.Settings = new TransifexPullSettings { Branch = branch };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe($"pull --branch {branch}");
+        }
+
+        [Fact]
+        public void Evaluate_SetsGitTimestampsWhenTrue()
+        {
+            this.fixture.Settings = new TransifexPullSettings { UseGitTimestamps = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("pull --use-git-timestamps");
+        }
+
+        [Fact]
+        public void Evaluate_DoesNotSetGitTimestampsWhenFalse()
+        {
+            this.fixture.Settings = new TransifexPullSettings { UseGitTimestamps = false };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("pull");
         }
     }
 }

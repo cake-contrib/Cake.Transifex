@@ -1,25 +1,38 @@
 create:
-   include-footer: true
-   footer-heading: Where to get it
-   footer-content: You can download this release from [nuget](https://nuget.org/packages/Cake.Transifex/{milestone})
-   footer-includes-milestone: true
-   milestone-replace-text: '{milestone}'
+  include-footer: true
+  footer-heading: Where to get it
+  footer-content: You can download this release from [nuget](https://nuget.org/packages/Cake.Transifex/{milestone})
+  footer-includes-milestone: true
+  milestone-replace-text: "{milestone}"
+  include-sha-section: true
 export:
-   include-created-date-in-title: true
-   created-date-string-format: yyyy-MM-dd
-   perform-regex-removal: true
-   regex-text: '### Where to get it(\r\n)*You can .*\)'
-   multiline-regex: true
+  include-created-date-in-title: true
+  created-date-string-format: yyyy-MM-dd
+  perform-regex-removal: true
+  regex-text: '### Where to get it(\r\n)*You can .*\)'
+  multiline-regex: true
+close:
+  use-issue-comments: true
+  issue-comment: |-
+    :tada: This issue has been resolved in version {milestone} :tada:
+
+    The release can be downloaded from:
+
+    - [GitHub release](https://github.com/{owner}/{repository}/releases/tag/{milestone})
+    - [NuGet.org](https://nuget.org/packages/{repository}/{milestone})
+    - Within Cake script: `#addin "nuget:?package={repository}&version={milestone}"
+
+    Your friendly **[GitReleaseManager](https://github.com/GitTools/GitReleaseManager)** bot :package::rocket:
 issue-labels-include:
- - Breaking Change
- - Bug
- - Feature
- - Improvement
- - Documentation
+  - Breaking Change
+  - Bug
+  - Feature
+  - Improvement
+  - Documentation
 issue-labels-exclude:
- - Internal Refactoring
- - Build
+  - Internal Refactoring
+  - Build
 issue-labels-alias:
- - name: Documentation
-   header: Documentation
-   plural: Documentation
+  - name: Documentation
+    header: Documentation
+    plural: Documentation

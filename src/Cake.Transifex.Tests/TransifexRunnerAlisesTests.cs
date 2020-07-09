@@ -1,4 +1,4 @@
-﻿namespace Cake.Transifex.Tests
+namespace Cake.Transifex.Tests
 {
     using Shouldly;
     using Xunit;
@@ -59,7 +59,7 @@
 
             result.Args.ShouldContain("pull");
             result.Args.ShouldContain("--all");
-            result.Args.ShouldContain("--mode=reviewed");
+            result.Args.ShouldContain("--mode reviewed");
         }
 
         [Fact]
@@ -101,7 +101,7 @@
 
             var result = this._statusFixture.Run();
 
-            result.Args.ShouldBe("status \"--resources=test.resource\"");
+            result.Args.ShouldBe("status --resources test.resource");
         }
     }
 }

@@ -9,7 +9,9 @@ namespace Cake.Transifex.Tests
         private readonly TransifexInitFixture fixture;
 
         public TransifexInitRunnerTests()
-            => this.fixture = new TransifexInitFixture();
+        {
+            this.fixture = new TransifexInitFixture();
+        }
 
         [Theory]
         [InlineData(null)]
@@ -69,7 +71,7 @@ namespace Cake.Transifex.Tests
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe($"init --host www.transifex.com --user {userName} --pass \"{password}\"");
+            result.Args.ShouldBe($"init --host www.transifex.com --user {userName} --pass {password}");
         }
 
         [Theory]

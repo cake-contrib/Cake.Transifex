@@ -26,7 +26,8 @@
       "contributions": [
         "question",
         "ideas",
-        "review"
+        "review",
+        "doc"
       ]
     },
     {
@@ -56,6 +57,15 @@
       "contributions": [
         "question"
       ]
+    },
+    {
+      "login": "x-jokay",
+      "name": "D. Domig",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/18613935?v=4",
+      "profile": "https://github.com/x-jokay",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -69,6 +79,11 @@
       "symbol": "🤔",
       "description": "Ideas, Planning, & Feedback",
       "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/issues?q=author%3A<%= contributor.login %>"
+    },
+    "review": {
+      "symbol": "👀",
+      "description": "Reviewed Pull Requests",
+      "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/pulls?q=reviewed-by%3A<%= contributor.login %>"
     }
   }
 }

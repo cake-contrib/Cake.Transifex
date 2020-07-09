@@ -1,9 +1,10 @@
 namespace Cake.Transifex
 {
-    using System.Collections.Generic;
     using Cake.Core;
     using Cake.Core.IO;
     using Cake.Core.Tooling;
+    using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// The wrapper around the transifex client. This class cannot be inherited.
@@ -50,7 +51,7 @@ namespace Cake.Transifex
 
         public ITransifexRunnerCommands Status(string resources)
         {
-            var settings = new TransifexStatusSettings()
+            var settings = new TransifexStatusSettings
             {
                 Resources = resources
             };
@@ -71,11 +72,70 @@ namespace Cake.Transifex
         protected override string GetToolName()
             => Common.TransifexRunner;
 
+        private static void AddValue(ProcessArgumentBuilder args, string key, string value)
+        {
+            var quote = value.IndexOfAny(new[] { ' ', '*' }) >= 0;
+
+            if (key.StartsWith("!", StringComparison.OrdinalIgnoreCase))
+            {
+                if (quote)
+                {
+                    args.AppendSwitchQuotedSecret(key.TrimStart('!'), value);
+                }
+                else
+                {
+                    args.AppendSwitchSecret(key.TrimStart('!'), value);
+                }
+            }
+            else
+            {
+                if (quote)
+                {
+                    args.AppendSwitchQuoted(key, value);
+                }
+                else
+                {
+                    args.AppendSwitch(key, value);
+                }
+            }
+        }
+
+        private static void AddValue(ProcessArgumentBuilder args, string key, bool value)
+        {
+            if (value)
+            {
+                args.Append(key);
+            }
+        }
+
         private static ProcessArgumentBuilder GetTransifexRunnerArguments(TransifexRunnerSettings settings)
         {
             var args = new ProcessArgumentBuilder();
-            settings.Evaluate(args);
+            args.Append(settings.Command);
+
+            SetArguments(args, settings);
             return args;
+        }
+
+        private static void SetArguments(ProcessArgumentBuilder args, TransifexRunnerSettings settings)
+        {
+            foreach (var argument in settings.GetAllArguments())
+            {
+                switch (argument.Value)
+                {
+                    case bool value:
+                        AddValue(args, argument.Key, value);
+                        break;
+
+                    case TransifexMode mode:
+                        AddValue(args, argument.Key, mode.ToString().ToLowerInvariant());
+                        break;
+
+                    default:
+                        AddValue(args, argument.Key, argument.Value?.ToString());
+                        break;
+                }
+            }
         }
     }
 }

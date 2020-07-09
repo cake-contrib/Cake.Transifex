@@ -1,4 +1,4 @@
-﻿namespace Cake.Transifex.Tests
+namespace Cake.Transifex.Tests
 {
     using Shouldly;
     using Xunit;
@@ -8,7 +8,9 @@
         private readonly TransifexStatusFixture fixture;
 
         public TransifexStatusRunnerTests()
-            => fixture = new TransifexStatusFixture();
+        {
+            fixture = new TransifexStatusFixture();
+        }
 
         [Theory]
         [InlineData(null)]
@@ -30,7 +32,7 @@
 
             var result = this.fixture.Run();
 
-            result.Args.ShouldBe("status \"--resources=helloworld*\"");
+            result.Args.ShouldBe("status --resources \"helloworld*\"");
         }
 
         [Fact]
