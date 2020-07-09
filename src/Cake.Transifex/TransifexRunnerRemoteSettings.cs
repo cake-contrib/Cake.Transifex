@@ -18,6 +18,28 @@ namespace Cake.Transifex
         }
 
         /// <summary>
+        /// Gets or sets the branch to use when pulling/pushing translations.
+        /// Source files and translations pushed/updated on other branches will
+        /// not be pulled.
+        /// </summary>
+        /// <list type="bullet">
+        ///   <item>
+        ///      <term>Required transifex client</term>
+        ///      <description>v0.13.0</description>
+        ///   </item>
+        ///   <item>
+        ///      <term>Required Cake.Transifex version</term>
+        ///      <description>v0.9.0</description>
+        ///   </item>
+        /// </list>
+        /// </remarks>
+        public string Branch
+        {
+            get => GetValue<string>("--branch");
+            set => SetValue("--branch", value);
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to force the command event if the resource exists.
         /// </summary>
         public bool Force

@@ -194,5 +194,18 @@ namespace Cake.Transifex.Tests
 
             result.Args.ShouldBe("pull");
         }
+
+        [Theory]
+        [InlineData("master")]
+        [InlineData("develop")]
+        [InlineData("feature/branch-argument")]
+        public void Evaluate_SetsBranchArgument(string branch)
+        {
+            this.fixture.Settings = new TransifexPullSettings { Branch = branch };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe($"pull --branch {branch}");
+        }
     }
 }
