@@ -22,7 +22,7 @@ foreach ($line in Get-Content "$SCRIPT_DIR/build.config" -Encoding utf8) {
 
 if ([string]::IsNullOrWhiteSpace($CAKE_VERSION) -or !$DOTNET_SDKS) {
     "An errer occured while parsing Cake / .NET Core SDK version."
-    exit 1
+    return 1
 }
 
 if ($IsMacOS -or $IsLinux) {
@@ -131,7 +131,7 @@ else {
         & $DOTNET_EXE tool install --tool-path $TOOLS_DIR --version $CAKE_VERSION Cake.Tool
         if ($LASTEXITCODE -ne 0) {
             "An error occured while installing Cake."
-            exit 1
+            return 1
         }
 
         $CAKE_EXE = (Get-ChildItem -Path $TOOLS_DIR -Filter "dotnet-cake*" -File | select -First 1 -Expand FullName)
@@ -143,4 +143,4 @@ if ($LASTEXITCODE -eq 0) {
     & "$CAKE_EXE" "$SCRIPT_DIR/setup.cake" $args
 }
 
-exit $LASTEXITCODE
+return $LASTEXITCODE
