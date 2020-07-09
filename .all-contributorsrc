@@ -10,80 +10,80 @@
   "commit": false,
   "contributors": [
     {
-      "login": "AdmiringWorm",
-      "name": "Kim J. Nordmo",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/1474648?v=4",
-      "profile": "https://github.com/AdmiringWorm",
-      "contributions": [
+    "login": "AdmiringWorm",
+    "name": "Kim J. Nordmo",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/1474648?v=4",
+    "profile": "https://github.com/AdmiringWorm",
+    "contributions": [
         "maintenance"
-      ]
+    ]
     },
     {
-      "login": "gep13",
-      "name": "Gary Ewan Park",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/1271146?v=4",
-      "profile": "http://www.gep13.co.uk/blog",
-      "contributions": [
+    "login": "gep13",
+    "name": "Gary Ewan Park",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/1271146?v=4",
+    "profile": "http://www.gep13.co.uk/blog",
+    "contributions": [
         "question",
         "ideas",
         "review",
         "doc"
-      ]
+    ]
     },
     {
-      "login": "codetriage-readme-bot",
-      "name": "README Bot",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/35302948?v=4",
-      "profile": "https://www.codetriage.com",
-      "contributions": [
+    "login": "codetriage-readme-bot",
+    "name": "README Bot",
+    "avatar_url": "https://avatars0.githubusercontent.com/u/35302948?v=4",
+    "profile": "https://www.codetriage.com",
+    "contributions": [
         "doc"
-      ]
+    ]
     },
     {
-      "login": "Jericho",
-      "name": "jericho",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/112710?v=4",
-      "profile": "https://github.com/Jericho",
-      "contributions": [
+    "login": "Jericho",
+    "name": "jericho",
+    "avatar_url": "https://avatars0.githubusercontent.com/u/112710?v=4",
+    "profile": "https://github.com/Jericho",
+    "contributions": [
         "ideas",
         "question"
-      ]
+    ]
     },
     {
-      "login": "mholo65",
-      "name": "Martin Björkström",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/7863439?v=4",
-      "profile": "https://twitter.com/mholo65",
-      "contributions": [
+    "login": "mholo65",
+    "name": "Martin Björkström",
+    "avatar_url": "https://avatars1.githubusercontent.com/u/7863439?v=4",
+    "profile": "https://twitter.com/mholo65",
+    "contributions": [
         "question"
-      ]
+    ]
     },
     {
-      "login": "x-jokay",
-      "name": "D. Domig",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/18613935?v=4",
-      "profile": "https://github.com/x-jokay",
-      "contributions": [
+    "login": "x-jokay",
+    "name": "D. Domig",
+    "avatar_url": "https://avatars0.githubusercontent.com/u/18613935?v=4",
+    "profile": "https://github.com/x-jokay",
+    "contributions": [
         "doc"
-      ]
+    ]
     }
   ],
   "contributorsPerLine": 7,
   "types": {
     "bug": {
-      "symbol": "🐛",
-      "description": "Bug reports",
-      "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/issues?q=author%3A<%= contributor.login %>+label%3Abug"
+    "symbol": "🐛",
+    "description": "Bug reports",
+    "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/issues?q=author%3A<%= contributor.login %>+label%3Abug"
     },
     "ideas": {
-      "symbol": "🤔",
-      "description": "Ideas, Planning, & Feedback",
-      "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/issues?q=author%3A<%= contributor.login %>"
+    "symbol": "🤔",
+    "description": "Ideas, Planning, & Feedback",
+    "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/issues?q=author%3A<%= contributor.login %>"
     },
     "review": {
-      "symbol": "👀",
-      "description": "Reviewed Pull Requests",
-      "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/pulls?q=reviewed-by%3A<%= contributor.login %>"
+    "symbol": "👀",
+    "description": "Reviewed Pull Requests",
+    "link": "<%= options.repoHost %>/<%= options.projectOwner %>/<%= options.projectName %>/pulls?q=reviewed-by%3A<%= contributor.login %>"
     }
   }
 }
