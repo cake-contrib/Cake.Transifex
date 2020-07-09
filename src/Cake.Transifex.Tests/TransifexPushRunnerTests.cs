@@ -160,5 +160,25 @@ namespace Cake.Transifex.Tests
 
             result.Args.ShouldBe($"push --branch {branch}");
         }
+
+        [Fact]
+        public void Evaluate_SetsGitTimestampsWhenTrue()
+        {
+            this.fixture.Settings = new TransifexPushSettings { UseGitTimestamps = true };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("push --use-git-timestamps");
+        }
+
+        [Fact]
+        public void Evaluate_DoesNotSetGitTimestampsWhenFalse()
+        {
+            this.fixture.Settings = new TransifexPushSettings { UseGitTimestamps = false };
+
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("push");
+        }
     }
 }

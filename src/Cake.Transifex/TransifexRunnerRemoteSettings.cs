@@ -22,6 +22,7 @@ namespace Cake.Transifex
         /// Source files and translations pushed/updated on other branches will
         /// not be pulled.
         /// </summary>
+        /// <remarks>
         /// <list type="bullet">
         ///   <item>
         ///      <term>Required transifex client</term>
@@ -105,6 +106,28 @@ namespace Cake.Transifex
         {
             get => GetValue<bool>("--skip");
             set => SetValue("--skip", value);
+        }
+
+        /// <summary>
+        /// Gets or set wether to use git timestamps when comparing commited files timestamp with corresponding
+        /// file on transifex.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        ///   <item>
+        ///      <term>Required transifex client</term>
+        ///      <description>v0.13.10</description>
+        ///   </item>
+        ///   <item>
+        ///      <term>Required Cake.Transifex version</term>
+        ///      <description>v0.9.0</description>
+        ///   </item>
+        /// </list>
+        /// </remarks>
+        public bool UseGitTimestamps
+        {
+            get => GetValue<bool>("--use-git-timestamps");
+            set => SetValue("--use-git-timestamps", value);
         }
 
         /// <summary>
