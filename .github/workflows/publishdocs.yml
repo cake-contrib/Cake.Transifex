@@ -22,11 +22,11 @@ jobs:
         uses: actions/cache@v2.1.1
         with:
           path: tools
-          key: ${{ runner.os }}-doc-tools-${{ hashFiles('setup.cake') }}
+          key: ${{ runner.os }}-doc-tools-${{ hashFiles('recipe.cake') }}
       - name: Publishing documentaiton
         uses: cake-build/cake-action@v1
         with:
-          script-path: setup.cake
+          script-path: recipe.cake
           target: Force-Publish-Documentation
           verbosity: Diagnostic
           cake-version: 0.38.4

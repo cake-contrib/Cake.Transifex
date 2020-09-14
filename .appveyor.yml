@@ -25,4 +25,4 @@ build_script:
   - pwsh: ./build.ps1 --target=CI --verbosity=Diagnostic
 
 cache:
-  - "tools -> .build/dotnet-tools.json,setup.cake,.build/sonarcloud.cake"
+  - "tools -> .build/dotnet-tools.json,recipe.cake,.build/sonarcloud.cake"

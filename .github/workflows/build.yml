@@ -46,11 +46,11 @@ jobs:
         uses: actions/cache@v2.1.1
         with:
           path: tools
-          key: ${{ runner.os }}-tools-${{ hashFiles('setup.cake') }}
+          key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
       - name: Build Addin
         uses: cake-build/cake-action@v1
         with:
-          script-path: setup.cake
+          script-path: recipe.cake
           target: CI
           verbosity: Diagnostic
           cake-version: 0.38.4

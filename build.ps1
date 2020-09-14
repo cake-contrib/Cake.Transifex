@@ -12,9 +12,9 @@ function Run([string[]]$arguments) {
 
 Run tool, restore
 
-Run cake, setup.cake, --bootstrap
+Run cake, recipe.cake, --bootstrap
 
-$arguments = @("cake"; "setup.cake")
+$arguments = @("cake"; "recipe.cake")
 $arguments += @($args)
 
 Run $arguments

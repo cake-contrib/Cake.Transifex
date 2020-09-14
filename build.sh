@@ -1,6 +1,6 @@
 #!/bin/bash
 dotnet tool restore
 
-dotnet cake setup.cake --bootstrap
+dotnet cake recipe.cake --bootstrap
 
-dotnet cake setup.cake "$@"
+dotnet cake recipe.cake "$@"
