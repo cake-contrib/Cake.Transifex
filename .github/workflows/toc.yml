@@ -18,4 +18,4 @@ jobs:
           TARGET_PATHS: "README.md"
           TOC_TITLE: "## Table of Contents"
           PR_TITLE: "(docs) Update TOC (${PR_MERGE_REF})"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

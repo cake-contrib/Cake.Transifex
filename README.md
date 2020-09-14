@@ -8,7 +8,6 @@ Cake.Transifex is a addin for the Cake Build script adding support for working w
 This addin requires that the transifex client is already installed and is available as `tx`.
 
 <!-- START doctoc -->
-
 <!-- END doctoc -->
 
 ## Information
