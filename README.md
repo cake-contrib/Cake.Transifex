@@ -7,8 +7,23 @@
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
+
+- [Information](#information)
+  - [Where to get the addin](#where-to-get-the-addin)
+  - [Usage](#usage)
+- [Build Status](#build-status)
+- [Code Coverage](#code-coverage)
+- [Quick Links](#quick-links)
+- [Chat Room](#chat-room)
+- [Building Cake.Transifex](#building-caketransifex)
+  - [1. Building on Windows](#1-building-on-windows)
+  - [2. Building on Linux or OSX](#2-building-on-linux-or-osx)
+- [Contributors](#contributors)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Information
 
