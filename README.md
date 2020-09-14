@@ -75,22 +75,7 @@ Come join in the conversation about Cake.Transifex in our Gitter Chat Room.
 
 ## Building Cake.Transifex
 
-### 1. Building on Windows
-
-The following are needed to build Cake.Transifex on Windows
-
-- .NET Core 2.0+
-- .NET 4.6
-- Visual Studio 2017 (or Visual Studio Build Tools 2017)
-
-Open up a powershell window and call `.\build.ps1`, this should build the projects, run the unit tests and create nuget packages in the `.\BuildArtifacts\Packages\NuGet` directory.
-
-### 2. Building on Linux or OSX
-
-- .NET Core 2.0+
-- Mono
-
-Open up the terminal and call `sh build.sh`, this should build the projects, run the unit tests and create nuget packages in the `./BuildArtifacts/Packages/NuGet/` directory.
+Please see [Building documentation](https://cake-contrib.github.io/Cake.Transifex/docs/building/) on how to build the Cake.Transifex addin.
 
 ## Contributors
 
