@@ -20,7 +20,7 @@ To install the transifex client, install python, then run `pip install transifex
     <Authors>Kim J. Nordmo;$(Company)</Authors>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageIcon>cake-contrib-small.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics@49c3b71def749b86416d773f1ead0c0da2d590ea/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://cake-contrib.github.io/Cake.Transifex/</PackageProjectUrl>
@@ -35,14 +35,12 @@ To install the transifex client, install python, then run `pip install transifex
 
   <!-- Package References only for this project -->
   <ItemGroup>
+    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\graphics\cake-contrib\png\cake-contrib-small.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <PackageReference Include="CakeContrib.Guidelines" Version="0.2.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
