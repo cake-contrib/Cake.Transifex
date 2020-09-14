@@ -19,8 +19,6 @@ This addin requires that the transifex client is already installed and is availa
 - [Quick Links](#quick-links)
 - [Chat Room](#chat-room)
 - [Building Cake.Transifex](#building-caketransifex)
-  - [1. Building on Windows](#1-building-on-windows)
-  - [2. Building on Linux or OSX](#2-building-on-linux-or-osx)
 - [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
