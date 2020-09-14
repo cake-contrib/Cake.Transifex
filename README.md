@@ -8,6 +8,9 @@
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 ## Information
 
 To install the transifex client, install python, then run `pip install transifex-client`, or using the chocolatey package `choco install transifex-client`.

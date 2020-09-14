@@ -1,0 +1,20 @@
+name: TOC Generator
+
+on:
+  push:
+    branches: [develop]
+      pull_request:
+
+jobs:
+  toc:
+    name: TOC Generator
+      runs-on: ubuntu-latest
+
+    steps:
+      - uses: technote-space/toc-generator@v2.4.9
+        with:
+          COMMIT_MESSAGE: "(docs) Update TOC"
+          TARGET_PATHS: "README.md"
+          TOC_TITLE: "## Table of Contents"
+          PR_TITLE: "(docs) Update TOC (${PR_MERGE_REF})"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
