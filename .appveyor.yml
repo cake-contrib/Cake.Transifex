@@ -1,44 +1,16 @@
-image:
-  #    - macos
-  - Ubuntu
-  - Visual Studio 2017
+image: Visual Studio 2019
 matrix:
   fast_finish: true
 environment:
   APPVEYOR_YML_DISABLE_PS_LINUX: true
 branches:
   except:
-    - ci/travis
     - /dependabot\/.*/
 skip_commits:
   files:
     - "*.md"
     - "LICENSE"
-    - ".travis.yml"
-
-for:
--
-  matrix:
-    only:
-      - image: Ubuntu
-  environment:
-    AZURE_SOURCE:
-    GITHUB_PASSWORD:
-    GITTER_TOKEN:
-    GPR_SOURCE:
-    MYGET_API_KEY:
-    NUGET_API_KEY:
-    SLACK_TOKEN:
-    TWITTER_ACCESS_TOKEN:
-    TWITTER_CONSUMER_KEY:
-    WYAM_ACCESS_TOKEN:
-
-  skip_tags: true
-  install:
-    - git submodule update --init
-    - sudo -H pip install transifex-client
-    - sudo apt-get update || echo "Update failed, ignoring..."
-    - sudo apt-get install -y libgit2-dev
+    - ".github/**/*.yml"
 
 install:
   - git submodule update --init
@@ -50,8 +22,7 @@ build: off
 test: off
 
 build_script:
-  - pwsh: ./build.ps1 --target=ContinuousIntegration --verbosity=Diagnostic
+  - pwsh: ./build.ps1 --target=CI --verbosity=Diagnostic
 
 cache:
-  - "tools -> build.config,setup.cake,.build/sonarcloud.cake"
-  - ".dotnet -> build.config"
+  - "tools -> .build/dotnet-tools.json,recipe.cake,.build/sonarcloud.cake"

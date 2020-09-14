@@ -295,3 +295,4 @@ BuildArtifacts/
 *.hash
 docs/input/tasks/
 .dotnet/
+src/Cake.Transifex/icon.png

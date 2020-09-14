@@ -8,7 +8,7 @@ Task("SonarCloud-Begin")
     .WithCriteria(() => HasEnvironmentVariable("SONARCLOUD_TOKEN"), "Missing sonar cloud token environment variable")
     .WithCriteria(() => HasEnvironmentVariable("SONARCLOUD_ORGANIZATION"), "Missing sonar cloud organization environment variable")
     .WithCriteria(() => HasEnvironmentVariable("SONARCLOUD_PROJECT_KEY"), "Missing sonar cloud project key environment variable")
-    .Does(() => RequireTool(SonarQubeTool,
+    .Does<BuildVersion>((version) => RequireTool(SonarQubeTool,
     () =>
 {
     Information("Starting SonarCloud analysing");
@@ -31,7 +31,7 @@ Task("SonarCloud-Begin")
         { "TEMP_ORGANIZATION", EnvironmentVariable("SONARCLOUD_ORGANIZATION") },
         { "TEMP_OPENCOVER_FILTER", BuildParameters.Paths.Files.TestCoverageOutputFilePath.ToString().Replace(".xml", "*.xml") },
         { "TEMP_TOKEN", EnvironmentVariable("SONARCLOUD_TOKEN") },
-        { "TEMP_VERSION", BuildParameters.Version.SemVersion },
+        { "TEMP_VERSION", version.SemVersion },
         { "TEMP_TEST_RESULTS", BuildParameters.Paths.Directories.TestResults.CombineWithFilePath("TestResults.xml").ToString() },
     });
 }));

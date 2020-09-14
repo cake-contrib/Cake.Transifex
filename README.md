@@ -1,12 +1,27 @@
 # Cake.Transifex
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors][all-contributorsimage]](#contributors)
 [![license](https://img.shields.io/github/license/cake-contrib/Cake.Transifex.svg)](https://github.com/cake-contrib/Cake.Transifex/blob/master/LICENSE)
 [![Open Source Helpers](https://www.codetriage.com/wormiecorp/cake.transifex/badges/users.svg)](https://www.codetriage.com/wormiecorp/cake.transifex)
 
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
+
+- [Information](#information)
+  - [Where to get the addin](#where-to-get-the-addin)
+  - [Usage](#usage)
+- [Build Status](#build-status)
+- [Code Coverage](#code-coverage)
+- [Quick Links](#quick-links)
+- [Chat Room](#chat-room)
+- [Building Cake.Transifex](#building-caketransifex)
+- [Contributors](#contributors)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Information
 
@@ -58,22 +73,7 @@ Come join in the conversation about Cake.Transifex in our Gitter Chat Room.
 
 ## Building Cake.Transifex
 
-### 1. Building on Windows
-
-The following are needed to build Cake.Transifex on Windows
-
-- .NET Core 2.0+
-- .NET 4.6
-- Visual Studio 2017 (or Visual Studio Build Tools 2017)
-
-Open up a powershell window and call `.\build.ps1`, this should build the projects, run the unit tests and create nuget packages in the `.\BuildArtifacts\Packages\NuGet` directory.
-
-### 2. Building on Linux or OSX
-
-- .NET Core 2.0+
-- Mono
-
-Open up the terminal and call `sh build.sh`, this should build the projects, run the unit tests and create nuget packages in the `./BuildArtifacts/Packages/NuGet/` directory.
+Please see [Building documentation](https://cake-contrib.github.io/Cake.Transifex/docs/building/) on how to build the Cake.Transifex addin.
 
 ## Contributors
 
@@ -96,3 +96,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
 Contributions of any kind welcome!
+
+[all-contributors]: https://github.com/all-contributors/all-contributors
+[all-contributorsimage]: https://img.shields.io/github/all-contributors/cake-contrib/Cake.Codecov.svg?color=orange&style=flat-square

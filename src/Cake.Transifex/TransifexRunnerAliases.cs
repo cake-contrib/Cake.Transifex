@@ -30,7 +30,9 @@ namespace Cake.Transifex
         /// </example>
         /// <revisionHistory>
         /// <revision version="0.2.0">Initial creation </revision>
+        /// <revision version="0.9.1">Add missing <see cref="CakeMethodAliasAttribute" /> attribute.</revision>
         /// </revisionHistory>
+        [CakeMethodAlias]
         public static void TransifexInit(this ICakeContext context)
             => TransifexInit(context, null);
 
@@ -77,6 +79,11 @@ namespace Cake.Transifex
         /// the <see cref="TransifexInitSettings.Username" /> or <see cref="TransifexInitSettings.Password" /> properties have been
         /// specified in the <paramref name="settings" /> parameter.
         /// </exception>
+        /// <revisionHistory>
+        /// <revision version="0.2.0">Initial creation </revision>
+        /// <revision version="0.9.1">Add missing <see cref="CakeMethodAliasAttribute" /> attribute.</revision>
+        /// </revisionHistory>
+        [CakeMethodAlias]
         public static void TransifexInit(this ICakeContext context, TransifexInitSettings settings)
         {
             var runner = CreateRunner(context);
