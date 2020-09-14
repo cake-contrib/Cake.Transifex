@@ -8,6 +8,8 @@ on:
       - "release/**"
       - "hotfix/**"
       - "feature/**"
+    paths:
+      - "README.md"
   pull_request:
 
 jobs:
