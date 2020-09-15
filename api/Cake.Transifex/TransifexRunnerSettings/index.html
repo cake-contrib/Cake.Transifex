@@ -74,7 +74,6 @@
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Constructors">Constructors</a></p>
-<p><a href="#Properties">Properties</a></p>
 <p><a href="#Methods">Methods</a></p>
 <p><a href="#SeeAlso">See Also</a></p>
 <hr class="infobar-hidden">
@@ -147,10 +146,10 @@
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></li>
 				<li class="selected"><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexStatusSettings">Transifex<wbr>Status<wbr>Settings</a></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/Cake.Transifex/api/Cake.Transifex/ITransifexRunnerCommands">I<wbr>Transifex<wbr>Runner<wbr>Commands</a></li>
 			<li class="header">Enum Types</li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexMode">TransifexMode</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/ITransifexRunnerCommands">I<wbr>Transifex<wbr>Runner<wbr>Commands</a></li>
 
 
                     </ul>
@@ -195,8 +194,8 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings</a><wbr>&lt;<a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1#typeparam-TSettingsType">TSettingsType</a>&gt;<wbr></li>								
 											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexInitSettings">Transifex<wbr>Init<wbr>Settings</a></li>								
+											<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings</a><wbr>&lt;<a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1#typeparam-TSettingsType">TSettingsType</a>&gt;<wbr></li>								
 									</ul>
 								</dd>			
 							
@@ -208,10 +207,10 @@
 	Type--&gt;Base0["ToolSettings"]
 	Type["TransifexRunnerSettings"]
 class Type type-node
-	Derived0["TransifexRunnerSettings&lt;TSettingsType&gt;"]--&gt;Type
-	click Derived0 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1"
-	Derived1["TransifexInitSettings"]--&gt;Type
-	click Derived1 "/Cake.Transifex/api/Cake.Transifex/TransifexInitSettings"
+	Derived0["TransifexInitSettings"]--&gt;Type
+	click Derived0 "/Cake.Transifex/api/Cake.Transifex/TransifexInitSettings"
+	Derived1["TransifexRunnerSettings&lt;TSettingsType&gt;"]--&gt;Type
+	click Derived1 "/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1"
 
 						</div>
 					</div>
@@ -220,7 +219,7 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public abstract class TransifexRunnerSettings : ToolSettings</code></pre>
+	<pre><code>public class TransifexRunnerSettings : ToolSettings</code></pre>
 
 
 
@@ -251,30 +250,6 @@ class Type type-node
 
 
 
-			<h1 id="Properties">Properties</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover three-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Value</th>
-								<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/35D4FEA5">Command</a></td>
-								<td>string</td>
-								<td>
-									<div>
-    The transifex command to execute.
-    </div>
-								</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
 
 			<h1 id="Methods">Methods</h1>
 			<div class="box">
@@ -288,11 +263,29 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/EF8CC74E">EvaluateCore<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/650B9B40">GetValue<wbr>&lt;TValue&gt;<wbr><wbr>(string, <wbr>TValue)<wbr></a></td>
+								<td>TValue</td>
+								<td>
+									<div>
+    Gets the stored value with the specified <span name="key" class="paramref">key</span>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/254F3E84">GetValue<wbr>&lt;TValue&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>TValue</td>
+								<td>
+									<div>
+    Gets the stored value with the specified <span name="key" class="paramref">key</span>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/70B1C748">SetValue<wbr>(string, <wbr>object)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
-    Evaluates the arguments and appends the necessary arguments.
+    Stores the specified <span name="value" class="paramref">value</span> with the specified <span name="key" class="paramref">key</span>.
     </div>
 								</td>
 							</tr>

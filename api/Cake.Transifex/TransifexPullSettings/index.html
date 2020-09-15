@@ -147,10 +147,10 @@
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">Transifex<wbr>Runner<wbr>Settings<wbr>&lt;<wbr>T<wbr>Settings<wbr>Type&gt;<wbr></a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexStatusSettings">Transifex<wbr>Status<wbr>Settings</a></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/Cake.Transifex/api/Cake.Transifex/ITransifexRunnerCommands">I<wbr>Transifex<wbr>Runner<wbr>Commands</a></li>
 			<li class="header">Enum Types</li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexMode">TransifexMode</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/ITransifexRunnerCommands">I<wbr>Transifex<wbr>Runner<wbr>Commands</a></li>
 
 
                     </ul>
@@ -269,16 +269,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/35D4FEA5">Command</a></td>
-								<td>string</td>
-								<td>
-									<div>
-    The transifex command to execute.
-    </div>
-											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings/5F44E672">DisableOverwrite</a></td>
 								<td>bool</td>
 								<td>
@@ -340,12 +330,33 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexPullSettings/F9EB4E3C">EvaluateCore<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/650B9B40">GetValue<wbr>&lt;TValue&gt;<wbr><wbr>(string, <wbr>TValue)<wbr></a></td>
+								<td>TValue</td>
+								<td>
+									<div>
+    Gets the stored value with the specified <span name="key" class="paramref">key</span>.
+    </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/254F3E84">GetValue<wbr>&lt;TValue&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>TValue</td>
+								<td>
+									<div>
+    Gets the stored value with the specified <span name="key" class="paramref">key</span>.
+    </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/70B1C748">SetValue<wbr>(string, <wbr>object)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
-    Evaluates the arguments and appends the necessary arguments.
+    Stores the specified <span name="value" class="paramref">value</span> with the specified <span name="key" class="paramref">key</span>.
     </div>
+											<div><small><em>Inherited from <a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>

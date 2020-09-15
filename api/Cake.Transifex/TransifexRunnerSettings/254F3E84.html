@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Transifex/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Transifex/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.Transifex - API - TransifexRunnerSettings.EvaluateCore(ProcessArgumentBuilder) Method</title>
+        <title>Cake.Transifex - API - TransifexRunnerSettings.GetValue&lt;TValue&gt;(string) Method</title>
         <link href="/Cake.Transifex/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.Transifex/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -73,6 +73,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
+<p><a href="#TypeParameters">Type Parameters</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -140,10 +141,10 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Constructors</li>
 				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/465D4C79">Transifex<wbr>Runner<wbr>Settings<wbr>(string)<wbr></a></li>
-			<li class="header">Property Members</li>
-				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/35D4FEA5">Command</a></li>
 			<li class="header">Method Members</li>
-				<li class="selected"><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/EF8CC74E">EvaluateCore<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
+				<li class="selected"><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/254F3E84">GetValue<wbr>&lt;TValue&gt;<wbr><wbr>(string)<wbr></a></li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/650B9B40">GetValue<wbr>&lt;TValue&gt;<wbr><wbr>(string, <wbr>TValue)<wbr></a></li>
+				<li><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings/70B1C748">SetValue<wbr>(string, <wbr>object)<wbr></a></li>
 
 
                     </ul>
@@ -159,14 +160,14 @@
 
 <section class="content-header">
 			<h3><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">Transifex<wbr>Runner<wbr>Settings</a>.</h3>
-	<h1>EvaluateCore<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr> <small>Method</small></h1>
+	<h1>GetValue<wbr>&lt;TValue&gt;<wbr><wbr>(string)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Evaluates the arguments and appends the necessary arguments.
+    Gets the stored value with the specified <span name="key" class="paramref">key</span>.
     </div>
 
 		<div class="panel panel-default">
@@ -184,11 +185,28 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>protected abstract void EvaluateCore(ProcessArgumentBuilder args)</code></pre>
+	<pre><code>protected TValue GetValue&lt;TValue&gt;(string key)</code></pre>
 
 
 
 
+	<h1 id="TypeParameters">Type Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr id="typeparam-TValue">
+						<td>TValue</td>
+						<td>The type of the value to get</td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
 
 	<h1 id="Parameters">Parameters</h1>
 	<div class="box">
@@ -202,9 +220,9 @@
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>args</td>
-						<td>Process<wbr>Argument<wbr>Builder</td>
-						<td>The arguments.</td>
+						<td>key</td>
+						<td>string</td>
+						<td>The key/id of the value</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -221,8 +239,8 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>void</td>
-					<td></td>
+					<td>TValue</td>
+					<td>The stored value, or the default value of the <span name="TValue" class="typeparamref">TValue</span>.</td>
 				</tr>
 			</tbody></table>
 		</div>
