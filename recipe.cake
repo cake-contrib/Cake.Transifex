@@ -3,6 +3,17 @@
 
 Environment.SetVariableNames();
 
+var platform = PlatformFamily.Linux;
+var provider = BuildProviderType.GitHubActions;
+
+// Because GitVersion do not play nice with GitHub Action, we need to do the publishing
+// on appveyor instead
+if (HasEnvironmentVariable("APPVEYOR") && EnvironmentVariable("APPVEYOR_REPO_TAG", false))
+{
+    platform = PlatformFamily.Windows;
+    provider = BuildProviderType.AppVeyor;
+}
+
 BuildParameters.SetParameters(
     context: Context,
     buildSystem: BuildSystem,
@@ -18,8 +29,8 @@ BuildParameters.SetParameters(
     shouldRunCoveralls: false,
     shouldUseDeterministicBuilds: true,
     shouldUseTargetFrameworkPath: false,
-    preferredBuildAgentOperatingSystem: PlatformFamily.Linux,
-    preferredBuildProviderType: BuildProviderType.GitHubActions);
+    preferredBuildAgentOperatingSystem: platform,
+    preferredBuildProviderType: provider);
 
 ToolSettings.SetToolSettings(context: Context);
 
