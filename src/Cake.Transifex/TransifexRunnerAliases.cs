@@ -6,7 +6,7 @@ namespace Cake.Transifex
     /// <summary>
     /// Provides a wrapper around transifex client functionality within a Cake build script.
     /// </summary>
-    [CakeAliasCategory("Transifex")]
+    [CakeAliasCategory("Localization")]
     [CakeNamespaceImport("Cake.Transifex")]
     public static class TransifexRunnerAliases
     {
