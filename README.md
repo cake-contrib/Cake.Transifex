@@ -88,7 +88,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.codetriage.com"><img src="https://avatars0.githubusercontent.com/u/35302948?v=4" width="100px;" alt="README Bot"/><br /><sub><b>README Bot</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/commits?author=codetriage-readme-bot" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Jericho"><img src="https://avatars0.githubusercontent.com/u/112710?v=4" width="100px;" alt="jericho"/><br /><sub><b>jericho</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/issues?q=author%3AJericho" title="Ideas, Planning, & Feedback">🤔</a> <a href="#question-Jericho" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://twitter.com/mholo65"><img src="https://avatars1.githubusercontent.com/u/7863439?v=4" width="100px;" alt="Martin Björkström"/><br /><sub><b>Martin Björkström</b></sub></a><br /><a href="#question-mholo65" title="Answering Questions">💬</a></td>
-    <td align="center"><a href="https://github.com/x-jokay"><img src="https://avatars0.githubusercontent.com/u/18613935?v=4" width="100px;" alt="D. Domig"/><br /><sub><b>D. Domig</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/commits?author=x-jokay" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/jokay"><img src="https://avatars0.githubusercontent.com/u/18613935?v=4" width="100px;" alt="D. Domig"/><br /><sub><b>D. Domig</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/commits?author=jokay" title="Documentation">📖</a></td>
   </tr>
 </table>
 
