@@ -20,7 +20,7 @@ close:
 
     - [GitHub release](https://github.com/{owner}/{repository}/releases/tag/{milestone})
     - [NuGet.org](https://nuget.org/packages/{repository}/{milestone})
-    - Within Cake script: `#addin "nuget:?package={repository}&version={milestone}"
+    - Within Cake script: `#addin "nuget:?package={repository}&version={milestone}"`
 
     Your friendly **[GitReleaseManager](https://github.com/GitTools/GitReleaseManager)** bot :package::rocket:
 issue-labels-include:
