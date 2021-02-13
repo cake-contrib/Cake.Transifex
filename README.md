@@ -90,6 +90,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/jokay"><img src="https://avatars0.githubusercontent.com/u/18613935?v=4?s=100" width="100px;" alt=""/><br /><sub><b>D. Domig</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/commits?author=jokay" title="Documentation">📖</a></td>
     <td align="center"><a href="https://augustoproiete.net"><img src="https://avatars.githubusercontent.com/u/177608?v=4?s=100" width="100px;" alt=""/><br /><sub><b>C. Augusto Proiete</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/issues?q=author%3Aaugustoproiete" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/nils-a"><img src="https://avatars.githubusercontent.com/u/349188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.Transifex/issues?q=author%3Anils-a" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
