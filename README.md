@@ -67,9 +67,7 @@ The following aliases is available from the cake build script:
 
 ## Chat Room
 
-Come join in the conversation about Cake.Transifex in our Gitter Chat Room.
-
-[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)](https://gitter.im/cake-contrib/Lobby)
+Please do not hesitate to reash out in the [GitHub discussions](https://github.com/cake-build/cake/discussions/categories/extension-q-a) if you have any issues or questions using this addin.
 
 ## Building Cake.Transifex
 
