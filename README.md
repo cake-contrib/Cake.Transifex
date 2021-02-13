@@ -9,18 +9,17 @@ This addin requires that the transifex client is already installed and is availa
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 ## Table of Contents
 
--   [Information](#information)
-    -   [Where to get the addin](#where-to-get-the-addin)
-    -   [Usage](#usage)
--   [Build Status](#build-status)
--   [Code Coverage](#code-coverage)
--   [Quick Links](#quick-links)
--   [Chat Room](#chat-room)
--   [Building Cake.Transifex](#building-caketransifex)
--   [Contributors](#contributors)
+- [Information](#information)
+  - [Where to get the addin](#where-to-get-the-addin)
+  - [Usage](#usage)
+- [Build Status](#build-status)
+- [Code Coverage](#code-coverage)
+- [Quick Links](#quick-links)
+- [Chat Room](#chat-room)
+- [Building Cake.Transifex](#building-caketransifex)
+- [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
