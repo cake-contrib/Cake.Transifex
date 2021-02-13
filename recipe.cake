@@ -1,4 +1,4 @@
-#load nuget:https://ci.appveyor.com/nuget/cake-recipe?package=Cake.Recipe&version=2.0.0-alpha0487&prerelease
+#load nuget:?package=Cake.Recipe&version=2.1.0
 #load "./.build/*.cake"
 
 Environment.SetVariableNames();
@@ -17,9 +17,7 @@ BuildParameters.SetParameters(
     shouldRunCodecov: true,
     shouldRunCoveralls: false,
     shouldUseDeterministicBuilds: true,
-    shouldUseTargetFrameworkPath: false,
-    preferredBuildAgentOperatingSystem: PlatformFamily.Linux,
-    preferredBuildProviderType: BuildProviderType.GitHubActions);
+    shouldUseTargetFrameworkPath: false);
 
 ToolSettings.SetToolSettings(context: Context);
 
