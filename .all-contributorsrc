@@ -75,6 +75,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "nils-a",
+      "name": "Nils Andresen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/349188?v=4",
+      "profile": "https://github.com/nils-a",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
