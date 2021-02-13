@@ -45,7 +45,7 @@ jobs:
         if: ${{ runner.os == 'ubuntu-latest' }} # We do not need it for anything else
         run: sudo apt-get install transifex-client -y
       - name: Cache Tools
-        uses: actions/cache@v2.1.1
+        uses: actions/cache@v2.1.4
         with:
           path: tools
           key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
