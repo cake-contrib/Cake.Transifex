@@ -254,6 +254,17 @@ public static class TransifexRunnerAliases</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/9CC07DBB">TransifexInit<wbr>(ICakeContext)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    This command initializes the current repository with a default configuration file, and
+    sets the host to <code class="cs">www.transifex.com</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/E023D341">TransifexInit<wbr>(ICakeContext, <wbr>Transifex<wbr>Init<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -266,12 +277,12 @@ public static class TransifexRunnerAliases</code></pre>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/9CC07DBB">TransifexInit<wbr>(ICakeContext)<wbr></a></td>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/D087B43E">TransifexPull<wbr>(ICakeContext)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
-    This command initializes the current repository with a default configuration file, and
-    sets the host to <code class="cs">www.transifex.com</code>.
+    This command pulls all outstanding changes from the remote Transifex server to the local
+    repository. By default only the files that are watched by transifex will be updated.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -289,12 +300,13 @@ public static class TransifexRunnerAliases</code></pre>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/D087B43E">TransifexPull<wbr>(ICakeContext)<wbr></a></td>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/17BB05DC">TransifexPush<wbr>(ICakeContext)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
-    This command pulls all outstanding changes from the remote Transifex server to the local
-    repository. By default only the files that are watched by transifex will be updated.
+    This command pushes all local files that have been added to Transifex to the remote
+    server. All new translations are merged with existing ones and if a language doesn't
+    exist then it is created.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -316,13 +328,11 @@ public static class TransifexRunnerAliases</code></pre>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/17BB05DC">TransifexPush<wbr>(ICakeContext)<wbr></a></td>
+								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/47B458CA">TransifexStatus<wbr>(ICakeContext)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
-    This command pushes all local files that have been added to Transifex to the remote
-    server. All new translations are merged with existing ones and if a language doesn't
-    exist then it is created.
+    Prints the status of the current project by reading the data in the configuration file.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -334,16 +344,6 @@ public static class TransifexRunnerAliases</code></pre>
 									<div>
     Prints the status of the current project by reading the data in the configuration file,
     but only for the specified <span name="resources" class="paramref">resources</span>.
-    </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerAliases/47B458CA">TransifexStatus<wbr>(ICakeContext)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-    Prints the status of the current project by reading the data in the configuration file.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
