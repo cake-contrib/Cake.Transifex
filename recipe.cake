@@ -14,6 +14,8 @@ BuildParameters.SetParameters(
     shouldRunDotNetCorePack: true,
     solutionFilePath: "./Cake.Transifex.sln",
     testFilePattern: "/**/*.Tests.csproj",
+    preferredBuildAgentOperatingSystem: PlatformFamily.Linux,
+    preferredBuildProviderType: BuildProviderType.GitHubActions,
     shouldRunCodecov: true,
     shouldRunCoveralls: false,
     shouldUseDeterministicBuilds: true,

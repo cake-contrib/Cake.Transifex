@@ -8,6 +8,8 @@ on:
       - "release/**"
       - "hotfix/**"
       - "feature/**"
+    tags:
+      - "*"
     paths-ignore:
       - "README.md"
   pull_request:
