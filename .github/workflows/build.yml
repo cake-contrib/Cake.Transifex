@@ -52,7 +52,7 @@ jobs:
           path: tools
           key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
       - name: Remove local nuget
-        if: ${{ runner.os == 'Linux' ]]
+        if: ${{ runner.os == 'Linux' }}
         run: sudo rm /usr/bin/nuget
       - name: Build Addin
         uses: cake-build/cake-action@v1
