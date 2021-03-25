@@ -44,13 +44,16 @@ jobs:
       - name: Fetch all tags and branches
         run: git fetch --prune --unshallow
       - name: Install Transifex Client
-        if: ${{ runner.os == 'ubuntu-latest' }} # We do not need it for anything else
+        if: ${{ matrix.os == 'ubuntu-18.04' }} # We do not need it for anything else
         run: sudo apt-get install transifex-client -y
       - name: Cache Tools
         uses: actions/cache@v2.1.4
         with:
           path: tools
           key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
+      - name: Remove local nuget
+        if: ${{ runner.os }} == 'Linux'
+        run: sudo rm /usr/bin/nuget
       - name: Build Addin
         uses: cake-build/cake-action@v1
         with:
