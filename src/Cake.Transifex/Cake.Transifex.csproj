@@ -30,7 +30,7 @@ Supports Cake $(CakeVersion)+
     <PackageSourceProjectUrl>https://github.com/cake-contrib/Cake.Transifex</PackageSourceProjectUrl>
     <PackageReleaseNotes Condition=" '$(Version)' == '$(FileVersion)'">All release notes for $(AssemblyName) can be found on our GitHub release page - $(PackageSourceProjectUrl)/releases/tag/$(Version)</PackageReleaseNotes>
     <PackageReleaseNotes Condition=" '$(Version)' != '$(FileVersion)'">Development releases do not contain release notes, please see the closed issues in these cases - $(PackageSourceProjectUrl)/issues?q=milestone:$(FileVersion)+is:closed</PackageReleaseNotes>
-    <PackageTags>Cake;Cake Script;Build;Transifex;Localization</PackageTags>
+    <PackageTags>cake;cake-script;build;transifex;localization</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>$(PackageSourceProjectUrl).git</RepositoryUrl>
     <Title>$(AssemblyTitle)</Title>
