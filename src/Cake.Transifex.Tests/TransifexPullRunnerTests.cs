@@ -5,11 +5,11 @@ namespace Cake.Transifex.Tests
 
     public class TransifexPullRunnerTests
     {
-        private readonly TransifexPullFixture fixture;
+        private readonly TransifexPullFixture _fixture;
 
         public TransifexPullRunnerTests()
         {
-            fixture = new TransifexPullFixture();
+            _fixture = new TransifexPullFixture();
         }
 
         [Theory]
@@ -18,9 +18,9 @@ namespace Cake.Transifex.Tests
         [InlineData("     ")]
         public void Evaluate_DoesNotSetLanguages(string language)
         {
-            this.fixture.Settings = new TransifexPullSettings { Languages = language };
+            _fixture.Settings = new TransifexPullSettings { Languages = language };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull");
         }
@@ -31,9 +31,9 @@ namespace Cake.Transifex.Tests
         [InlineData("     ")]
         public void Evaluate_DoesNotSetResources(string resources)
         {
-            this.fixture.Settings = new TransifexPullSettings { Resources = resources };
+            _fixture.Settings = new TransifexPullSettings { Resources = resources };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull");
         }
@@ -41,9 +41,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsAllArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { All = true };
+            _fixture.Settings = new TransifexPullSettings { All = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --all");
         }
@@ -51,9 +51,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsDisableOverwriteWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { DisableOverwrite = true };
+            _fixture.Settings = new TransifexPullSettings { DisableOverwrite = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --disable-overwrite");
         }
@@ -61,9 +61,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsForceArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { Force = true };
+            _fixture.Settings = new TransifexPullSettings { Force = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --force");
         }
@@ -71,9 +71,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsLanguagesArgument()
         {
-            this.fixture.Settings = new TransifexPullSettings { Languages = "nb_NO*" };
+            _fixture.Settings = new TransifexPullSettings { Languages = "nb_NO*" };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --language \"nb_NO*\"");
         }
@@ -81,9 +81,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsMinimumPercWhenNotNull()
         {
-            this.fixture.Settings = new TransifexPullSettings { MinimumPercentage = 50 };
+            _fixture.Settings = new TransifexPullSettings { MinimumPercentage = 50 };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --minimum-perc 50");
         }
@@ -98,9 +98,9 @@ namespace Cake.Transifex.Tests
         public void Evaluate_SetsModeWhenNotNull(TransifexMode mode)
         {
             var expected = mode.ToString().ToLowerInvariant();
-            this.fixture.Settings = new TransifexPullSettings { Mode = mode };
+            _fixture.Settings = new TransifexPullSettings { Mode = mode };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe($"pull --mode {expected}");
         }
@@ -108,9 +108,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsPseuodArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { Pseudo = true };
+            _fixture.Settings = new TransifexPullSettings { Pseudo = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --pseudo");
         }
@@ -118,9 +118,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsResourcesArgument()
         {
-            this.fixture.Settings = new TransifexPullSettings { Resources = "helloworld*" };
+            _fixture.Settings = new TransifexPullSettings { Resources = "helloworld*" };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --resources \"helloworld*\"");
         }
@@ -128,9 +128,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsSkipArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { SkipErrors = true };
+            _fixture.Settings = new TransifexPullSettings { SkipErrors = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --skip");
         }
@@ -138,9 +138,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsSourceArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { DownloadSourceFiles = true };
+            _fixture.Settings = new TransifexPullSettings { DownloadSourceFiles = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --source");
         }
@@ -148,9 +148,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsStatusAsCommandToArgumentBuilder()
         {
-            this.fixture.Settings = null;
+            _fixture.Settings = null;
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull");
         }
@@ -158,9 +158,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsXLiffArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { UseXliff = true };
+            _fixture.Settings = new TransifexPullSettings { UseXliff = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --xliff");
         }
@@ -168,9 +168,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsNoInteractiveWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { NoInteractive = true };
+            _fixture.Settings = new TransifexPullSettings { NoInteractive = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --no-interactive");
         }
@@ -178,9 +178,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsParallelWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { Parallel = true };
+            _fixture.Settings = new TransifexPullSettings { Parallel = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --parallel");
         }
@@ -188,9 +188,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_DoesNotSetParallelWhenFalse()
         {
-            this.fixture.Settings = new TransifexPullSettings { Parallel = false };
+            _fixture.Settings = new TransifexPullSettings { Parallel = false };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull");
         }
@@ -201,9 +201,9 @@ namespace Cake.Transifex.Tests
         [InlineData("feature/branch-argument")]
         public void Evaluate_SetsBranchArgument(string branch)
         {
-            this.fixture.Settings = new TransifexPullSettings { Branch = branch };
+            _fixture.Settings = new TransifexPullSettings { Branch = branch };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe($"pull --branch {branch}");
         }
@@ -211,9 +211,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsGitTimestampsWhenTrue()
         {
-            this.fixture.Settings = new TransifexPullSettings { UseGitTimestamps = true };
+            _fixture.Settings = new TransifexPullSettings { UseGitTimestamps = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull --use-git-timestamps");
         }
@@ -221,9 +221,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_DoesNotSetGitTimestampsWhenFalse()
         {
-            this.fixture.Settings = new TransifexPullSettings { UseGitTimestamps = false };
+            _fixture.Settings = new TransifexPullSettings { UseGitTimestamps = false };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("pull");
         }

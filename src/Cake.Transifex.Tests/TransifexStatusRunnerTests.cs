@@ -5,11 +5,11 @@ namespace Cake.Transifex.Tests
 
     public class TransifexStatusRunnerTests
     {
-        private readonly TransifexStatusFixture fixture;
+        private readonly TransifexStatusFixture _fixture;
 
         public TransifexStatusRunnerTests()
         {
-            fixture = new TransifexStatusFixture();
+            _fixture = new TransifexStatusFixture();
         }
 
         [Theory]
@@ -18,9 +18,9 @@ namespace Cake.Transifex.Tests
         [InlineData("     ")]
         public void Evaluate_DoesNotSetResources(string resources)
         {
-            this.fixture.Resources = resources;
+            _fixture.Resources = resources;
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("status");
         }
@@ -28,9 +28,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsResourcesArgument()
         {
-            this.fixture.Resources = "helloworld*";
+            _fixture.Resources = "helloworld*";
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("status --resources \"helloworld*\"");
         }
@@ -38,9 +38,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsStatusAsCommandToArgumentBuilder()
         {
-            this.fixture.Resources = null;
+            _fixture.Resources = null;
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("status");
         }

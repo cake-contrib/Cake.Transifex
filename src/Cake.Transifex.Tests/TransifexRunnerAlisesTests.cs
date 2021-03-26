@@ -21,9 +21,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void TransifexInit_ShouldJustCallTxInitWithDefaultHost()
         {
-            this._initFixture.Settings = null;
+            _initFixture.Settings = null;
 
-            var result = this._initFixture.Run();
+            var result = _initFixture.Run();
 
             result.Args.ShouldBe("init --host www.transifex.com");
         }
@@ -31,9 +31,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void TransifexInitWithArguments_ShouldUsePassedSettings()
         {
-            this._initFixture.Settings = new TransifexInitSettings { Token = "MEGA-TOKEN", Host = "cakebuild.net" };
+            _initFixture.Settings = new TransifexInitSettings { Token = "MEGA-TOKEN", Host = "cakebuild.net" };
 
-            var result = this._initFixture.Run();
+            var result = _initFixture.Run();
 
             result.Args.ShouldContain("init");
             result.Args.ShouldContain("--host cakebuild.net");
@@ -43,9 +43,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void TransifexPull_ShouldJustCallTxPull()
         {
-            this._pullFixture.Settings = null;
+            _pullFixture.Settings = null;
 
-            var result = this._pullFixture.Run();
+            var result = _pullFixture.Run();
 
             result.Args.ShouldBe("pull");
         }
@@ -53,9 +53,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void TransifexPullWithArguments_ShouldUsePassedSettings()
         {
-            this._pullFixture.Settings = new TransifexPullSettings { All = true, Mode = TransifexMode.Reviewed };
+            _pullFixture.Settings = new TransifexPullSettings { All = true, Mode = TransifexMode.Reviewed };
 
-            var result = this._pullFixture.Run();
+            var result = _pullFixture.Run();
 
             result.Args.ShouldContain("pull");
             result.Args.ShouldContain("--all");
@@ -65,9 +65,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void TransifexPush_ShouldJustCallTxPush()
         {
-            this._pushFixture.Settings = null;
+            _pushFixture.Settings = null;
 
-            var result = this._pushFixture.Run();
+            var result = _pushFixture.Run();
 
             result.Args.ShouldBe("push");
         }
@@ -75,9 +75,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void TransifexPushWithSettings_ShouldUsePassedSettings()
         {
-            this._pushFixture.Settings = new TransifexPushSettings { UploadSourceFiles = true, UploadTranslations = true };
+            _pushFixture.Settings = new TransifexPushSettings { UploadSourceFiles = true, UploadTranslations = true };
 
-            var result = this._pushFixture.Run();
+            var result = _pushFixture.Run();
 
             result.Args.ShouldContain("push");
             result.Args.ShouldContain("--source");
@@ -87,9 +87,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void TransifexStatus_ShouldJustCallTxStatus()
         {
-            this._statusFixture.Resources = null;
+            _statusFixture.Resources = null;
 
-            var result = this._statusFixture.Run();
+            var result = _statusFixture.Run();
 
             result.Args.ShouldBe("status");
         }
@@ -97,9 +97,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void TransifexStatusWithSettings_ShouldPassUsedResources()
         {
-            this._statusFixture.Resources = "test.resource";
+            _statusFixture.Resources = "test.resource";
 
-            var result = this._statusFixture.Run();
+            var result = _statusFixture.Run();
 
             result.Args.ShouldBe("status --resources test.resource");
         }
