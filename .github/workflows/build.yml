@@ -39,8 +39,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.3.4
-        with:
-          sumbodules: true
       - name: Fetch all tags and branches
         run: git fetch --prune --unshallow
       - name: Install Transifex Client
