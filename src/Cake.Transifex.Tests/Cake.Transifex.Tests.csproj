@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net50;netcoreapp2.1</TargetFrameworks>
+    <TargetFrameworks>net5.0;netcoreapp2.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
