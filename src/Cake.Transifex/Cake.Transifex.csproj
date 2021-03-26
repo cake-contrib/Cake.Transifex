@@ -37,6 +37,10 @@ Supports Cake $(CakeVersion)+
     <Title>$(AssemblyTitle)</Title>
   </PropertyGroup>
 
+  <ItemGroup>
+    <CakeContribGuidelinesOmitTargetFramework Include="net461" />
+  </ItemGroup>
+
   <!-- Package References only for this project -->
   <ItemGroup>
     <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.3">
