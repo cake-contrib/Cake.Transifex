@@ -73,6 +73,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Attributes">Attributes</a></p>
 <p><a href="#TypeParameters">Type Parameters</a></p>
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Properties">Properties</a></p>
@@ -224,11 +225,29 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class TransifexRunnerSettings&lt;TSettingsType&gt; : TransifexRunnerSettings 
+	<pre><code>[SuppressMessage("StyeCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleType", Justification = "The class only differ in the type parameter used!")]
+public class TransifexRunnerSettings&lt;TSettingsType&gt; : TransifexRunnerSettings 
     where TSettingsType : TransifexRunnerSettings&lt;TSettingsType&gt;</code></pre>
 
 
 
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>Suppress<wbr>Message<wbr>Attribute</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
 
 	<h1 id="TypeParameters">Type Parameters</h1>
 	<div class="box">
@@ -242,7 +261,7 @@ class Type type-node
 				</thead>
 					<tbody><tr id="typeparam-TSettingsType">
 						<td>TSettingsType</td>
-						<td></td>
+						<td>The type of settings that inherits from this class.</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -263,7 +282,7 @@ class Type type-node
 							<tbody><tr>
 								<td><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1/C4792F9E">Transifex<wbr>Runner<wbr>Settings<wbr>(string)<wbr></a></td>
 									<td>
-    Initializes a new instance of the <code class="cs"><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings">TransifexRunnerSettings</a></code> class.
+    Initializes a new instance of the <code class="cs"><a href="/Cake.Transifex/api/Cake.Transifex/TransifexRunnerSettings_1">TransifexRunnerSettings&lt;TSettingsType&gt;</a></code> class.
     </td>
 							</tr>
 					</tbody></table>
@@ -289,7 +308,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-    The resources you want to use for this command (defaults to all)
+    Gets or sets the resources you want to use for this command (defaults to all).
     </div>
 								</td>
 							</tr>
