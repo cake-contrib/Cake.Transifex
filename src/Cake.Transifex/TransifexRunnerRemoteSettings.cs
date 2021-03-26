@@ -1,8 +1,14 @@
+// <copyright file="TransifexRunnerRemoteSettings.cs" company="Cake Contrib">
+// Copyright (c) 2017-2021 Kim J. Nordmo and Cake Contrib.
+// Licensed under the MIT license. See LICENSE in the project.
+// </copyright>
+
 namespace Cake.Transifex
 {
     /// <summary>
     /// Defines common properties that can be used for all commands touching a remote location.
     /// </summary>
+    /// <typeparam name="TSettingsType">The type of settings that inherits from this class.</typeparam>
     /// <seealso cref="TransifexRunnerSettings{TSettingsType}"/>
     public class TransifexRunnerRemoteSettings<TSettingsType> : TransifexRunnerSettings<TSettingsType>
         where TSettingsType : TransifexRunnerRemoteSettings<TSettingsType>
@@ -72,7 +78,7 @@ namespace Cake.Transifex
         }
 
         /// <summary>
-        /// The languages you want to push/pull. (defaults to all)
+        /// Gets or sets the languages you want to push/pull. (defaults to all).
         /// </summary>
         /// <remarks>Supports unix style wildcards.</remarks>
         public string Languages
@@ -82,7 +88,7 @@ namespace Cake.Transifex
         }
 
         /// <summary>
-        /// Gets or sets a value indicating wether translations/sources should be pushed/pulled in parallel.
+        /// Gets or sets a value indicating whether translations/sources should be pushed/pulled in parallel.
         /// </summary>
         /// <value><see langword="true"/> to pull/push files in parallel; otherwise <see langword="false"/>.</value>
         /// <remarks>
@@ -117,7 +123,7 @@ namespace Cake.Transifex
         }
 
         /// <summary>
-        /// Gets or set wether to use git timestamps when comparing commited files timestamp with corresponding
+        /// Gets or sets a value indicating whether to use git timestamps when comparing commited files timestamp with corresponding
         /// file on transifex.
         /// </summary>
         /// <remarks>

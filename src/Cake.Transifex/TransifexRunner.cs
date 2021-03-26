@@ -1,10 +1,16 @@
+// <copyright file="TransifexRunner.cs" company="Cake Contrib">
+// Copyright (c) 2017-2021 Kim J. Nordmo and Cake Contrib.
+// Licensed under the MIT license. See LICENSE in the project.
+// </copyright>
+
 namespace Cake.Transifex
 {
+    using System;
+    using System.Collections.Generic;
+
     using Cake.Core;
     using Cake.Core.IO;
     using Cake.Core.Tooling;
-    using System;
-    using System.Collections.Generic;
 
     /// <summary>
     /// The wrapper around the transifex client. This class cannot be inherited.
@@ -25,6 +31,7 @@ namespace Cake.Transifex
         {
         }
 
+        /// <inheritdoc/>
         public ITransifexRunnerCommands Init(TransifexInitSettings settings)
         {
             settings = settings ?? new TransifexInitSettings();
@@ -33,6 +40,7 @@ namespace Cake.Transifex
             return this;
         }
 
+        /// <inheritdoc/>
         public ITransifexRunnerCommands Pull(TransifexPullSettings settings)
         {
             settings = settings ?? new TransifexPullSettings();
@@ -41,6 +49,7 @@ namespace Cake.Transifex
             return this;
         }
 
+        /// <inheritdoc/>
         public ITransifexRunnerCommands Push(TransifexPushSettings settings)
         {
             settings = settings ?? new TransifexPushSettings();
@@ -49,11 +58,12 @@ namespace Cake.Transifex
             return this;
         }
 
+        /// <inheritdoc/>
         public ITransifexRunnerCommands Status(string resources)
         {
             var settings = new TransifexStatusSettings
             {
-                Resources = resources
+                Resources = resources,
             };
 
             var args = GetTransifexRunnerArguments(settings);
@@ -61,14 +71,16 @@ namespace Cake.Transifex
             return this;
         }
 
+        /// <inheritdoc/>
         protected override IEnumerable<string> GetToolExecutableNames()
             => new[]
             {
                 "tx.cmd",
                 "tx.exe",
-                "tx"
+                "tx",
             };
 
+        /// <inheritdoc/>
         protected override string GetToolName()
             => Common.TransifexRunner;
 

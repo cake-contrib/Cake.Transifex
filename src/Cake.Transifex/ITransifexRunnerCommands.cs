@@ -1,3 +1,8 @@
+// <copyright file="ITransifexRunnerCommands.cs" company="Cake Contrib">
+// Copyright (c) 2017-2021 Kim J. Nordmo and Cake Contrib.
+// Licensed under the MIT license. See LICENSE in the project.
+// </copyright>
+
 namespace Cake.Transifex
 {
     /// <summary>
@@ -8,6 +13,8 @@ namespace Cake.Transifex
         /// <summary>
         /// Initializes a transifex configuration file and the user configuration file (if token, username or password is specified).
         /// </summary>
+        /// <param name="settings">The settings to use when initializing the directory.</param>
+        /// <returns>The current instance of <see cref="ITransifexRunnerCommands"/>.</returns>
         /// <remarks>
         /// <note type="warning">
         ///   Do not call this runner if a configuration file already exists in the repository.

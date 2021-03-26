@@ -22,11 +22,11 @@
         {
             if (Settings != null)
             {
-                TransifexRunnerAliases.TransifexInit(_context, Settings);
+                _context.TransifexInit(Settings);
             }
             else
             {
-                TransifexRunnerAliases.TransifexInit(_context);
+                _context.TransifexInit();
             }
         }
     }
@@ -47,11 +47,11 @@
         {
             if (Settings != null)
             {
-                TransifexRunnerAliases.TransifexPull(_context, Settings);
+                _context.TransifexPull(Settings);
             }
             else
             {
-                TransifexRunnerAliases.TransifexPull(_context);
+                _context.TransifexPull();
             }
         }
     }
@@ -72,11 +72,11 @@
         {
             if (Settings != null)
             {
-                TransifexRunnerAliases.TransifexPush(_context, Settings);
+                _context.TransifexPush(Settings);
             }
             else
             {
-                TransifexRunnerAliases.TransifexPush(_context);
+                _context.TransifexPush();
             }
         }
     }
@@ -97,11 +97,11 @@
         {
             if (!string.IsNullOrEmpty(Resources))
             {
-                TransifexRunnerAliases.TransifexStatus(_context, Resources);
+                _context.TransifexStatus(Resources);
             }
             else
             {
-                TransifexRunnerAliases.TransifexStatus(_context);
+                _context.TransifexStatus();
             }
         }
     }
