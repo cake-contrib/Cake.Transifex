@@ -6,11 +6,11 @@ namespace Cake.Transifex.Tests
 
     public class TransifexInitRunnerTests
     {
-        private readonly TransifexInitFixture fixture;
+        private readonly TransifexInitFixture _fixture;
 
         public TransifexInitRunnerTests()
         {
-            this.fixture = new TransifexInitFixture();
+            _fixture = new TransifexInitFixture();
         }
 
         [Theory]
@@ -18,9 +18,9 @@ namespace Cake.Transifex.Tests
         [InlineData("")]
         public void Evaluate_DoesNotSetHostWhenNullOrEmpty(string host)
         {
-            this.fixture.Settings = new TransifexInitSettings { Host = host };
+            _fixture.Settings = new TransifexInitSettings { Host = host };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("init");
         }
@@ -34,9 +34,9 @@ namespace Cake.Transifex.Tests
         [InlineData("", "SECRET-PASSWORD")]
         public void Evaluate_DoesNotSetUserNameAndPasswordWhenEitherIsEmpty(string userName, string password)
         {
-            this.fixture.Settings = new TransifexInitSettings { Username = userName, Password = password };
+            _fixture.Settings = new TransifexInitSettings { Username = userName, Password = password };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("init --host www.transifex.com");
         }
@@ -44,9 +44,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetHostByDefault()
         {
-            this.fixture.Settings = null;
+            _fixture.Settings = null;
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("init --host www.transifex.com");
         }
@@ -55,9 +55,9 @@ namespace Cake.Transifex.Tests
         public void Evaluate_SetsTokenWhenOneIsSpecified()
         {
             const string token = "MY-AWESOME-TOKEN";
-            this.fixture.Settings = new TransifexInitSettings { Token = token };
+            _fixture.Settings = new TransifexInitSettings { Token = token };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("init --host www.transifex.com --token " + token);
         }
@@ -67,9 +67,9 @@ namespace Cake.Transifex.Tests
         {
             const string userName = "My-Awesome-Username";
             const string password = "My-Super-Awesome-Secret-Password";
-            this.fixture.Settings = new TransifexInitSettings { Username = userName, Password = password };
+            _fixture.Settings = new TransifexInitSettings { Username = userName, Password = password };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe($"init --host www.transifex.com --user {userName} --pass {password}");
         }
@@ -82,9 +82,9 @@ namespace Cake.Transifex.Tests
         [InlineData("token", "userName", "password")]
         public void Evaluate_ThrowsArgumentExceptionWhenTokenAndUsernameOrPasswordIsSpecified(string token, string userName, string password)
         {
-            this.fixture.Settings = new TransifexInitSettings { Token = token, Username = userName, Password = password };
+            _fixture.Settings = new TransifexInitSettings { Token = token, Username = userName, Password = password };
 
-            var ex = Assert.Throws<ArgumentException>(() => this.fixture.Run());
+            var ex = Assert.Throws<ArgumentException>(() => _fixture.Run());
 
             Assert.Equal(Exceptions.TokenAndUsernameException, ex.Message);
         }

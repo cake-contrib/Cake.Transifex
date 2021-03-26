@@ -1,7 +1,12 @@
-﻿namespace Cake.Transifex
+﻿// <copyright file="TransifexMode.cs" company="Cake Contrib">
+// Copyright (c) 2017-2021 Kim J. Nordmo and Cake Contrib.
+// Licensed under the MIT license. See LICENSE in the project.
+// </copyright>
+
+namespace Cake.Transifex
 {
     /// <summary>
-    /// Specifies the mode of the translation file to pull
+    /// Specifies the mode of the translation file to pull.
     /// </summary>
     public enum TransifexMode
     {
@@ -40,6 +45,6 @@
         /// Pull down both translated and untranslated strings (untranslated strings will be set to
         /// the value of the source).
         /// </summary>
-        SourceAsTranslation
+        SourceAsTranslation,
     }
 }

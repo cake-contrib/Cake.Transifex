@@ -1,3 +1,8 @@
+// <copyright file="TransifexInitSettings.cs" company="Cake Contrib">
+// Copyright (c) 2017-2021 Kim J. Nordmo and Cake Contrib.
+// Licensed under the MIT license. See LICENSE in the project.
+// </copyright>
+
 namespace Cake.Transifex
 {
     using System;
@@ -9,7 +14,6 @@ namespace Cake.Transifex
     /// client. This class cannot be inherited.
     /// </summary>
     /// <seealso cref="Cake.Transifex.TransifexRunnerSettings"/>
-    /// <category>Initialization</category>
     public sealed class TransifexInitSettings : TransifexRunnerSettings
     {
         private const string UserNameKey = "!--user";
@@ -80,6 +84,7 @@ namespace Cake.Transifex
             set => SetValue(UserNameKey, value);
         }
 
+        /// <inheritdoc/>
         internal override IDictionary<string, object> GetAllArguments()
         {
             var arguments = base.GetAllArguments();

@@ -1,3 +1,8 @@
+// <copyright file="TransifexRunnerAliases.cs" company="Cake Contrib">
+// Copyright (c) 2017-2021 Kim J. Nordmo and Cake Contrib.
+// Licensed under the MIT license. See LICENSE in the project.
+// </copyright>
+
 namespace Cake.Transifex
 {
     using Cake.Core;
@@ -14,9 +19,9 @@ namespace Cake.Transifex
         /// This command initializes the current repository with a default configuration file, and
         /// sets the host to <c>www.transifex.com</c>.
         /// </summary>
-        /// <param name="context">The cake context</param>
+        /// <param name="context">The cake context.</param>
         /// <para>Runs <c>tx init --host www.transifex.com</c> with the specified with default settings.</para>
-        /// <para>Cake task:</para>
+        /// <para>Cake task.</para>
         /// <example>
         /// <code>
         /// <![CDATA[
@@ -41,10 +46,10 @@ namespace Cake.Transifex
         /// optionally the user configuration file with either a Username + Password combination or
         /// an API token.
         /// </summary>
-        /// <param name="context">The cake context</param>
+        /// <param name="context">The cake context.</param>
         /// <param name="settings">The settings to use when initializing repository.</param>
-        /// <para>Runs <c>tx init</c> with the specified <paramref name="settings" /></para>
-        /// <para>Cake task:</para>
+        /// <para>Runs <c>tx init</c> with the specified <paramref name="settings" />.</para>
+        /// <para>Cake task.</para>
         /// <example>
         /// <code title="Initialize with a username and password">
         /// <![CDATA[
@@ -96,8 +101,8 @@ namespace Cake.Transifex
         /// repository. By default only the files that are watched by transifex will be updated.
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <para>Run 'tx pull'</para>
-        /// <para>Cake task:</para>
+        /// <para>Run 'tx pull'.</para>
+        /// <para>Cake task.</para>
         /// <code>
         /// <![CDATA[
         /// Task("Transifex-Pull")
@@ -120,7 +125,7 @@ namespace Cake.Transifex
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
         /// <example>
-        /// <para>Run 'tx pull' with additional options</para>
+        /// <para>Run 'tx pull' with additional options.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -153,7 +158,7 @@ namespace Cake.Transifex
         /// </summary>
         /// <param name="context">The context.</param>
         /// <example>
-        /// <para>Run 'tx push'</para>
+        /// <para>Run 'tx push'.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -181,7 +186,7 @@ namespace Cake.Transifex
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
         /// <example>
-        /// <para>Run 'tx push' with additional arguments</para>
+        /// <para>Run 'tx push' with additional arguments.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -209,7 +214,7 @@ namespace Cake.Transifex
         /// </summary>
         /// <param name="context">The context.</param>
         /// <example>
-        /// <para>Run 'tx status'</para>
+        /// <para>Run 'tx status'.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -232,7 +237,7 @@ namespace Cake.Transifex
         /// <param name="context">The context.</param>
         /// <param name="resources">The resources.</param>
         /// <example>
-        /// <para>Run 'tx status "--resources=resource.name"'</para>
+        /// <para>Run 'tx status "--resources=resource.name"'.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[

@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=2.1.0
+#load nuget:?package=Cake.Recipe&version=2.2.1
 #load "./.build/*.cake"
 
 Environment.SetVariableNames();
@@ -14,6 +14,8 @@ BuildParameters.SetParameters(
     shouldRunDotNetCorePack: true,
     solutionFilePath: "./Cake.Transifex.sln",
     testFilePattern: "/**/*.Tests.csproj",
+    preferredBuildAgentOperatingSystem: PlatformFamily.Linux,
+    preferredBuildProviderType: BuildProviderType.GitHubActions,
     shouldRunCodecov: true,
     shouldRunCoveralls: false,
     shouldUseDeterministicBuilds: true,

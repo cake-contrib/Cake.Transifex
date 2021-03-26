@@ -5,17 +5,19 @@
     <CodeAnalysisRuleSet>Cake.Transifex.ruleset</CodeAnalysisRuleSet>
     <Company>Cake Contributors</Company>
     <Copyright>Copyright 2017-$([System.DateTime]::Now.Year) - Kim J. Nordmo</Copyright>
+    <CakeVersion>1.0.0</CakeVersion>
     <Description>
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
 To install the transifex client, install python, then run `pip install transifex-client`.
 
-Supports Cake 1.0.0+
+Supports Cake $(CakeVersion)+
     </Description>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <NeutralLanguage>en-GB</NeutralLanguage>
-    <TargetFrameworks>net50;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net5.0;netstandard2.0</TargetFrameworks>
     <LangVersion>7</LangVersion>
+    <CodeAnalysisRuleSet>..\Cake.Transifex.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <!-- Package information -->
   <PropertyGroup>
@@ -29,21 +31,29 @@ Supports Cake 1.0.0+
     <PackageSourceProjectUrl>https://github.com/cake-contrib/Cake.Transifex</PackageSourceProjectUrl>
     <PackageReleaseNotes Condition=" '$(Version)' == '$(FileVersion)'">All release notes for $(AssemblyName) can be found on our GitHub release page - $(PackageSourceProjectUrl)/releases/tag/$(Version)</PackageReleaseNotes>
     <PackageReleaseNotes Condition=" '$(Version)' != '$(FileVersion)'">Development releases do not contain release notes, please see the closed issues in these cases - $(PackageSourceProjectUrl)/issues?q=milestone:$(FileVersion)+is:closed</PackageReleaseNotes>
-    <PackageTags>Cake;Cake Script;Build;Transifex;Localization</PackageTags>
+    <PackageTags>cake;cake-addin;addin;cake-build;build;cake-script;script;transifex;localization</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>$(PackageSourceProjectUrl).git</RepositoryUrl>
     <Title>$(AssemblyTitle)</Title>
   </PropertyGroup>
 
+  <ItemGroup>
+    <CakeContribGuidelinesOmitTargetFramework Include="net461" />
+  </ItemGroup>
+
   <!-- Package References only for this project -->
   <ItemGroup>
-    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.1">
+    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
-    <PackageReference Include="CakeContrib.Guidelines" Version="0.5.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="$(CakeVersion)" PrivateAssets="All" />
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="Roslynator.Analyzers" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -68,5 +78,9 @@ Supports Cake 1.0.0+
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Exceptions.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 </Project>

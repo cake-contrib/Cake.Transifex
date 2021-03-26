@@ -5,11 +5,11 @@ namespace Cake.Transifex.Tests
 
     public class TransifexPushRunnerTests
     {
-        private readonly TransifexPushFixture fixture;
+        private readonly TransifexPushFixture _fixture;
 
         public TransifexPushRunnerTests()
         {
-            fixture = new TransifexPushFixture();
+            _fixture = new TransifexPushFixture();
         }
 
         [Theory]
@@ -18,9 +18,9 @@ namespace Cake.Transifex.Tests
         [InlineData("     ")]
         public void Evaluate_DoesNotSetLanguages(string language)
         {
-            this.fixture.Settings = new TransifexPushSettings { Languages = language };
+            _fixture.Settings = new TransifexPushSettings { Languages = language };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push");
         }
@@ -31,9 +31,9 @@ namespace Cake.Transifex.Tests
         [InlineData("     ")]
         public void Evaluate_DoesNotSetResources(string resources)
         {
-            this.fixture.Settings = new TransifexPushSettings { Resources = resources };
+            _fixture.Settings = new TransifexPushSettings { Resources = resources };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push");
         }
@@ -41,9 +41,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsForceArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPushSettings { Force = true };
+            _fixture.Settings = new TransifexPushSettings { Force = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --force");
         }
@@ -51,9 +51,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsLanguagesArgument()
         {
-            this.fixture.Settings = new TransifexPushSettings { Languages = "nb_NO*" };
+            _fixture.Settings = new TransifexPushSettings { Languages = "nb_NO*" };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --language \"nb_NO*\"");
         }
@@ -61,9 +61,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsNoInteractiveWhenTrue()
         {
-            this.fixture.Settings = new TransifexPushSettings { NoInteractive = true };
+            _fixture.Settings = new TransifexPushSettings { NoInteractive = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --no-interactive");
         }
@@ -71,9 +71,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsResourcesArgument()
         {
-            this.fixture.Settings = new TransifexPushSettings { Resources = "helloworld*" };
+            _fixture.Settings = new TransifexPushSettings { Resources = "helloworld*" };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --resources \"helloworld*\"");
         }
@@ -81,9 +81,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsSkipArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPushSettings { SkipErrors = true };
+            _fixture.Settings = new TransifexPushSettings { SkipErrors = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --skip");
         }
@@ -91,9 +91,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsSourceWhenUploadSourceFilesIsTrue()
         {
-            this.fixture.Settings = new TransifexPushSettings { UploadSourceFiles = true };
+            _fixture.Settings = new TransifexPushSettings { UploadSourceFiles = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --source");
         }
@@ -101,9 +101,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsStatusAsCommandToArgumentBuilder()
         {
-            this.fixture.Settings = null;
+            _fixture.Settings = null;
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push");
         }
@@ -111,9 +111,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsTranslationsWhenUploadTranslationsIsTrue()
         {
-            this.fixture.Settings = new TransifexPushSettings { UploadTranslations = true };
+            _fixture.Settings = new TransifexPushSettings { UploadTranslations = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --translations");
         }
@@ -121,9 +121,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsXLiffArgumentWhenTrue()
         {
-            this.fixture.Settings = new TransifexPushSettings { UseXliff = true };
+            _fixture.Settings = new TransifexPushSettings { UseXliff = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --xliff");
         }
@@ -131,9 +131,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsParallelWhenTrue()
         {
-            this.fixture.Settings = new TransifexPushSettings { Parallel = true };
+            _fixture.Settings = new TransifexPushSettings { Parallel = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --parallel");
         }
@@ -141,9 +141,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_DoesNotSetParallelWhenFalse()
         {
-            this.fixture.Settings = new TransifexPushSettings { Parallel = false };
+            _fixture.Settings = new TransifexPushSettings { Parallel = false };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push");
         }
@@ -154,9 +154,9 @@ namespace Cake.Transifex.Tests
         [InlineData("feature/branch-argument")]
         public void Evaluate_SetsBranchArgument(string branch)
         {
-            this.fixture.Settings = new TransifexPushSettings { Branch = branch };
+            _fixture.Settings = new TransifexPushSettings { Branch = branch };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe($"push --branch {branch}");
         }
@@ -164,9 +164,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_SetsGitTimestampsWhenTrue()
         {
-            this.fixture.Settings = new TransifexPushSettings { UseGitTimestamps = true };
+            _fixture.Settings = new TransifexPushSettings { UseGitTimestamps = true };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push --use-git-timestamps");
         }
@@ -174,9 +174,9 @@ namespace Cake.Transifex.Tests
         [Fact]
         public void Evaluate_DoesNotSetGitTimestampsWhenFalse()
         {
-            this.fixture.Settings = new TransifexPushSettings { UseGitTimestamps = false };
+            _fixture.Settings = new TransifexPushSettings { UseGitTimestamps = false };
 
-            var result = this.fixture.Run();
+            var result = _fixture.Run();
 
             result.Args.ShouldBe("push");
         }
