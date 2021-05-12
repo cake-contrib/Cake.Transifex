@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: technote-space/toc-generator@v4
+      - uses: technote-space/toc-generator@v4.1.2
         with:
           COMMIT_MESSAGE: "(docs) Update TOC"
           TARGET_PATHS: "README.md"
