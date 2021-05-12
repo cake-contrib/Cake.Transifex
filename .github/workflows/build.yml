@@ -53,7 +53,7 @@ jobs:
         if: ${{ runner.os == 'Linux' }}
         run: sudo rm /usr/bin/nuget
       - name: Build Addin
-        uses: cake-build/cake-action@v1
+        uses: cake-build/cake-action@v1.3.0
         with:
           script-path: recipe.cake
           target: CI
