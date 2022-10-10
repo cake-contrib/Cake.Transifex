@@ -5,7 +5,7 @@
     <CodeAnalysisRuleSet>Cake.Transifex.ruleset</CodeAnalysisRuleSet>
     <Company>Cake Contributors</Company>
     <Copyright>Copyright 2017-$([System.DateTime]::Now.Year) - Kim J. Nordmo</Copyright>
-    <CakeVersion>1.0.0</CakeVersion>
+    <CakeVersion>2.0.0</CakeVersion>
     <Description>
 Cake.Transifex is a addin for the Cake Build script adding support for working with the localization service Transifex.
 This addin requires that the transifex client is already installed and is available as `tx`.
@@ -15,7 +15,7 @@ Supports Cake $(CakeVersion)+
     </Description>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <NeutralLanguage>en-GB</NeutralLanguage>
-    <TargetFrameworks>net5.0;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
     <LangVersion>7</LangVersion>
     <CodeAnalysisRuleSet>..\Cake.Transifex.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -43,12 +43,15 @@ Supports Cake $(CakeVersion)+
 
   <!-- Package References only for this project -->
   <ItemGroup>
-    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.3">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Cake.Core" Version="$(CakeVersion)" PrivateAssets="All" />
-    <PackageReference Include="CakeContrib.Guidelines" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Roslynator.Analyzers" Version="3.1.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
