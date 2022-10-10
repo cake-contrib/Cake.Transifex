@@ -48,7 +48,7 @@ Supports Cake $(CakeVersion)+
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Cake.Core" Version="$(CakeVersion)" PrivateAssets="All" />
-    <PackageReference Include="CakeContrib.Guidelines" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.3.0" PrivateAssets="All" />
     <PackageReference Include="Roslynator.Analyzers" Version="3.1.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
