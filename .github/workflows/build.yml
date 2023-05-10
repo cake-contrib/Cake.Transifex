@@ -19,7 +19,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-18.04, macos-latest]
+        os: [windows-2022, ubuntu-22.04, macos-12]
     env:
       AZURE_PASSWORD: ${{ secrets.AZURE_PASSWORD }}
       AZURE_SOURCE: ${{ secrets.AZURE_SOURCE }}
@@ -42,7 +42,7 @@ jobs:
       - name: Fetch all tags and branches
         run: git fetch --prune --unshallow
       - name: Install Transifex Client
-        if: ${{ matrix.os == 'ubuntu-18.04' }} # We do not need it for anything else
+        if: ${{ matrix.os == 'ubuntu-22.04' }} # We do not need it for anything else
         run: sudo apt-get install transifex-client -y
       - name: Cache Tools
         uses: actions/cache@v3.0.10
