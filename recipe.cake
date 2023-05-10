@@ -22,6 +22,9 @@ BuildParameters.SetParameters(
     shouldUseTargetFrameworkPath: false);
 
 ToolSettings.SetToolSettings(context: Context);
+ToolSettings.SetToolPreprocessorDirectives(
+    codecovTool: "#tool nuget:?package=CodecovUploader&version=0.5.0"
+);
 
 BuildParameters.PrintParameters(Context);
 
