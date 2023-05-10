@@ -8,7 +8,7 @@ on:
 jobs:
   toc:
     name: TOC Generator
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: technote-space/toc-generator@v4
