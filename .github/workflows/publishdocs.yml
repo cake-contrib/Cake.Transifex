@@ -18,6 +18,13 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.ref }}
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            5.0.x
+            6.0.x
+            7.0.x
       - name: Cache Tools
         uses: actions/cache@v3.0.10
         with:
