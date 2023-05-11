@@ -1,15 +1,16 @@
 [main]
-host = https://www.transifex.com
+host     = https://app.transifex.com
 lang_map = en_GB: en-GB, en_US: en-US
 
-[caketransifex.commonresx]
-source_file = src/Cake.Transifex/Common.resx
+[o:cake-contrib:p:caketransifex:r:commonresx]
 file_filter = src/Cake.Transifex/Common.<lang>.resx
+source_file = src/Cake.Transifex/Common.resx
 source_lang = en
-type = RESX
+type        = RESX
 
-[caketransifex.exceptionsresx]
-source_file = src/Cake.Transifex/Exceptions.resx
+[o:cake-contrib:p:caketransifex:r:exceptionsresx]
 file_filter = src/Cake.Transifex/Exceptions.<lang>.resx
+source_file = src/Cake.Transifex/Exceptions.resx
 source_lang = en
-type = RESX
+type        = RESX
+

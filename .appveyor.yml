@@ -15,8 +15,7 @@ skip_commits:
 install:
   - git submodule update --init
   - cmd: |
-      cinst python3 -n
-      cinst transifex-client
+      choco install transifex-cli
 
 build: off
 test: off
