@@ -28,4 +28,6 @@ ToolSettings.SetToolPreprocessorDirectives(
 
 BuildParameters.PrintParameters(Context);
 
+((CakeTask)BuildParameters.Tasks.TransifexSetupTask.Task).Actions.Clear();
+
 Build.RunDotNetCore();

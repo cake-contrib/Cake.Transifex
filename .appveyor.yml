@@ -21,7 +21,9 @@ build: off
 test: off
 
 build_script:
-  - pwsh: ./build.ps1 --target=CI --verbosity=Diagnostic
+  - pwsh: |
+      $env:TX_TOKEN = "$env:TRANSIFEX_API_TOKEN"
+      ./build.ps1 --target=CI --verbosity=Diagnostic
 
 cache:
   - "tools -> .build/dotnet-tools.json,recipe.cake,.build/sonarcloud.cake"
