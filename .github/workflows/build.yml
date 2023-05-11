@@ -69,7 +69,7 @@ jobs:
           verbosity: Diagnostic
           cake-version: tool-manifest
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2.2.3
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: ${{ matrix.os }}-artifacts
           path: |
