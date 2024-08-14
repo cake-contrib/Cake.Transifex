@@ -16,6 +16,7 @@ install:
   - git submodule update --init
   - cmd: |
       choco install transifex-cli
+      choco install dotnet-5.0-sdk dotnet-6.0-sdk dotnet-7.0-sdk
 
 build: off
 test: off
