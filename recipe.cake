@@ -21,13 +21,16 @@ BuildParameters.SetParameters(
     shouldUseDeterministicBuilds: true,
     shouldUseTargetFrameworkPath: false);
 
-ToolSettings.SetToolSettings(context: Context);
+ToolSettings.SetToolSettings(
+    context: Context,
+    testCoverageExcludeByFile: "**/*Designer.cs,*/*.g.cs;**/*.g.i.cs",
+    testCoverageExcludeByAttribute: "Obsolete;GeneratedCodeAttribute;CompilerGeneratedAttribute");
 ToolSettings.SetToolPreprocessorDirectives(
     codecovTool: "#tool nuget:?package=CodecovUploader&version=0.5.0"
 );
 
 BuildParameters.PrintParameters(Context);
 
-((CakeTask)BuildParameters.Tasks.TransifexSetupTask.Task).Actions.Clear();
+//((CakeTask)BuildParameters.Tasks.TransifexSetupTask.Task).Actions.Clear();
 
 Build.RunDotNetCore();
