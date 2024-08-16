@@ -31,6 +31,46 @@ ToolSettings.SetToolPreprocessorDirectives(
 
 BuildParameters.PrintParameters(Context);
 
-//((CakeTask)BuildParameters.Tasks.TransifexSetupTask.Task).Actions.Clear();
+// Temporary Overrides needed to work properly with TX.Exe
+
+((CakeTask)BuildParameters.Tasks.TransifexSetupTask.Task).Actions.Clear();
+((CakeTask)BuildParameters.Tasks.TransifexPushSourceResource.Task).Actions.Clear();
+((CakeTask)BuildParameters.Tasks.TransifexPullTranslations.Task).Actions.Clear();
+((CakeTask)BuildParameters.Tasks.TransifexPushTranslations.Task).Actions.Clear();
+
+private static void AddGlobalOptions(TransifexRunnerSettings settings)
+{
+    if (!string.IsNullOrEmpty(BuildParameters.Transifex.ApiToken))
+    {
+        settings.ArgumentCustomization = args => args.PrependSwitchQuotedSecret("--token", " ", BuildParameters.Transifex.ApiToken);
+    };
+}
+
+BuildParameters.Tasks.TransifexPushSourceResource.Does(() =>
+{
+    var settings = new TransifexPushSettings
+    {
+        UploadSourceFiles = true,
+        Force = string.Equals(BuildParameters.Target, "Transifex-Push-SourceFiles", StringComparison.OrdinalIgnoreCase),
+    };
+
+    AddGlobalOptions(settings);
+
+    TransifexPush(settings);
+});
+
+BuildParameters.Tasks.TransifexPullTranslations.Does(() =>
+{
+    var settings = new TransifexPullSettings
+    {
+        All = true,
+        Mode = BuildParameters.TransifexPullMode,
+        MinimumPercentage = BuildParameters.TransifexPullPercentage
+    };
+
+    AddGlobalOptions(settings);
+
+    TransifexPull(settings);
+});
 
 Build.RunDotNetCore();
