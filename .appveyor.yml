@@ -1,4 +1,4 @@
-image: Visual Studio 2019
+image: Visual Studio 2022
 matrix:
   fast_finish: true
 environment:
@@ -15,14 +15,16 @@ skip_commits:
 install:
   - git submodule update --init
   - cmd: |
-      cinst python3 -n
-      cinst transifex-client
+      choco install transifex-cli
+      choco install dotnet-5.0-sdk dotnet-6.0-sdk dotnet-7.0-sdk
 
 build: off
 test: off
 
 build_script:
-  - pwsh: ./build.ps1 --target=CI --verbosity=Diagnostic
+  - pwsh: |
+      $env:TX_TOKEN = "$env:TRANSIFEX_API_TOKEN"
+      ./build.ps1 --target=CI --verbosity=Diagnostic
 
 cache:
   - "tools -> .build/dotnet-tools.json,recipe.cake,.build/sonarcloud.cake"
