@@ -1,10 +1,10 @@
-﻿namespace Cake.Transifex.Tests
+namespace Cake.Transifex.Tests
 {
     using Cake.Core;
     using Cake.Core.IO;
     using Cake.Testing;
     using Cake.Testing.Fixtures;
-    using Moq;
+    using NSubstitute;
 
     public class TransifexAliasesInitFixture : TransifexInitFixture
     {
@@ -12,10 +12,10 @@
 
         public TransifexAliasesInitFixture()
         {
-            var argumentsMoq = new Mock<ICakeArguments>();
-            var registryMoq = new Mock<IRegistry>();
-            var dataService = new Mock<ICakeDataService>();
-            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools, dataService.Object, Configuration);
+            var argumentsMoq = Substitute.For<ICakeArguments>();
+            var registryMoq = Substitute.For<IRegistry>();
+            var dataService = Substitute.For<ICakeDataService>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq, ProcessRunner, registryMoq, Tools, dataService, Configuration);
         }
 
         protected override void RunTool()
@@ -37,10 +37,10 @@
 
         public TransifexAliasesPullFixture()
         {
-            var argumentsMoq = new Mock<ICakeArguments>();
-            var registryMoq = new Mock<IRegistry>();
-            var dataService = new Mock<ICakeDataService>();
-            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools, dataService.Object, Configuration);
+            var argumentsMoq = Substitute.For<ICakeArguments>();
+            var registryMoq = Substitute.For<IRegistry>();
+            var dataService = Substitute.For<ICakeDataService>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq, ProcessRunner, registryMoq, Tools, dataService, Configuration);
         }
 
         protected override void RunTool()
@@ -62,10 +62,10 @@
 
         public TransifexAliasesPushFixture()
         {
-            var argumentsMoq = new Mock<ICakeArguments>();
-            var registryMoq = new Mock<IRegistry>();
-            var dataService = new Mock<ICakeDataService>();
-            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools, dataService.Object, Configuration);
+            var argumentsMoq = Substitute.For<ICakeArguments>();
+            var registryMoq = Substitute.For<IRegistry>();
+            var dataService = Substitute.For<ICakeDataService>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq, ProcessRunner, registryMoq, Tools, dataService, Configuration);
         }
 
         protected override void RunTool()
@@ -87,10 +87,10 @@
 
         public TransifexAliasesStatusFixture()
         {
-            var argumentsMoq = new Mock<ICakeArguments>();
-            var registryMoq = new Mock<IRegistry>();
-            var dataService = new Mock<ICakeDataService>();
-            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq.Object, ProcessRunner, registryMoq.Object, Tools, dataService.Object, Configuration);
+            var argumentsMoq = Substitute.For<ICakeArguments>();
+            var registryMoq = Substitute.For<IRegistry>();
+            var dataService = Substitute.For<ICakeDataService>();
+            _context = new CakeContext(FileSystem, Environment, Globber, new FakeLog(), argumentsMoq, ProcessRunner, registryMoq, Tools, dataService, Configuration);
         }
 
         protected override void RunTool()
