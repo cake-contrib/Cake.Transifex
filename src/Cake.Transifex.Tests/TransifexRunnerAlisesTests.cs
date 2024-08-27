@@ -1,6 +1,6 @@
 namespace Cake.Transifex.Tests
 {
-    using Shouldly;
+    using FluentAssertions;
     using Xunit;
 
     public class TransifexRunnerAlisesTests
@@ -25,7 +25,7 @@ namespace Cake.Transifex.Tests
 
             var result = _initFixture.Run();
 
-            result.Args.ShouldBe("init --host www.transifex.com");
+            result.Args.Should().Be("init --host www.transifex.com");
         }
 
         [Fact]
@@ -35,9 +35,10 @@ namespace Cake.Transifex.Tests
 
             var result = _initFixture.Run();
 
-            result.Args.ShouldContain("init");
-            result.Args.ShouldContain("--host cakebuild.net");
-            result.Args.ShouldContain("--token MEGA-TOKEN");
+            result.Args.Should().ContainAll(
+                "init",
+                "--host cakebuild.net",
+                "--token MEGA-TOKEN");
         }
 
         [Fact]
@@ -47,7 +48,7 @@ namespace Cake.Transifex.Tests
 
             var result = _pullFixture.Run();
 
-            result.Args.ShouldBe("pull");
+            result.Args.Should().Be("pull");
         }
 
         [Fact]
@@ -57,9 +58,10 @@ namespace Cake.Transifex.Tests
 
             var result = _pullFixture.Run();
 
-            result.Args.ShouldContain("pull");
-            result.Args.ShouldContain("--all");
-            result.Args.ShouldContain("--mode reviewed");
+            result.Args.Should().ContainAll(
+                "pull",
+                "--all",
+                "--mode reviewed");
         }
 
         [Fact]
@@ -69,7 +71,7 @@ namespace Cake.Transifex.Tests
 
             var result = _pushFixture.Run();
 
-            result.Args.ShouldBe("push");
+            result.Args.Should().Be("push");
         }
 
         [Fact]
@@ -79,9 +81,10 @@ namespace Cake.Transifex.Tests
 
             var result = _pushFixture.Run();
 
-            result.Args.ShouldContain("push");
-            result.Args.ShouldContain("--source");
-            result.Args.ShouldContain("--translations");
+            result.Args.Should().ContainAll(
+                "push",
+                "--source",
+                "--translations");
         }
 
         [Fact]
@@ -91,7 +94,7 @@ namespace Cake.Transifex.Tests
 
             var result = _statusFixture.Run();
 
-            result.Args.ShouldBe("status");
+            result.Args.Should().Be("status");
         }
 
         [Fact]
@@ -101,7 +104,7 @@ namespace Cake.Transifex.Tests
 
             var result = _statusFixture.Run();
 
-            result.Args.ShouldBe("status --resources test.resource");
+            result.Args.Should().Be("status --resources test.resource");
         }
     }
 }
