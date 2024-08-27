@@ -1,6 +1,6 @@
 namespace Cake.Transifex.Tests
 {
-    using Shouldly;
+    using FluentAssertions;
     using Xunit;
 
     public class TransifexPullRunnerTests
@@ -22,7 +22,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull");
+            result.Args.Should().Be("pull");
         }
 
         [Theory]
@@ -35,7 +35,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull");
+            result.Args.Should().Be("pull");
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --all");
+            result.Args.Should().Be("pull --all");
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --disable-overwrite");
+            result.Args.Should().Be("pull --disable-overwrite");
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --force");
+            result.Args.Should().Be("pull --force");
         }
 
         [Fact]
@@ -75,7 +75,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --language \"nb_NO*\"");
+            result.Args.Should().Be("pull --language \"nb_NO*\"");
         }
 
         [Fact]
@@ -85,7 +85,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --minimum-perc 50");
+            result.Args.Should().Be("pull --minimum-perc 50");
         }
 
         [Theory]
@@ -102,7 +102,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe($"pull --mode {expected}");
+            result.Args.Should().Be($"pull --mode {expected}");
         }
 
         [Fact]
@@ -112,7 +112,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --pseudo");
+            result.Args.Should().Be("pull --pseudo");
         }
 
         [Fact]
@@ -122,7 +122,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --resources \"helloworld*\"");
+            result.Args.Should().Be("pull --resources \"helloworld*\"");
         }
 
         [Fact]
@@ -132,7 +132,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --skip");
+            result.Args.Should().Be("pull --skip");
         }
 
         [Fact]
@@ -142,7 +142,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --source");
+            result.Args.Should().Be("pull --source");
         }
 
         [Fact]
@@ -152,7 +152,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull");
+            result.Args.Should().Be("pull");
         }
 
         [Fact]
@@ -162,7 +162,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --xliff");
+            result.Args.Should().Be("pull --xliff");
         }
 
         [Fact]
@@ -172,7 +172,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --no-interactive");
+            result.Args.Should().Be("pull --no-interactive");
         }
 
         [Fact]
@@ -182,7 +182,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --parallel");
+            result.Args.Should().Be("pull --parallel");
         }
 
         [Fact]
@@ -192,7 +192,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull");
+            result.Args.Should().Be("pull");
         }
 
         [Theory]
@@ -205,7 +205,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe($"pull --branch {branch}");
+            result.Args.Should().Be($"pull --branch {branch}");
         }
 
         [Fact]
@@ -215,7 +215,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull --use-git-timestamps");
+            result.Args.Should().Be("pull --use-git-timestamps");
         }
 
         [Fact]
@@ -225,7 +225,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("pull");
+            result.Args.Should().Be("pull");
         }
     }
 }

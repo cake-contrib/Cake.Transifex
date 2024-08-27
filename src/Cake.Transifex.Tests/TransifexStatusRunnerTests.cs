@@ -1,6 +1,6 @@
 namespace Cake.Transifex.Tests
 {
-    using Shouldly;
+    using FluentAssertions;
     using Xunit;
 
     public class TransifexStatusRunnerTests
@@ -22,7 +22,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("status");
+            result.Args.Should().Be("status");
         }
 
         [Fact]
@@ -32,7 +32,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("status --resources \"helloworld*\"");
+            result.Args.Should().Be("status --resources \"helloworld*\"");
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("status");
+            result.Args.Should().Be("status");
         }
     }
 }

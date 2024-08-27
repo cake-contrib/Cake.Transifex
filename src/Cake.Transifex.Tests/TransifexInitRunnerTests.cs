@@ -1,7 +1,7 @@
 namespace Cake.Transifex.Tests
 {
     using System;
-    using Shouldly;
+    using FluentAssertions;
     using Xunit;
 
     public class TransifexInitRunnerTests
@@ -22,7 +22,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("init");
+            result.Args.Should().Be("init");
         }
 
         [Theory]
@@ -38,7 +38,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("init --host www.transifex.com");
+            result.Args.Should().Be("init --host www.transifex.com");
         }
 
         [Fact]
@@ -48,7 +48,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("init --host www.transifex.com");
+            result.Args.Should().Be("init --host www.transifex.com");
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe("init --host www.transifex.com --token " + token);
+            result.Args.Should().Be($"init --host www.transifex.com --token {token}");
         }
 
         [Fact]
@@ -71,7 +71,7 @@ namespace Cake.Transifex.Tests
 
             var result = _fixture.Run();
 
-            result.Args.ShouldBe($"init --host www.transifex.com --user {userName} --pass {password}");
+            result.Args.Should().Be($"init --host www.transifex.com --user {userName} --pass {password}");
         }
 
         [Theory]
@@ -84,9 +84,10 @@ namespace Cake.Transifex.Tests
         {
             _fixture.Settings = new TransifexInitSettings { Token = token, Username = userName, Password = password };
 
-            var ex = Assert.Throws<ArgumentException>(() => _fixture.Run());
+            var action = _fixture.Run;
 
-            Assert.Equal(Exceptions.TokenAndUsernameException, ex.Message);
+            action.Should().ThrowExactly<ArgumentException>()
+                .WithMessage(Exceptions.TokenAndUsernameException);
         }
     }
 }
