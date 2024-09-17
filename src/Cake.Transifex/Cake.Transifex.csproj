@@ -16,8 +16,9 @@ Supports Cake $(CakeVersion)+
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Cake.Transifex.xml</DocumentationFile>
     <NeutralLanguage>en-GB</NeutralLanguage>
     <TargetFrameworks>net7.0;net6.0</TargetFrameworks>
-    <LangVersion>7</LangVersion>
+    <LangVersion>10</LangVersion>
     <CodeAnalysisRuleSet>..\Cake.Transifex.ruleset</CodeAnalysisRuleSet>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
   <!-- Package information -->
   <PropertyGroup>

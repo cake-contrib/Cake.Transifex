@@ -12,7 +12,7 @@
             "copyrightText": "Copyright (c) {year} {user} and {companyName}.\nLicensed under the {licenseName} license. See {licenseFile} in the project.",
             "xmlHeader": true,
             "variables": {
-                "year": "2017-2021",
+                "year": "2017-2024",
                 "user": "Kim J. Nordmo",
                 "licenseName": "MIT",
                 "licenseFile": "LICENSE"
