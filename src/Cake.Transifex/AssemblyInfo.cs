@@ -1,5 +1,5 @@
 // <copyright file="AssemblyInfo.cs" company="Cake Contrib">
-// Copyright (c) 2017-2021 Kim J. Nordmo and Cake Contrib.
+// Copyright (c) 2017-2024 Kim J. Nordmo and Cake Contrib.
 // Licensed under the MIT license. See LICENSE in the project.
 // </copyright>
 

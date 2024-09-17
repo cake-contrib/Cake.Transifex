@@ -120,4 +120,7 @@
   <data name="TransifexRunner" xml:space="preserve">
     <value>Transifex Runner</value>
   </data>
+  <data name="TxRunner" xml:space="preserve">
+    <value>TX (Transifex) Runner</value>
+  </data>
 </root>
