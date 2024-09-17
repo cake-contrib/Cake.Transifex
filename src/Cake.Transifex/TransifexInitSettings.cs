@@ -14,6 +14,7 @@ namespace Cake.Transifex
     /// client. This class cannot be inherited.
     /// </summary>
     /// <seealso cref="Cake.Transifex.TransifexRunnerSettings"/>
+    [Obsolete("Will be removed in v4. Use TxInitSettings instead.")]
     public sealed class TransifexInitSettings : TransifexRunnerSettings
     {
         private const string UserNameKey = "!--user";

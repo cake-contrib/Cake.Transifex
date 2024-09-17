@@ -5,11 +5,14 @@
 
 namespace Cake.Transifex
 {
+    using System;
+
     /// <summary>
     /// Defines the properties that can be used when calling the status command on the transifex
     /// client. This class cannot be inherited.
     /// </summary>
     /// <seealso cref="Cake.Transifex.TransifexRunnerSettings{TSettingsType}"/>
+    [Obsolete("Will be removed in v4. Use TxStatusSettings instead.")]
     public sealed class TransifexStatusSettings : TransifexRunnerSettings<TransifexStatusSettings>
     {
         /// <summary>

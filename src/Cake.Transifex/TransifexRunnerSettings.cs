@@ -5,6 +5,7 @@
 
 namespace Cake.Transifex
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 
@@ -16,6 +17,7 @@ namespace Cake.Transifex
     /// <typeparam name="TSettingsType">The type of settings that inherits from this class.</typeparam>
     /// <seealso cref="TransifexRunnerSettings"/>
     [SuppressMessage("StyeCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleType", Justification = "The class only differ in the type parameter used!")]
+    [Obsolete("Will be removed in v4. Use TxGlobalSettings instead.")]
     public class TransifexRunnerSettings<TSettingsType> : TransifexRunnerSettings
             where TSettingsType : TransifexRunnerSettings<TSettingsType>
     {
@@ -43,6 +45,7 @@ namespace Cake.Transifex
     /// Defines common properties that can be used for all commands.
     /// </summary>
     /// <seealso cref="Cake.Core.Tooling.ToolSettings"/>
+    [Obsolete("Will be removed in v4. Use TxGlobalSettings instead.")]
     public class TransifexRunnerSettings : ToolSettings
     {
         private readonly IDictionary<string, object> arguments = new Dictionary<string, object>();

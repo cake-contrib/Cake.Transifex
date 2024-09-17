@@ -7,12 +7,14 @@ namespace Cake.Transifex
 {
     using Cake.Core;
     using Cake.Core.Annotations;
+    using System;
 
     /// <summary>
     /// Provides a wrapper around transifex client functionality within a Cake build script.
     /// </summary>
     [CakeAliasCategory("Localization")]
     [CakeNamespaceImport("Cake.Transifex")]
+    [Obsolete("Will be removed in v4. Use the TxAliases class instead.")]
     public static class TransifexRunnerAliases
     {
         /// <summary>
@@ -38,6 +40,7 @@ namespace Cake.Transifex
         /// <revision version="0.9.1">Add missing <see cref="CakeMethodAliasAttribute" /> attribute.</revision>
         /// </revisionHistory>
         [CakeMethodAlias]
+        [Obsolete("Will be removed in v4. Use TxInit instead.")]
         public static void TransifexInit(this ICakeContext context)
             => TransifexInit(context, null);
 
@@ -89,6 +92,7 @@ namespace Cake.Transifex
         /// <revision version="0.9.1">Add missing <see cref="CakeMethodAliasAttribute" /> attribute.</revision>
         /// </revisionHistory>
         [CakeMethodAlias]
+        [Obsolete("Will be removed in v4. Use TxInit instead.")]
         public static void TransifexInit(this ICakeContext context, TransifexInitSettings settings)
         {
             var runner = CreateRunner(context);
@@ -113,6 +117,7 @@ namespace Cake.Transifex
         /// ]]>
         /// </code>
         [CakeMethodAlias]
+        [Obsolete("Will be removed in v4. Use TxPull instead.")]
         public static void TransifexPull(this ICakeContext context)
             => TransifexPull(context, null);
 
@@ -144,6 +149,7 @@ namespace Cake.Transifex
         /// </code>
         /// </example>
         [CakeMethodAlias]
+        [Obsolete("Will be removed in v4. Use TxPull instead.")]
         public static void TransifexPull(this ICakeContext context, TransifexPullSettings settings)
         {
             var runner = CreateRunner(context);
@@ -171,6 +177,7 @@ namespace Cake.Transifex
         /// </code>
         /// </example>
         [CakeMethodAlias]
+        [Obsolete("Will be removed in v4. Use TxPush instead.")]
         public static void TransifexPush(this ICakeContext context)
             => TransifexPush(context, null);
 
@@ -203,6 +210,7 @@ namespace Cake.Transifex
         /// </code>
         /// </example>
         [CakeMethodAlias]
+        [Obsolete("Will be removed in v4. Use TxPush instead.")]
         public static void TransifexPush(this ICakeContext context, TransifexPushSettings settings)
         {
             var runner = CreateRunner(context);
@@ -227,6 +235,7 @@ namespace Cake.Transifex
         /// </code>
         /// </example>
         [CakeMethodAlias]
+        [Obsolete("Will be removed in v4. Use TxStatus instead.")]
         public static void TransifexStatus(this ICakeContext context)
             => TransifexStatus(context, null);
 
@@ -250,6 +259,7 @@ namespace Cake.Transifex
         /// </code>
         /// </example>
         [CakeMethodAlias]
+        [Obsolete("Will be removed in v4. Use TxStatus instead.")]
         public static void TransifexStatus(this ICakeContext context, string resources)
         {
             var runner = CreateRunner(context);
@@ -258,6 +268,6 @@ namespace Cake.Transifex
         }
 
         private static TransifexRunner CreateRunner(ICakeContext context)
-            => new TransifexRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            => new (context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
     }
 }

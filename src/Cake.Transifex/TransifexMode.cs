@@ -1,13 +1,16 @@
-﻿// <copyright file="TransifexMode.cs" company="Cake Contrib">
+// <copyright file="TransifexMode.cs" company="Cake Contrib">
 // Copyright (c) 2017-2021 Kim J. Nordmo and Cake Contrib.
 // Licensed under the MIT license. See LICENSE in the project.
 // </copyright>
 
 namespace Cake.Transifex
 {
+    using System;
+
     /// <summary>
     /// Specifies the mode of the translation file to pull.
     /// </summary>
+    [Obsolete("This enumeration have been deprecated, and is not part of the new aliases.")]
     public enum TransifexMode
     {
         /// <summary>

@@ -5,11 +5,14 @@
 
 namespace Cake.Transifex
 {
+    using System;
+
     /// <summary>
     /// Defines common properties that can be used for all commands touching a remote location.
     /// </summary>
     /// <typeparam name="TSettingsType">The type of settings that inherits from this class.</typeparam>
     /// <seealso cref="TransifexRunnerSettings{TSettingsType}"/>
+    [Obsolete("Will be removed in v4.")]
     public class TransifexRunnerRemoteSettings<TSettingsType> : TransifexRunnerSettings<TSettingsType>
         where TSettingsType : TransifexRunnerRemoteSettings<TSettingsType>
     {

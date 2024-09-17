@@ -17,6 +17,7 @@ namespace Cake.Transifex
     /// </summary>
     /// <seealso cref="Cake.Core.Tooling.Tool{TSettings}"/>
     /// <seealso cref="Cake.Transifex.ITransifexRunnerCommands"/>
+    [Obsolete("Will be removed in v4. Use TxRunner instead.")]
     internal sealed class TransifexRunner : Tool<TransifexRunnerSettings>, ITransifexRunnerCommands
     {
         /// <summary>

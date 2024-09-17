@@ -4,6 +4,7 @@ namespace Cake.Transifex.Tests
     using FluentAssertions;
     using Xunit;
 
+    [Obsolete("Will be removed in v4.")]
     public class TransifexInitRunnerTests
     {
         private readonly TransifexInitFixture _fixture;

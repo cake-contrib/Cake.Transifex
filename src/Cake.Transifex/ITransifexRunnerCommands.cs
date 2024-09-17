@@ -5,9 +5,12 @@
 
 namespace Cake.Transifex
 {
+    using System;
+
     /// <summary>
     /// Defines the commands supported by the transifex client and the transifex runner.
     /// </summary>
+    [Obsolete("Will be removed in v4")]
     public interface ITransifexRunnerCommands
     {
         /// <summary>

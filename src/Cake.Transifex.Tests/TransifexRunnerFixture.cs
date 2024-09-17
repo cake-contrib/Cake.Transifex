@@ -4,8 +4,12 @@ namespace Cake.Transifex.Tests
     using Cake.Core.IO;
     using Cake.Testing;
     using Cake.Testing.Fixtures;
+    using Cake.Transifex.Runners;
+    using Cake.Transifex.Settings;
     using NSubstitute;
+    using System;
 
+    [Obsolete("Will be removed in v4")]
     public class TransifexAliasesInitFixture : TransifexInitFixture
     {
         private static ICakeContext _context;
@@ -31,6 +35,7 @@ namespace Cake.Transifex.Tests
         }
     }
 
+    [Obsolete("Will be removed in v4")]
     public class TransifexAliasesPullFixture : TransifexPullFixture
     {
         private static ICakeContext _context;
@@ -56,6 +61,7 @@ namespace Cake.Transifex.Tests
         }
     }
 
+    [Obsolete("Will be removed in v4")]
     public class TransifexAliasesPushFixture : TransifexPushFixture
     {
         private static ICakeContext _context;
@@ -81,6 +87,7 @@ namespace Cake.Transifex.Tests
         }
     }
 
+    [Obsolete("Will be removed in v4")]
     public class TransifexAliasesStatusFixture : TransifexStatusFixture
     {
         private static ICakeContext _context;
@@ -106,6 +113,7 @@ namespace Cake.Transifex.Tests
         }
     }
 
+    [Obsolete("Will be removed in v4")]
     public class TransifexInitFixture : ToolFixture<TransifexInitSettings>
     {
         public TransifexInitFixture()
@@ -120,6 +128,7 @@ namespace Cake.Transifex.Tests
         }
     }
 
+    [Obsolete("Will be removed in v4")]
     public class TransifexPullFixture : ToolFixture<TransifexPullSettings>
     {
         public TransifexPullFixture()
@@ -134,6 +143,7 @@ namespace Cake.Transifex.Tests
         }
     }
 
+    [Obsolete("Will be removed in v4")]
     public class TransifexPushFixture : ToolFixture<TransifexPushSettings>
     {
         public TransifexPushFixture()
@@ -148,6 +158,7 @@ namespace Cake.Transifex.Tests
         }
     }
 
+    [Obsolete("Will be removed in v4")]
     public class TransifexStatusFixture : ToolFixture<TransifexStatusSettings>
     {
         public TransifexStatusFixture()

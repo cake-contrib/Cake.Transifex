@@ -5,11 +5,14 @@
 
 namespace Cake.Transifex
 {
+    using System;
+
     /// <summary>
     /// Defines the properties that can be used when calling the push command on the transifex
     /// client. This class cannot be inherited.
     /// </summary>
     /// <seealso cref="Cake.Transifex.TransifexRunnerRemoteSettings{TSettingsType}"/>
+    [Obsolete("Will be removed in v4. Use TxPushSettings instead.")]
     public sealed class TransifexPushSettings : TransifexRunnerRemoteSettings<TransifexPushSettings>
     {
         /// <summary>
